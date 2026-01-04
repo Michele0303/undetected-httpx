@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "undetected-httpx"
+version = "0.1.0"
+description = "An httpx-like HTTP toolkit with anti-bot resilience."
+authors = ["Michele Fiori <michele8.fiori8@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.14"
+typer = "^0.21.0"
+curl-cffi = "^0.14.0"
+beautifulsoup4 = "^4.14.3"
+rich = "^14.2.0"
+
+[tool.poetry.scripts]
+undetected-httpx = "undetected_httpx.cli:main"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.14.10"
+pre-commit = "^4.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project.scripts]
+undetected-httpx = "undetected_httpx.cli:main"
+
+[tool.ruff]
+target-version = "py314"
+line-length = 88
