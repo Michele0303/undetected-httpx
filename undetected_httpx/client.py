@@ -6,28 +6,33 @@ import time
 @dataclass
 class Response:
     url: str
+    orig_url: str
     status_code: int
     headers: dict
     body: bytes
-    elapsed: float
+    response_time: float
 
 
 class Client:
-    def __init__(self, timeout=10, impersonate="chrome"):
+    def __init__(
+        self, timeout: int = 10, follow_redirects: bool = False, impersonate="chrome"
+    ):
         self.transport = Transport(
-            timeout=timeout,
-            impersonate=impersonate,
+            timeout=timeout, impersonate=impersonate, follow_redirects=follow_redirects
         )
 
     def get(self, url: str) -> Response:
-        start = time.time()
+        start = time.perf_counter()
+
         raw = self.transport.request("GET", url)
-        elapsed = time.time() - start
+
+        elapsed = time.perf_counter() - start
 
         return Response(
-            url=url,
+            url=raw["url"],
+            orig_url=url,
             status_code=raw["status_code"],
             headers=raw["headers"],
             body=raw["body"],
-            elapsed=elapsed,
+            response_time=elapsed * 1000,
         )

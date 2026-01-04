@@ -6,19 +6,49 @@ def probe_status_code(response: Response) -> dict:
     return {"status_code": response.status_code}
 
 
+def probe_content_length(response: Response) -> dict:
+    cl = response.headers.get("content-length")
+    if cl is None:
+        cl = len(response.body)
+    return {"content_length": cl}
+
+
+def probe_content_type(response: Response) -> dict:
+    ct = response.headers.get("content-type", "")
+    ct_clean = ct.split(";")[0].strip()
+    return {"content_type": ct_clean}
+
+
+def probe_location(response: Response) -> dict:
+    loc = response.headers.get("Location") or response.headers.get("location")
+
+    if not loc and hasattr(response, "orig_url") and response.url != response.orig_url:
+        loc = response.url
+
+    return {"location": loc}
+
+
 def probe_title(response: Response) -> dict:
     try:
         soup = BeautifulSoup(response.body, "html.parser")
-        title = soup.title.string.strip() if soup.title else ""
+        title = soup.title.string.strip() if soup.title else None
     except Exception:
-        title = ""
+        title = None
 
     return {"title": title}
 
 
+def probe_response_time(response: Response) -> dict:
+    return {"response_time": response.response_time}
+
+
 PROBES = {
     "status_code": probe_status_code,
+    "content_length": probe_content_length,
+    "content_type": probe_content_type,
+    "location": probe_location,
     "title": probe_title,
+    "response_time": probe_response_time,
 }
 
 

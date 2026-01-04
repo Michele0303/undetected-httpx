@@ -40,8 +40,31 @@ def scan(
         help="Display status code",
         rich_help_panel="PROBES",
     ),
+    content_length: bool = typer.Option(
+        False,
+        "-cl",
+        "-content-length",
+        help="display response content-length",
+        rich_help_panel="PROBES",
+    ),
+    content_type: bool = typer.Option(
+        False,
+        "-ct",
+        "-content-type",
+        help="display response content-type",
+        rich_help_panel="PROBES",
+    ),
+    location: bool = typer.Option(
+        False,
+        "-location",
+        help="display response redirect location",
+        rich_help_panel="PROBES",
+    ),
     title: bool = typer.Option(
-        False, "-title", help="Display page title", rich_help_panel="PROBES"
+        False,
+        "-title",
+        help="display response content-length",
+        rich_help_panel="PROBES",
     ),
     response_time: bool = typer.Option(
         False,
@@ -101,6 +124,9 @@ def scan(
 
     enabled_probes = {
         "status_code": status_code,
+        "content_length": content_length,
+        "content_type": content_type,
+        "location": location,
         "title": title,
         "response_time": response_time,
     }
