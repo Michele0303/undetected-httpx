@@ -3,6 +3,9 @@ from pathlib import Path
 from typing import List, Optional
 import sys
 
+from rich.console import Console
+from rich.panel import Panel
+
 from undetected_httpx.client import Client
 from undetected_httpx.probes import run_probes
 from undetected_httpx.output import render_stdout, render_json
@@ -13,6 +16,25 @@ app = typer.Typer(
     rich_markup_mode="rich",
     context_settings={"help_option_names": ["-h", "-help", "--help"]},
 )
+
+console = Console()
+
+
+def show_banner():
+    ascii_art = r"""
+░█░█░█▀█░█▀▄░█▀▀░▀█▀░█▀▀░█▀▀░▀█▀░█▀▀░█▀▄░░░█░█░▀█▀░▀█▀░█▀█░█░█
+░█░█░█░█░█░█░█▀▀░░█░░█▀▀░█░░░░█░░█▀▀░█░█░░░█▀█░░█░░░█░░█▀▀░▄▀▄
+░▀▀▀░▀░▀░▀▀░░▀▀▀░░▀░░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀░░░░▀░▀░░▀░░░▀░░▀░░░▀░▀
+    """
+
+    console.print(
+        Panel(
+            f"[bold yellow]{ascii_art}[/bold yellow]\n"
+            "[bold cyan]Undetected HTTPX Toolkit[/bold cyan] | [dim]v0.1.0[/dim]",
+            border_style="yellow",
+            expand=False,
+        )
+    )
 
 
 @app.command()
@@ -145,6 +167,7 @@ def scan(
 
 
 def main():
+    show_banner()
     app()
 
 
