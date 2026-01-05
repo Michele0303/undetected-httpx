@@ -1,9 +1,17 @@
 [tool.poetry]
 name = "undetected-httpx"
-version = "0.1.0"
+version = "0.1.1"
 description = "Stop getting 403 Forbidden. A specialized httpx-like toolkit for WAF evasion."
 authors = ["Michele Fiori <michele8.fiori8@gmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/michele0303/undetected-httpx"
+documentation = "https://github.com/michele0303/undetected-httpx#readme"
+repository = "https://github.com/michele0303/undetected-httpx"
+keywords = [
+    "httpx", "waf-bypass", "fingerprinting", "reconnaissance", "cloudflare-bypass",
+    "scraping", "requests", "security", "anti-bot-bypass", "curl-cffi", "anti-bot-evasion"
+]
+packages = [{include = "undetected_httpx"}]
 
 [tool.poetry.dependencies]
 python = "^3.14"
@@ -13,7 +21,7 @@ beautifulsoup4 = "^4.14.3"
 rich = "^14.2.0"
 
 [tool.poetry.scripts]
-undetected-httpx = "undetected_httpx.cli:main"
+undetected-httpx = "undetected_httpx.cli:app"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.14.10"
@@ -22,9 +30,6 @@ pre-commit = "^4.5.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[project.scripts]
-undetected-httpx = "undetected_httpx.cli:main"
 
 [tool.ruff]
 target-version = "py314"

@@ -30,7 +30,7 @@ def show_banner():
     console.print(
         Panel(
             f"[bold yellow]{ascii_art}[/bold yellow]\n"
-            "[bold cyan]Undetected HTTPX Toolkit[/bold cyan] | [dim]v0.1.0[/dim]",
+            "[bold cyan]Undetected HTTPX Toolkit[/bold cyan] | [dim]v0.1.1[/dim]",
             border_style="yellow",
             expand=False,
         )

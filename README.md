@@ -19,11 +19,11 @@ Traditional HTTP clients are easily fingerprinted and blocked by WAFs. This tool
   <tr>
     <td align="center" style="border: none; width: 50%; padding: 10px;">
       <kbd><b>undetected-httpx (Pro)</b></kbd><br><br>
-      <img src="docs/undetected-httpx.gif" width="100%" style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+      <img src="https://raw.githubusercontent.com/michele0303/undetected-httpx/main/docs/undetected-httpx.gif" width="100%" style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
     </td>
     <td align="center" style="border: none; width: 50%; padding: 10px;">
       <kbd>httpx (Original)</kbd><br><br>
-      <img src="docs/httpx.gif" width="100%" style="border-radius: 8px; opacity: 0.8;">
+      <img src="https://raw.githubusercontent.com/michele0303/undetected-httpx/main/docs/httpx.gif" width="100%" style="border-radius: 8px; opacity: 0.8;">
     </td> 
   </tr>
 </table>
