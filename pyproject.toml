@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "undetected-httpx"
 version = "0.1.0"
-description = "An httpx-like HTTP toolkit with anti-bot resilience."
+description = "Stop getting 403 Forbidden. A specialized httpx-like toolkit for WAF evasion."
 authors = ["Michele Fiori <michele8.fiori8@gmail.com>"]
 readme = "README.md"
 
