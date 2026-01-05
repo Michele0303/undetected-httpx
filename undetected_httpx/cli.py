@@ -116,7 +116,13 @@ def scan(
         help="store output in JSONL(ines) format",
         rich_help_panel="OUTPUT",
     ),
+    silent: bool = typer.Option(
+        False, "-silent", help="silent mode", rich_help_panel="DEBUG"
+    ),
 ):
+    if not silent:
+        show_banner()
+
     targets: List[str] = []
 
     if list_file:
@@ -167,7 +173,6 @@ def scan(
 
 
 def main():
-    show_banner()
     app()
 
 
