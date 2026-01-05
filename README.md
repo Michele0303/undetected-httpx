@@ -11,6 +11,12 @@
 Traditional HTTP clients are easily fingerprinted and blocked by WAFs. This tool leverages **browser-grade TLS** and **HTTP fingerprinting** (JA3/H2) to appear as a legitimate user, ensuring your reconnaissance stays under the radar.
 
 -----
+## 📦 Installation
+
+```bash
+pip install undetected-httpx
+```
+-----
 
 ## 🎭 Real-world Comparison
 *Can you spot the difference?* Standard tools get a `403 Forbidden` where we get a `200 OK`.
