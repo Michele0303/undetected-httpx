@@ -2,7 +2,18 @@
 
 **An HTTP probing toolkit inspired by <a href="https://github.com/projectdiscovery/httpx">httpx</a>, powered by curl_cffi with browser-grade TLS and HTTP fingerprinting.**
 
-<img src="https://i.ibb.co/GvKXKJ99/comparation.png" alt="tool comparation" border="0">
+<table style="width: 100%; border-collapse: collapse; border: none;">
+  <tr>
+    <td align="center" style="border: none; width: 50%;">
+      <b>undetected-httpx (Pro)</b><br>
+      <img src="docs/undetected-httpx.gif" width="100%">
+    </td>
+    <td align="center" style="border: none; width: 50%;">
+      <b>httpx (Original)</b><br>
+      <img src="docs/httpx.gif" width="100%">
+    </td> 
+</tr>
+</table>
 
 `undetected-httpx` is a fast and flexible HTTP probing tool designed for modern web environments where traditional HTTP clients are easily fingerprinted or blocked.
 
