@@ -6,6 +6,17 @@ from pathlib import Path
 from platformdirs import user_config_dir
 
 
+_cdn_manager_instance: "CDNManager | None" = None
+
+
+def get_cdn_manager() -> "CDNManager":
+    """singleton for CDNManager."""
+    global _cdn_manager_instance
+    if _cdn_manager_instance is None:
+        _cdn_manager_instance = CDNManager()
+    return _cdn_manager_instance
+
+
 class CDNManager:
     def __init__(self, cache_days=1):
         # cross-platform (Windows: AppData/Local, Linux: .config)
