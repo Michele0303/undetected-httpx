@@ -1,3 +1,6 @@
+import socket
+from urllib.parse import urlparse
+
 from undetected_httpx.client import Response
 from bs4 import BeautifulSoup
 
@@ -42,6 +45,16 @@ def probe_response_time(response: Response) -> dict:
     return {"response_time": response.response_time}
 
 
+def probe_ip(response: Response) -> dict:
+    try:
+        hostname = urlparse(response.url).hostname
+        ip = socket.gethostbyname(hostname) if hostname else None
+    except Exception:
+        ip = None
+
+    return {"ip": ip}
+
+
 PROBES = {
     "status_code": probe_status_code,
     "content_length": probe_content_length,
@@ -49,6 +62,7 @@ PROBES = {
     "location": probe_location,
     "title": probe_title,
     "response_time": probe_response_time,
+    "ip": probe_ip,
 }
 
 

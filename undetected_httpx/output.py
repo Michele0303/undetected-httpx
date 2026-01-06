@@ -44,8 +44,13 @@ def render_stdout(result: dict, silent: bool = False):
         response_time_text = typer.style(f"{rt:.2f}ms", fg="magenta")
         response_time_part = f" [{response_time_text}]"
 
+    ip_part = ""
+    if "ip" in result and result["ip"]:
+        ip_text = typer.style(result["ip"], fg="magenta")
+        ip_part = f" [{ip_text}]"
+
     print(
-        f"{url}{status_part}{location_part}{content_length_part}{content_type_part}{title_part}{response_time_part}"
+        f"{url}{status_part}{location_part}{content_length_part}{content_type_part}{title_part}{ip_part}{response_time_part}"
     )
 
 

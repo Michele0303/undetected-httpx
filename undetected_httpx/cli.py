@@ -95,6 +95,12 @@ def scan(
         help="display response time",
         rich_help_panel="PROBES",
     ),
+    ip: bool = typer.Option(
+        False,
+        "-ip",
+        help="display host ip",
+        rich_help_panel="PROBES",
+    ),
     # CONFIG
     timeout: int = typer.Option(
         10,
@@ -157,6 +163,7 @@ def scan(
         "location": location,
         "title": title,
         "response_time": response_time,
+        "ip": ip,
     }
 
     for t in targets:
