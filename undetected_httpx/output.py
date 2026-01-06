@@ -41,17 +41,17 @@ def render_stdout(result: dict, silent: bool = False):
     response_time_part = ""
     if "response_time" in result and result["response_time"]:
         rt = result["response_time"]
-        response_time_text = typer.style(f"{rt:.2f}ms", fg="magenta")
+        response_time_text = typer.style(f"{rt:.2f}ms")
         response_time_part = f" [{response_time_text}]"
 
     ip_part = ""
     if "ip" in result and result["ip"]:
-        ip_text = typer.style(result["ip"], fg="magenta")
+        ip_text = typer.style(result["ip"])
         ip_part = f" [{ip_text}]"
 
     cdn_part = ""
     if "cdn" in result and result["cdn"]:
-        cdn_text = typer.style(result["cdn"], fg="magenta")
+        cdn_text = typer.style(result["cdn"])
         cdn_part = f" [{cdn_text}]"
 
     print(
