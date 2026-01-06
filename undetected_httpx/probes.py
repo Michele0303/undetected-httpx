@@ -4,6 +4,8 @@ from urllib.parse import urlparse
 from undetected_httpx.client import Response
 from bs4 import BeautifulSoup
 
+from undetected_httpx.manager import CDNManager
+
 
 def probe_status_code(response: Response) -> dict:
     return {"status_code": response.status_code}
@@ -55,6 +57,15 @@ def probe_ip(response: Response) -> dict:
     return {"ip": ip}
 
 
+def probe_cdn(response) -> dict:
+    ip_data = probe_ip(response)
+    ip = ip_data.get("ip")
+
+    # TODO: use dependency injection
+    provider, category = CDNManager().check(ip)
+    return {"cdn": provider, "cdn_type": category}
+
+
 PROBES = {
     "status_code": probe_status_code,
     "content_length": probe_content_length,
@@ -63,6 +74,7 @@ PROBES = {
     "title": probe_title,
     "response_time": probe_response_time,
     "ip": probe_ip,
+    "cdn": probe_cdn,
 }
 
 

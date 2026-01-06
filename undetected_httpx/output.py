@@ -49,8 +49,15 @@ def render_stdout(result: dict, silent: bool = False):
         ip_text = typer.style(result["ip"], fg="magenta")
         ip_part = f" [{ip_text}]"
 
+    cdn_part = ""
+    if "cdn" in result and result["cdn"]:
+        cdn_text = typer.style(result["cdn"], fg="magenta")
+        cdn_part = f" [{cdn_text}]"
+
     print(
-        f"{url}{status_part}{location_part}{content_length_part}{content_type_part}{title_part}{ip_part}{response_time_part}"
+        f"{url}{status_part}{location_part}{content_length_part}"
+        f"{content_type_part}{title_part}{ip_part}{cdn_part}"
+        f"{response_time_part}"
     )
 
 

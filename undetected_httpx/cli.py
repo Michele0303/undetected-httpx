@@ -101,6 +101,12 @@ def scan(
         help="display host ip",
         rich_help_panel="PROBES",
     ),
+    cdn: bool = typer.Option(
+        True,
+        "-cdn",
+        help="display cdn/waf in use (default true)",
+        rich_help_panel="PROBES",
+    ),
     # CONFIG
     timeout: int = typer.Option(
         10,
@@ -164,6 +170,7 @@ def scan(
         "title": title,
         "response_time": response_time,
         "ip": ip,
+        "cdn": cdn,
     }
 
     for t in targets:
