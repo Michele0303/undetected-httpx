@@ -14,7 +14,7 @@ Traditional HTTP clients are easily fingerprinted and blocked by WAFs. This tool
 ## 📦 Installation
 
 ```bash
-pip install undetected-httpx
+pip install undetected-httpx --upgrade
 ```
 -----
 
