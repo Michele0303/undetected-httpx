@@ -6,6 +6,7 @@ import sys
 from rich.console import Console
 from rich.panel import Panel
 
+from undetected_httpx import __version__
 from undetected_httpx.client import Client
 from undetected_httpx.probes import run_probes
 from undetected_httpx.output import render_stdout, render_json
@@ -30,7 +31,7 @@ def show_banner():
     console.print(
         Panel(
             f"[bold yellow]{ascii_art}[/bold yellow]\n"
-            "[bold cyan]Undetected HTTPX Toolkit[/bold cyan] | [dim]v0.2.0[/dim]",
+            f"[bold cyan]Undetected HTTPX Toolkit[/bold cyan] | [dim]v{__version__}[/dim]",
             border_style="yellow",
             expand=False,
         )
