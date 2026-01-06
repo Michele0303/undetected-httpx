@@ -1,4 +1,4 @@
-from curl_cffi import requests
+from curl_cffi.requests import Session
 
 
 class Transport:
@@ -6,21 +6,20 @@ class Transport:
         self,
         impersonate: str,
         timeout: int = 10,
-        proxy: str = None,
+        proxy: str | None = None,
         follow_redirects: bool = False,
     ):
-        self.impersonate = impersonate
-        self.timeout = timeout
-        self.proxy = proxy
         self.follow_redirects = follow_redirects
+        self.session = Session(
+            impersonate=impersonate,
+            proxy=proxy,
+            timeout=timeout,
+        )
 
     def request(self, method: str, url: str) -> dict:
-        r = requests.request(
+        r = self.session.request(
             method,
             url,
-            impersonate=self.impersonate,
-            proxy=self.proxy,
-            timeout=self.timeout,
             allow_redirects=self.follow_redirects,
         )
 
@@ -28,6 +27,15 @@ class Transport:
             "status_code": r.status_code,
             "headers": dict(r.headers),
             "body": r.content,
-            "url": r.url,
+            "url": str(r.url),
             "orig_url": url,
         }
+
+    def close(self):
+        self.session.close()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        self.close()

@@ -41,3 +41,12 @@ class Client:
             body=raw["body"],
             response_time=elapsed * 1000,
         )
+
+    def close(self):
+        self.transport.close()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        self.close()

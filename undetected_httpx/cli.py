@@ -166,12 +166,6 @@ def scan(
         )
         raise typer.Exit(1)
 
-    client = Client(
-        timeout=timeout,
-        impersonate=impersonate,
-        follow_redirects=fhr,
-    )
-
     enabled_probes = {
         "status_code": status_code,
         "content_length": content_length,
@@ -183,17 +177,22 @@ def scan(
         "cdn": cdn,
     }
 
-    for t in targets:
-        try:
-            response = client.get(t)
-            result = run_probes(response, enabled_probes)
+    with Client(
+        timeout=timeout,
+        impersonate=impersonate,
+        follow_redirects=fhr,
+    ) as client:
+        for t in targets:
+            try:
+                response = client.get(t)
+                result = run_probes(response, enabled_probes)
 
-            if json:
-                render_json(result)
-            else:
-                render_stdout(result)
-        except Exception as e:
-            typer.secho(f"Error connecting to {t}: {e}", fg="red", err=True)
+                if json:
+                    render_json(result)
+                else:
+                    render_stdout(result)
+            except Exception as e:
+                typer.secho(f"Error connecting to {t}: {e}", fg="red", err=True)
 
 
 def main():
