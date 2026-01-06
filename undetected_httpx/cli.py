@@ -1,8 +1,10 @@
-import typer
+import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import List, Optional
-import sys
 
+import typer
 from rich.console import Console
 from rich.panel import Panel
 
@@ -10,6 +12,10 @@ from undetected_httpx import __version__
 from undetected_httpx.client import Client
 from undetected_httpx.probes import run_probes
 from undetected_httpx.output import render_stdout, render_json
+
+# Thread-local storage for Client instances
+_thread_local = threading.local()
+_print_lock = threading.Lock()
 
 app = typer.Typer(
     add_completion=False,
@@ -108,6 +114,14 @@ def scan(
         help="display cdn/waf in use",
         rich_help_panel="PROBES",
     ),
+    # RATE-LIMIT
+    threads: int = typer.Option(
+        50,
+        "-t",
+        "-threads",
+        help="number of threads to use (default 50)",
+        rich_help_panel="RATE-LIMIT",
+    ),
     # OUTPUT
     json: bool = typer.Option(
         False,
@@ -177,22 +191,36 @@ def scan(
         "cdn": cdn,
     }
 
-    with Client(
-        timeout=timeout,
-        impersonate=impersonate,
-        follow_redirects=fhr,
-    ) as client:
-        for t in targets:
-            try:
-                response = client.get(t)
-                result = run_probes(response, enabled_probes)
+    def get_client() -> Client:
+        """Get or create a thread-local Client instance."""
+        if not hasattr(_thread_local, "client"):
+            _thread_local.client = Client(
+                timeout=timeout,
+                impersonate=impersonate,
+                follow_redirects=fhr,
+            )
+        return _thread_local.client
 
+    def process_target(t: str) -> None:
+        """Process a single target (runs in thread pool)."""
+        try:
+            client = get_client()
+            response = client.get(t)
+            result = run_probes(response, enabled_probes)
+
+            with _print_lock:
                 if json:
                     render_json(result)
                 else:
                     render_stdout(result)
-            except Exception as e:
+        except Exception as e:
+            with _print_lock:
                 typer.secho(f"Error connecting to {t}: {e}", fg="red", err=True)
+
+    with ThreadPoolExecutor(max_workers=threads) as executor:
+        futures = [executor.submit(process_target, t) for t in targets]
+        for future in as_completed(futures):
+            future.result()
 
 
 def main():
