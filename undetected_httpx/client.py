@@ -15,10 +15,15 @@ class Response:
 
 class Client:
     def __init__(
-        self, timeout: int = 10, follow_redirects: bool = False, impersonate="chrome"
+        self,
+        timeout: int = 10,
+        follow_redirects: bool = False,
+        impersonate: str = "chrome",
     ):
         self.transport = Transport(
-            timeout=timeout, impersonate=impersonate, follow_redirects=follow_redirects
+            timeout=timeout,
+            follow_redirects=follow_redirects,
+            impersonate=impersonate,
         )
 
     def get(self, url: str) -> Response:

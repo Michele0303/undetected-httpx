@@ -102,23 +102,10 @@ def scan(
         rich_help_panel="PROBES",
     ),
     cdn: bool = typer.Option(
-        True,
+        False,
         "-cdn",
-        help="display cdn/waf in use (default true)",
+        help="display cdn/waf in use",
         rich_help_panel="PROBES",
-    ),
-    # CONFIG
-    timeout: int = typer.Option(
-        10,
-        "-timeout",
-        help="timeout in seconds (default 10)",
-        rich_help_panel="CONFIGURATIONS",
-    ),
-    impersonate: str = typer.Option(
-        "chrome",
-        "--impersonate",
-        help="Browser fingerprint to impersonate",
-        rich_help_panel="CONFIGURATIONS",
     ),
     # OUTPUT
     json: bool = typer.Option(
@@ -130,6 +117,27 @@ def scan(
     ),
     silent: bool = typer.Option(
         False, "-silent", help="silent mode", rich_help_panel="DEBUG"
+    ),
+    # CONFIGURATIONS
+    fhr: bool = typer.Option(
+        False,
+        "-fhr",
+        "-follow-host-redirects",
+        help="follow redirects on the same host",
+        rich_help_panel="CONFIGURATIONS",
+    ),
+    impersonate: str = typer.Option(
+        "chrome",
+        "-impersonate",
+        help="Browser fingerprint to impersonate",
+        rich_help_panel="CONFIGURATIONS",
+    ),
+    # OPTIMIZATIONS
+    timeout: int = typer.Option(
+        10,
+        "-timeout",
+        help="timeout in seconds (default 10)",
+        rich_help_panel="OPTIMIZATIONS",
     ),
 ):
     if not silent:
@@ -160,6 +168,7 @@ def scan(
     client = Client(
         timeout=timeout,
         impersonate=impersonate,
+        follow_redirects=fhr,
     )
 
     enabled_probes = {
