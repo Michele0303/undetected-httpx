@@ -92,7 +92,7 @@ def scan(
         False,
         "-rt",
         "-response-time",
-        help="Display response time",
+        help="display response time",
         rich_help_panel="PROBES",
     ),
     # CONFIG
