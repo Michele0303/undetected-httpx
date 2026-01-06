@@ -30,7 +30,7 @@ class CDNManager:
 
         self._initialize_data()
 
-    def _initialize_data(self):
+    def _initialize_data(self) -> None:
         self.cache_dir.mkdir(parents=True, exist_ok=True)
 
         if (
@@ -41,7 +41,7 @@ class CDNManager:
         else:
             self._load_from_disk()
 
-    def _update_cache(self):
+    def _update_cache(self) -> None:
         try:
             response = curl_cffi.get(self.url, timeout=15)
             if response.status_code == 200:
@@ -54,14 +54,14 @@ class CDNManager:
             if self.cache_file.exists():
                 self._load_from_disk()
 
-    def _load_from_disk(self):
+    def _load_from_disk(self) -> None:
         try:
             with open(self.cache_file, "r", encoding="utf-8") as f:
                 self.data = json.load(f)
         except Exception:
             self.data = {}
 
-    def check(self, ip_str):
+    def check(self, ip_str: str) -> tuple[str | None, str | None]:
         if not ip_str or not self.data:
             return None, None
 

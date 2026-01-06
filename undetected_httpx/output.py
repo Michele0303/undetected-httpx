@@ -2,7 +2,7 @@ import json
 import typer
 
 
-def render_stdout(result: dict, silent: bool = False):
+def render_stdout(result: dict, silent: bool = False) -> None:
     if silent:
         print(result.get("url", ""))
         return
@@ -61,5 +61,5 @@ def render_stdout(result: dict, silent: bool = False):
     )
 
 
-def render_json(result: dict):
+def render_json(result: dict) -> None:
     print(json.dumps(result, ensure_ascii=False))

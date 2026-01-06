@@ -27,7 +27,7 @@ app = typer.Typer(
 console = Console()
 
 
-def show_banner():
+def show_banner() -> None:
     ascii_art = r"""
 ░█░█░█▀█░█▀▄░█▀▀░▀█▀░█▀▀░█▀▀░▀█▀░█▀▀░█▀▄░░░█░█░▀█▀░▀█▀░█▀█░█░█
 ░█░█░█░█░█░█░█▀▀░░█░░█▀▀░█░░░░█░░█▀▀░█░█░░░█▀█░░█░░░█░░█▀▀░▄▀▄
@@ -154,7 +154,7 @@ def scan(
         help="timeout in seconds (default 10)",
         rich_help_panel="OPTIMIZATIONS",
     ),
-):
+) -> None:
     if not silent:
         show_banner()
 
@@ -223,7 +223,7 @@ def scan(
             future.result()
 
 
-def main():
+def main() -> None:
     app()
 
 
