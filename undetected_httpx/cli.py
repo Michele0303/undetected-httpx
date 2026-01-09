@@ -2,7 +2,6 @@ import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import List, Optional
 
 import typer
 from rich.console import Console
@@ -47,14 +46,14 @@ def show_banner() -> None:
 @app.command()
 def scan(
     # INPUT
-    list_file: Optional[Path] = typer.Option(
+    list_file: Path | None = typer.Option(
         None,
         "-l",
         "-list",
         help="input file containing list of hosts to process",
         rich_help_panel="INPUT",
     ),
-    target: Optional[List[str]] = typer.Option(
+    target: list[str] | None = typer.Option(
         None,
         "-u",
         "-target",
@@ -158,7 +157,7 @@ def scan(
     if not silent:
         show_banner()
 
-    targets: List[str] = []
+    targets: list[str] = []
 
     if list_file:
         if list_file.is_file():
