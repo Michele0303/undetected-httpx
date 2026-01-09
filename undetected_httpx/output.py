@@ -2,6 +2,13 @@ import json
 import typer
 
 
+def _styled_part(value, color: str | None = None, bold: bool = False) -> str:
+    if not value:
+        return ""
+    styled = typer.style(str(value), fg=color, bold=bold)
+    return f" [{styled}]"
+
+
 def render_stdout(result: dict, silent: bool = False) -> None:
     if silent:
         print(result.get("url", ""))
@@ -9,50 +16,22 @@ def render_stdout(result: dict, silent: bool = False) -> None:
 
     url = result.get("url", "")
 
+    # status_code ha logica speciale per il colore
     status_part = ""
-    if "status_code" in result and result["status_code"]:
-        sc = result["status_code"]
+    if sc := result.get("status_code"):
         color = "green" if 200 <= sc < 300 else "yellow" if 300 <= sc < 400 else "red"
-        status_text = typer.style(f"{sc}", fg=color, bold=True)
-        status_part = f" [{status_text}]"
+        status_part = _styled_part(sc, color, bold=True)
 
-    content_length_part = ""
-    if "content_length" in result and result["content_length"]:
-        cl = result["content_length"]
-        content_length_text = typer.style(f"{cl}", fg="magenta")
-        content_length_part = f" [{content_length_text}]"
+    content_length_part = _styled_part(result.get("content_length"), "magenta")
+    content_type_part = _styled_part(result.get("content_type"), "magenta")
+    location_part = _styled_part(result.get("location"), "magenta")
+    title_part = _styled_part(result.get("title"), "cyan")
+    ip_part = _styled_part(result.get("ip"))
+    cdn_part = _styled_part(result.get("cdn"))
 
-    content_type_part = ""
-    if "content_type" in result and result["content_type"]:
-        ct = result["content_type"]
-        content_type_text = typer.style(f"{ct}", fg="magenta")
-        content_type_part = f" [{content_type_text}]"
-
-    location_part = ""
-    if "location" in result and result["location"]:
-        location_text = typer.style(result["location"], fg="magenta")
-        location_part = f" [{location_text}]"
-
-    title_part = ""
-    if "title" in result and result["title"]:
-        title_text = typer.style(result["title"], fg="cyan")
-        title_part = f" [{title_text}]"
-
-    response_time_part = ""
-    if "response_time" in result and result["response_time"]:
-        rt = result["response_time"]
-        response_time_text = typer.style(f"{rt:.2f}ms")
-        response_time_part = f" [{response_time_text}]"
-
-    ip_part = ""
-    if "ip" in result and result["ip"]:
-        ip_text = typer.style(result["ip"])
-        ip_part = f" [{ip_text}]"
-
-    cdn_part = ""
-    if "cdn" in result and result["cdn"]:
-        cdn_text = typer.style(result["cdn"])
-        cdn_part = f" [{cdn_text}]"
+    # response_time ha formattazione speciale
+    rt = result.get("response_time")
+    response_time_part = _styled_part(f"{rt:.2f}ms" if rt else None)
 
     print(
         f"{url}{status_part}{location_part}{content_length_part}"
