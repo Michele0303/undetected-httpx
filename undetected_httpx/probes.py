@@ -36,11 +36,11 @@ def probe_location(response: Response) -> dict:
 def probe_title(response: Response) -> dict:
     try:
         soup = BeautifulSoup(response.body, "html.parser")
-        title = soup.title.string.strip() if soup.title else None
+        title = soup.title.get_text(strip=True) if soup.title else None
     except Exception:
         title = None
 
-    return {"title": title}
+    return {"title": title or None}
 
 
 def probe_response_time(response: Response) -> dict:
