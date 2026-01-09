@@ -16,7 +16,6 @@ def render_stdout(result: dict, silent: bool = False) -> None:
 
     url = result.get("url", "")
 
-    # status_code ha logica speciale per il colore
     status_part = ""
     if sc := result.get("status_code"):
         color = "green" if 200 <= sc < 300 else "yellow" if 300 <= sc < 400 else "red"
@@ -29,7 +28,6 @@ def render_stdout(result: dict, silent: bool = False) -> None:
     ip_part = _styled_part(result.get("ip"))
     cdn_part = _styled_part(result.get("cdn"))
 
-    # response_time ha formattazione speciale
     rt = result.get("response_time")
     response_time_part = _styled_part(f"{rt:.2f}ms" if rt else None)
 
