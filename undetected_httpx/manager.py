@@ -2,19 +2,14 @@ import json
 import time
 import curl_cffi
 import ipaddress
+from functools import lru_cache
 from pathlib import Path
 from platformdirs import user_config_dir
 
 
-_cdn_manager_instance: "CDNManager | None" = None
-
-
+@lru_cache(maxsize=1)
 def get_cdn_manager() -> "CDNManager":
-    """singleton for CDNManager."""
-    global _cdn_manager_instance
-    if _cdn_manager_instance is None:
-        _cdn_manager_instance = CDNManager()
-    return _cdn_manager_instance
+    return CDNManager()
 
 
 class CDNManager:
