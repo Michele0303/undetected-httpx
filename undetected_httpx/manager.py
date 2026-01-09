@@ -1,9 +1,10 @@
 import json
 import time
-import curl_cffi
 import ipaddress
 from functools import lru_cache
 from pathlib import Path
+
+import curl_cffi
 from platformdirs import user_config_dir
 
 
@@ -13,67 +14,64 @@ def get_cdn_manager() -> "CDNManager":
 
 
 class CDNManager:
-    def __init__(self, cache_days=1):
-        # cross-platform (Windows: AppData/Local, Linux: .config)
-        self.cache_dir = Path(user_config_dir("undetected-httpx"))
-        self.cache_file = self.cache_dir / "sources_data.json"
-        self.url = "https://raw.githubusercontent.com/projectdiscovery/cdncheck/main/sources_data.json"
-        self.cache_seconds = cache_days * 24 * 60 * 60
+    CACHE_URL = "https://raw.githubusercontent.com/projectdiscovery/cdncheck/main/sources_data.json"
 
-        self.data = {}
-        self._lookup_cache = {}  # in-memory cache for quick lookups
+    def __init__(self, cache_days: int = 1):
+        self.cache_file = (
+            Path(user_config_dir("undetected-httpx")) / "sources_data.json"
+        )
+        self.cache_seconds = cache_days * 86400
+        self._networks = []
+        self._lookup_cache = {}
+        self._load_data()
 
-        self._initialize_data()
+    def _load_data(self) -> None:
+        self.cache_file.parent.mkdir(parents=True, exist_ok=True)
 
-    def _initialize_data(self) -> None:
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        if not self.cache_file.exists() or self._cache_expired():
+            self._fetch_remote()
 
-        if (
-            not self.cache_file.exists()
-            or (time.time() - self.cache_file.stat().st_mtime) > self.cache_seconds
-        ):
-            self._update_cache()
-        else:
-            self._load_from_disk()
-
-    def _update_cache(self) -> None:
         try:
-            response = curl_cffi.get(self.url, timeout=15)
-            if response.status_code == 200:
-                self.data = response.json()
-                with open(self.cache_file, "w", encoding="utf-8") as f:
-                    json.dump(self.data, f, ensure_ascii=False)
-            elif self.cache_file.exists():
-                self._load_from_disk()
-        except Exception:
-            if self.cache_file.exists():
-                self._load_from_disk()
+            data = json.loads(self.cache_file.read_text())
+            self._build_network_list(data)
+        except (json.JSONDecodeError, OSError):
+            self._networks = []
 
-    def _load_from_disk(self) -> None:
+    def _cache_expired(self) -> bool:
+        return time.time() - self.cache_file.stat().st_mtime > self.cache_seconds
+
+    def _fetch_remote(self) -> None:
         try:
-            with open(self.cache_file, "r", encoding="utf-8") as f:
-                self.data = json.load(f)
+            r = curl_cffi.get(self.CACHE_URL, timeout=15)
+            if r.status_code == 200:
+                self.cache_file.write_text(r.text)
         except Exception:
-            self.data = {}
+            pass
+
+    def _build_network_list(self, data: dict) -> None:
+        for category in ("waf", "cdn", "cloud"):
+            for provider, cidrs in data.get(category, {}).items():
+                for cidr in cidrs:
+                    try:
+                        net = ipaddress.ip_network(cidr, strict=False)
+                        self._networks.append((net, provider, category))
+                    except ValueError:
+                        continue
 
     def check(self, ip_str: str) -> tuple[str | None, str | None]:
-        if not ip_str or not self.data:
+        if not ip_str or not self._networks:
             return None, None
 
-        # check cache first
         if ip_str in self._lookup_cache:
             return self._lookup_cache[ip_str]
 
         try:
-            ip_obj = ipaddress.ip_address(ip_str)
-            for category in ["waf", "cdn", "cloud"]:
-                for provider, cidrs in self.data.get(category, {}).items():
-                    for cidr in cidrs:
-                        if ip_obj in ipaddress.ip_network(cidr):
-                            res = (provider, category)
-                            self._lookup_cache[ip_str] = res
-                            return res
-        except Exception:
+            ip = ipaddress.ip_address(ip_str)
+            for net, provider, category in self._networks:
+                if ip in net:
+                    self._lookup_cache[ip_str] = (provider, category)
+                    return provider, category
+        except ValueError:
             pass
 
         self._lookup_cache[ip_str] = (None, None)
