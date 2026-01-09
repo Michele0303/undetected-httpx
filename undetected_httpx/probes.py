@@ -1,7 +1,7 @@
 import socket
 from urllib.parse import urlparse
 
-from undetected_httpx.client import Response
+from undetected_httpx.models import Response
 from bs4 import BeautifulSoup
 
 from undetected_httpx.manager import get_cdn_manager
