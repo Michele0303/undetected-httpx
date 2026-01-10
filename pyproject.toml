@@ -20,6 +20,7 @@ curl-cffi = "^0.14.0"
 beautifulsoup4 = "^4.14.3"
 rich = "^14.2.0"
 platformdirs = "^4.5.1"
+mmh3 = "^5.2.0"
 
 [tool.poetry.scripts]
 undetected-httpx = "undetected_httpx.cli:app"
