@@ -1,85 +1,87 @@
+import codecs
 import socket
 from urllib.parse import urlparse
 
+import mmh3
 from bs4 import BeautifulSoup
 
 from undetected_httpx.manager import get_cdn_manager
 from undetected_httpx.models import Response
 
 
-def probe_status_code(response: Response) -> dict:
-    return {"status_code": response.status_code}
+class ProbeRunner:
+    def __init__(self, client):
+        self.client = client
+        self._probes = {
+            "status_code": self._status_code,
+            "content_length": self._content_length,
+            "content_type": self._content_type,
+            "location": self._location,
+            "title": self._title,
+            "response_time": self._response_time,
+            "ip": self._ip,
+            "cdn": self._cdn,
+            "favicon": self._favicon,
+        }
 
+    def run(self, response: Response, enabled: dict) -> dict:
+        result = {"url": response.url}
+        for name, is_enabled in enabled.items():
+            if is_enabled and name in self._probes:
+                result.update(self._probes[name](response))
+        return result
 
-def probe_content_length(response: Response) -> dict:
-    cl = response.headers.get("content-length")
-    if cl is None:
-        cl = len(response.body)
-    return {"content_length": cl}
+    def _status_code(self, response: Response) -> dict:
+        return {"status_code": response.status_code}
 
+    def _content_length(self, response: Response) -> dict:
+        cl = response.headers.get("content-length")
+        if cl is None:
+            cl = len(response.body)
+        return {"content_length": cl}
 
-def probe_content_type(response: Response) -> dict:
-    ct = response.headers.get("content-type", "")
-    ct_clean = ct.split(";")[0].strip()
-    return {"content_type": ct_clean}
+    def _content_type(self, response: Response) -> dict:
+        ct = response.headers.get("content-type", "")
+        return {"content_type": ct.split(";")[0].strip()}
 
+    def _location(self, response: Response) -> dict:
+        loc = response.headers.get("Location") or response.headers.get("location")
+        if not loc and response.url != response.orig_url:
+            loc = response.url
+        return {"location": loc}
 
-def probe_location(response: Response) -> dict:
-    loc = response.headers.get("Location") or response.headers.get("location")
-    if not loc and response.url != response.orig_url:
-        loc = response.url
-    return {"location": loc}
+    def _title(self, response: Response) -> dict:
+        try:
+            soup = BeautifulSoup(response.body, "html.parser")
+            title = soup.title.get_text(strip=True) if soup.title else None
+        except Exception:
+            title = None
+        return {"title": title or None}
 
+    def _response_time(self, response: Response) -> dict:
+        return {"response_time": response.response_time}
 
-def probe_title(response: Response) -> dict:
-    try:
-        soup = BeautifulSoup(response.body, "html.parser")
-        title = soup.title.get_text(strip=True) if soup.title else None
-    except Exception:
-        title = None
+    def _ip(self, response: Response) -> dict:
+        try:
+            hostname = urlparse(response.url).hostname
+            ip = socket.gethostbyname(hostname) if hostname else None
+        except Exception:
+            ip = None
+        return {"ip": ip}
 
-    return {"title": title or None}
+    def _cdn(self, response: Response) -> dict:
+        ip = self._ip(response).get("ip")
+        provider, category = get_cdn_manager().check(ip)
+        return {"cdn": provider, "cdn_type": category}
 
-
-def probe_response_time(response: Response) -> dict:
-    return {"response_time": response.response_time}
-
-
-def probe_ip(response: Response) -> dict:
-    try:
-        hostname = urlparse(response.url).hostname
-        ip = socket.gethostbyname(hostname) if hostname else None
-    except Exception:
-        ip = None
-
-    return {"ip": ip}
-
-
-def probe_cdn(response: Response) -> dict:
-    ip_data = probe_ip(response)
-    ip = ip_data.get("ip")
-
-    provider, category = get_cdn_manager().check(ip)
-    return {"cdn": provider, "cdn_type": category}
-
-
-PROBES = {
-    "status_code": probe_status_code,
-    "content_length": probe_content_length,
-    "content_type": probe_content_type,
-    "location": probe_location,
-    "title": probe_title,
-    "response_time": probe_response_time,
-    "ip": probe_ip,
-    "cdn": probe_cdn,
-}
-
-
-def run_probes(response: Response, enabled: dict) -> dict:
-    result = {"url": response.url}
-
-    for name, is_enabled in enabled.items():
-        if is_enabled and name in PROBES:
-            result.update(PROBES[name](response))
-
-    return result
+    def _favicon(self, response: Response) -> dict:
+        try:
+            parsed = urlparse(response.url)
+            favicon_url = f"{parsed.scheme}://{parsed.netloc}/favicon.ico"
+            r = self.client.get(favicon_url)
+            if r.status_code == 200 and r.body:
+                favicon_b64 = codecs.encode(r.body, "base64")
+                return {"favicon_hash": mmh3.hash(favicon_b64)}
+        except Exception:
+            pass
+        return {"favicon_hash": None}

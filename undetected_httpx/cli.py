@@ -9,7 +9,7 @@ from rich.panel import Panel
 
 from undetected_httpx import __version__
 from undetected_httpx.client import Client
-from undetected_httpx.probes import run_probes
+from undetected_httpx.probes import ProbeRunner
 from undetected_httpx.output import render_stdout, render_json
 
 app = typer.Typer(
@@ -82,6 +82,12 @@ def scan(
         False,
         "-location",
         help="display response redirect location",
+        rich_help_panel="PROBES",
+    ),
+    favicon: bool = typer.Option(
+        False,
+        "-favicon",
+        help="display mmh3 hash for '/favicon.ico' file",
         rich_help_panel="PROBES",
     ),
     title: bool = typer.Option(
@@ -180,6 +186,7 @@ def scan(
         "content_length": content_length,
         "content_type": content_type,
         "location": location,
+        "favicon": favicon,
         "title": title,
         "response_time": response_time,
         "ip": ip,
@@ -194,8 +201,8 @@ def scan(
                 timeout=timeout, impersonate=impersonate, follow_redirects=fhr
             ) as client:
                 response = client.get(url)
+                result = ProbeRunner(client).run(response, enabled_probes)
 
-            result = run_probes(response, enabled_probes)
             with print_lock:
                 render_json(result) if json else render_stdout(result)
 
