@@ -57,30 +57,6 @@ class ProbeRunner:
             loc = response.url
         return {"location": loc}
 
-    def _title(self, response: Response) -> dict:
-        try:
-            soup = BeautifulSoup(response.body, "html.parser")
-            title = soup.title.get_text(strip=True) if soup.title else None
-        except Exception:
-            title = None
-        return {"title": title or None}
-
-    def _response_time(self, response: Response) -> dict:
-        return {"response_time": response.response_time}
-
-    def _ip(self, response: Response) -> dict:
-        try:
-            hostname = urlparse(response.url).hostname
-            ip = socket.gethostbyname(hostname) if hostname else None
-        except Exception:
-            ip = None
-        return {"ip": ip}
-
-    def _cdn(self, response: Response) -> dict:
-        ip = self._ip(response).get("ip")
-        provider, category = get_cdn_manager().check(ip)
-        return {"cdn": provider, "cdn_type": category}
-
     def _favicon(self, response: Response) -> dict:
         try:
             parsed = urlparse(response.url)
@@ -112,3 +88,27 @@ class ProbeRunner:
             return {"jarm": jarm_hash}
         except Exception:
             return {"jarm": None}
+
+    def _title(self, response: Response) -> dict:
+        try:
+            soup = BeautifulSoup(response.body, "html.parser")
+            title = soup.title.get_text(strip=True) if soup.title else None
+        except Exception:
+            title = None
+        return {"title": title or None}
+
+    def _response_time(self, response: Response) -> dict:
+        return {"response_time": response.response_time}
+
+    def _ip(self, response: Response) -> dict:
+        try:
+            hostname = urlparse(response.url).hostname
+            ip = socket.gethostbyname(hostname) if hostname else None
+        except Exception:
+            ip = None
+        return {"ip": ip}
+
+    def _cdn(self, response: Response) -> dict:
+        ip = self._ip(response).get("ip")
+        provider, category = get_cdn_manager().check(ip)
+        return {"cdn": provider, "cdn_type": category}
