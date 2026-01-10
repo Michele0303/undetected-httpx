@@ -115,6 +115,12 @@ def scan(
         help="display cdn/waf in use",
         rich_help_panel="PROBES",
     ),
+    hash: str | None = typer.Option(
+        None,
+        "-hash",
+        help="display body hash (md5, mmh3, sha1, sha256, sha512)",
+        rich_help_panel="PROBES",
+    ),
     # RATE-LIMIT
     threads: int = typer.Option(
         50,
@@ -191,6 +197,7 @@ def scan(
         "response_time": response_time,
         "ip": ip,
         "cdn": cdn,
+        "hash": hash,
     }
 
     print_lock = threading.Lock()

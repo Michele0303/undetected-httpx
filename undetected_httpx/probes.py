@@ -1,4 +1,5 @@
 import codecs
+import hashlib
 import socket
 from urllib.parse import urlparse
 
@@ -29,6 +30,10 @@ class ProbeRunner:
         for name, is_enabled in enabled.items():
             if is_enabled and name in self._probes:
                 result.update(self._probes[name](response))
+
+        if hash_algo := enabled.get("hash"):
+            result["body_hash"] = self._hash(response, hash_algo)
+
         return result
 
     def _status_code(self, response: Response) -> dict:
@@ -85,3 +90,13 @@ class ProbeRunner:
         except Exception:
             pass
         return {"favicon_hash": None}
+
+    def _hash(self, response: Response, algo: str) -> str | None:
+        if not response.body:
+            return None
+        algo = algo.lower()
+        if algo == "mmh3":
+            return str(mmh3.hash(response.body))
+        if algo in ("md5", "sha1", "sha256", "sha512"):
+            return hashlib.new(algo, response.body).hexdigest()
+        return None
