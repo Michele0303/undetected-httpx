@@ -90,6 +90,18 @@ def scan(
         help="display mmh3 hash for '/favicon.ico' file",
         rich_help_panel="PROBES",
     ),
+    hash: str | None = typer.Option(
+        None,
+        "-hash",
+        help="display body hash (md5, mmh3, sha1, sha256, sha512)",
+        rich_help_panel="PROBES",
+    ),
+    jarm: bool = typer.Option(
+        False,
+        "-jarm",
+        help="display jarm fingerprint hash",
+        rich_help_panel="PROBES",
+    ),
     title: bool = typer.Option(
         False,
         "-title",
@@ -113,12 +125,6 @@ def scan(
         False,
         "-cdn",
         help="display cdn/waf in use",
-        rich_help_panel="PROBES",
-    ),
-    hash: str | None = typer.Option(
-        None,
-        "-hash",
-        help="display body hash (md5, mmh3, sha1, sha256, sha512)",
         rich_help_panel="PROBES",
     ),
     # RATE-LIMIT
@@ -198,6 +204,7 @@ def scan(
         "ip": ip,
         "cdn": cdn,
         "hash": hash,
+        "jarm": jarm,
     }
 
     print_lock = threading.Lock()

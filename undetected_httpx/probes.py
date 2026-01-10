@@ -5,6 +5,7 @@ from urllib.parse import urlparse
 
 import mmh3
 from bs4 import BeautifulSoup
+from jarm.scanner.scanner import Scanner
 
 from undetected_httpx.manager import get_cdn_manager
 from undetected_httpx.models import Response
@@ -23,6 +24,7 @@ class ProbeRunner:
             "ip": self._ip,
             "cdn": self._cdn,
             "favicon": self._favicon,
+            "jarm": self._jarm,
         }
 
     def run(self, response: Response, enabled: dict) -> dict:
@@ -100,3 +102,13 @@ class ProbeRunner:
         if algo in ("md5", "sha1", "sha256", "sha512"):
             return hashlib.new(algo, response.body).hexdigest()
         return None
+
+    def _jarm(self, response: Response) -> dict:
+        try:
+            parsed = urlparse(response.url)
+            hostname = parsed.hostname
+            port = parsed.port or (443 if parsed.scheme == "https" else 80)
+            jarm_hash, _, _ = Scanner.scan(hostname, port)
+            return {"jarm": jarm_hash}
+        except Exception:
+            return {"jarm": None}

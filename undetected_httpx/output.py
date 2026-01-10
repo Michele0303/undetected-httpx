@@ -57,11 +57,12 @@ def render_stdout(result: dict, silent: bool = False) -> None:
     body_hash_part = _styled_part(
         result.get("body_hash"), show_empty=("body_hash" in result)
     )
+    jarm_part = _styled_part(result.get("jarm"), show_empty=("jarm" in result))
 
     print(
         f"{url}{status_part}{location_part}{content_length_part}"
         f"{content_type_part}{title_part}{ip_part}{cdn_part}"
-        f"{response_time_part}{favicon_part}{body_hash_part}"
+        f"{response_time_part}{favicon_part}{body_hash_part}{jarm_part}"
     )
 
 
