@@ -475,6 +475,17 @@ files = [
 windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
+name = "pyjarm"
+version = "0.0.5"
+description = "pyJarm is a convenience library for the JARM fingerprinting tool."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "pyjarm-0.0.5-py3-none-any.whl", hash = "sha256:c955396901e59710d61b1cb7e442735fe9840ed6d8dd87ffba8cef159cc083c4"},
+    {file = "pyjarm-0.0.5.tar.gz", hash = "sha256:73110c42e65ce21944d18ebf0639d1ade3d36ef36b416d4577cf83574fce6541"},
+]
+
+[[package]]
 name = "pyyaml"
 version = "6.0.3"
 description = "YAML parser and emitter for Python"
@@ -675,4 +686,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.14"
-content-hash = "d8c5e23e8ebfeeb11a16d52716f2fe16feb8c5b45593ac928970e4570f1c688e"
+content-hash = "730df0df57c4a7b15ab83c4582a37fdd0a3519fba83253fade3dc3be8f1ea671"
