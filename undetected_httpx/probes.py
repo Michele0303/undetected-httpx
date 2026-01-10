@@ -1,10 +1,10 @@
 import socket
 from urllib.parse import urlparse
 
-from undetected_httpx.models import Response
 from bs4 import BeautifulSoup
 
 from undetected_httpx.manager import get_cdn_manager
+from undetected_httpx.models import Response
 
 
 def probe_status_code(response: Response) -> dict:
@@ -26,10 +26,8 @@ def probe_content_type(response: Response) -> dict:
 
 def probe_location(response: Response) -> dict:
     loc = response.headers.get("Location") or response.headers.get("location")
-
-    if not loc and hasattr(response, "orig_url") and response.url != response.orig_url:
+    if not loc and response.url != response.orig_url:
         loc = response.url
-
     return {"location": loc}
 
 
