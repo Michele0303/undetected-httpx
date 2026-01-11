@@ -38,6 +38,9 @@ class ProbeRunner:
         if hash_algo := enabled.get("hash"):
             result["body_hash"] = self._hash(response, hash_algo)
 
+        if preview_len := enabled.get("body_preview"):
+            result["body_preview"] = self._body_preview(response, preview_len)
+
         return result
 
     def _status_code(self, response: Response) -> dict:
@@ -98,6 +101,16 @@ class ProbeRunner:
         except Exception:
             title = None
         return {"title": title or None}
+
+    def _body_preview(self, response: Response, length: int) -> str | None:
+        if not response.body:
+            return None
+        try:
+            soup = BeautifulSoup(response.body, "html.parser")
+            text = soup.get_text(strip=True)
+            return text[:length] if text else None
+        except Exception:
+            return None
 
     def _response_time(self, response: Response) -> dict:
         return {"response_time": response.response_time}

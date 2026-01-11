@@ -41,15 +41,6 @@ def render_stdout(result: dict, silent: bool = False) -> None:
     title_part = _styled_part(
         result.get("title"), "cyan", show_empty=("title" in result)
     )
-    ip_part = _styled_part(result.get("ip"), show_empty=("ip" in result))
-    cdn_part = _styled_part(result.get("cdn"), show_empty=("cdn" in result))
-
-    line_count_part = _styled_part(
-        result.get("line_count"), "magenta", show_empty=("line_count" in result)
-    )
-    word_count_part = _styled_part(
-        result.get("word_count"), "magenta", show_empty=("word_count" in result)
-    )
 
     response_time_part = ""
     if "response_time" in result:
@@ -57,6 +48,19 @@ def render_stdout(result: dict, silent: bool = False) -> None:
         response_time_part = _styled_part(
             f"{rt:.2f}ms" if rt else None, show_empty=True
         )
+
+    line_count_part = _styled_part(
+        result.get("line_count"), "magenta", show_empty=("line_count" in result)
+    )
+    word_count_part = _styled_part(
+        result.get("word_count"), "magenta", show_empty=("word_count" in result)
+    )
+    body_preview_part = _styled_part(
+        result.get("body_preview"), "blue", show_empty=("body_preview" in result)
+    )
+
+    ip_part = _styled_part(result.get("ip"), show_empty=("ip" in result))
+    cdn_part = _styled_part(result.get("cdn"), show_empty=("cdn" in result))
 
     favicon_part = _styled_part(
         result.get("favicon_hash"), show_empty=("favicon_hash" in result)
@@ -68,9 +72,9 @@ def render_stdout(result: dict, silent: bool = False) -> None:
 
     print(
         f"{url}{status_part}{location_part}{content_length_part}"
-        f"{content_type_part}{title_part}"
+        f"{content_type_part}{title_part}{body_preview_part}"
         f"{ip_part}{cdn_part}{response_time_part}{favicon_part}{line_count_part}"
-        f"{body_hash_part}{jarm_part}{word_count_part}"
+        f"{word_count_part}{body_hash_part}{jarm_part}"
     )
 
 

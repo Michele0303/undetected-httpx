@@ -105,7 +105,7 @@ def scan(
     title: bool = typer.Option(
         False,
         "-title",
-        help="display response content-length",
+        help="display page title",
         rich_help_panel="PROBES",
     ),
     response_time: bool = typer.Option(
@@ -127,6 +127,13 @@ def scan(
         "-wc",
         "-word-count",
         help="display response body word count",
+        rich_help_panel="PROBES",
+    ),
+    body_preview: int | None = typer.Option(
+        None,
+        "-bp",
+        "-body-preview",
+        help="display first N characters of response body",
         rich_help_panel="PROBES",
     ),
     ip: bool = typer.Option(
@@ -217,6 +224,7 @@ def scan(
         "response_time": response_time,
         "line_count": line_count,
         "word_count": word_count,
+        "body_preview": body_preview,
         "ip": ip,
         "cdn": cdn,
         "hash": hash,
