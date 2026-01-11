@@ -44,6 +44,13 @@ def render_stdout(result: dict, silent: bool = False) -> None:
     ip_part = _styled_part(result.get("ip"), show_empty=("ip" in result))
     cdn_part = _styled_part(result.get("cdn"), show_empty=("cdn" in result))
 
+    line_count_part = _styled_part(
+        result.get("line_count"), "magenta", show_empty=("line_count" in result)
+    )
+    word_count_part = _styled_part(
+        result.get("word_count"), "magenta", show_empty=("word_count" in result)
+    )
+
     response_time_part = ""
     if "response_time" in result:
         rt = result["response_time"]
@@ -61,8 +68,9 @@ def render_stdout(result: dict, silent: bool = False) -> None:
 
     print(
         f"{url}{status_part}{location_part}{content_length_part}"
-        f"{content_type_part}{title_part}{ip_part}{cdn_part}"
-        f"{response_time_part}{favicon_part}{body_hash_part}{jarm_part}"
+        f"{content_type_part}{title_part}"
+        f"{ip_part}{cdn_part}{response_time_part}{favicon_part}{line_count_part}"
+        f"{body_hash_part}{jarm_part}{word_count_part}"
     )
 
 

@@ -21,6 +21,8 @@ class ProbeRunner:
             "location": self._location,
             "title": self._title,
             "response_time": self._response_time,
+            "line_count": self._line_count,
+            "word_count": self._word_count,
             "ip": self._ip,
             "cdn": self._cdn,
             "favicon": self._favicon,
@@ -99,6 +101,16 @@ class ProbeRunner:
 
     def _response_time(self, response: Response) -> dict:
         return {"response_time": response.response_time}
+
+    def _line_count(self, response: Response) -> dict:
+        if not response.body:
+            return {"line_count": 0}
+        return {"line_count": response.body.count(b"\n")}
+
+    def _word_count(self, response: Response) -> dict:
+        if not response.body:
+            return {"word_count": 0}
+        return {"word_count": len(response.body.split())}
 
     def _ip(self, response: Response) -> dict:
         try:
