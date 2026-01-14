@@ -1,4 +1,6 @@
-# undetected-httpx
+<p align="center">
+  <h1 align="center">undetected-httpx</h1>
+</p>
 
 <p align="center"> 
   <img src="https://img.shields.io/badge/python-3.14-blue.svg" alt="Python Version"> 
