@@ -1,0 +1,157 @@
+{
+  "kind": "live-terminal-recording",
+  "recorder": "vhs version 0.12.1",
+  "started_at": "2026-10-16T21:54:33.530393+00:00",
+  "preflight": {
+    "upstream": {
+      "same_user_agent": true,
+      "responses": 6,
+      "first_to_last_request_seconds": 1.0004733750247397
+    },
+    "fork": {
+      "same_user_agent": true,
+      "responses": 6,
+      "first_to_last_request_seconds": 1.000497874978464
+    }
+  },
+  "order": [
+    "upstream",
+    "fork"
+  ],
+  "arms": {
+    "upstream": {
+      "binary_sha256": "5861aa7ee38cea98e0d6561a09e062f02435cfe8599c0a79093ee325bda3579b",
+      "command": [
+        "httpx",
+        "-l",
+        "list.txt",
+        "-sc",
+        "-silent",
+        "-config",
+        "demo.yml"
+      ],
+      "started_at": "2026-10-16T21:54:33.567855+00:00",
+      "finished_at": "2026-10-16T21:54:47.440957+00:00",
+      "recorder_exit_code": 0,
+      "tool_exit_code": 0,
+      "results": [
+        "https://ir.tripadvisor.com/ [403]",
+        "https://openai.com/ [403]",
+        "https://platform.openai.com/ [403]",
+        "https://www.adobe.com/ [403]",
+        "https://www.npmjs.com/ [403]"
+      ],
+      "files_sha256": {
+        "httpx.gif": "cd6c83b78d2cd1678e1a19a908f83e477f6a66b140fa784677aadf314394b894",
+        "list.txt": "aa79c26a39dde40f3d2ad6abec0877bc33841bb60480c7fd6dfed71e699c892b",
+        "style.tape": "a2a8695e11a195173c2e506c71fa53685dca0404423086034097a706cf3ce371",
+        "recorder.txt": "a026c665752b78d43232db2bf42c8dd7a90d0ee1d5e1721251d037a29085edbc",
+        "httpx.mp4": "f735527caa78b202e73511c3a0b6ebb24f294019e47ee378a199443919707037",
+        "results.txt": "5ee056d3e4d63a87b8b0e53d8b0cbd9f2ddacfcd5625654a471823111919ba02",
+        "demo.yml": "54bd137902271b19030d5b99bd34ccc65b66ed8b91dd374b1265563f51597116",
+        "httpx.tape": "601a0f20661f37512a6fd5f1e26160625ba081f64048d87f43871ece13ded20f",
+        "exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "terminal.ascii": "b63d06528e7beb07e9478926a584cd5a12cf4a778269e1bd75518e3bf83d45fa",
+        "responses/response/index.txt": "5517126b0855c077d15f1738f28bc44736ecebfd16e5b841f7fe780ec940103b",
+        "responses/response/platform.openai.com/60c17ee40eecf35c38cb4e661cc4d285d365678b.txt": "46e932c2c15ac7f9816200cf6d4cd34e05c0a661a6c98499b3fe9a2ca0136c3e",
+        "responses/response/www.npmjs.com/9413d228f62752d042633e009c65a1b37ac1cf4a.txt": "beda09d3f870a9928c3f31b6dce0394c83681f8e0f07a2287834dc72b6c218e1",
+        "responses/response/ir.tripadvisor.com/d5f5702caa8dd135abc32272b5922a357be41879.txt": "eca95a843639ebac4bc1ed42f0015d16c85746706bb752c08ded27d4f8394f29",
+        "responses/response/openai.com/684fc19810b16a25c59c6d15871b4b6ac61733f1.txt": "c132ec44a21af60db43e163350dcc9e90a703a24becad3ab3d02bfaf03396659",
+        "responses/response/www.adobe.com/832eca2e40a331e29155baebe7cf67b98eb4f0b0.txt": "7d6317c6391f1bb939362961ba7e2c3a930a2e5501c2e755e87f77b2ab9329ff"
+      },
+      "original_files_sha256": {
+        "httpx.gif": "cd6c83b78d2cd1678e1a19a908f83e477f6a66b140fa784677aadf314394b894",
+        "list.txt": "aa79c26a39dde40f3d2ad6abec0877bc33841bb60480c7fd6dfed71e699c892b",
+        "style.tape": "a2a8695e11a195173c2e506c71fa53685dca0404423086034097a706cf3ce371",
+        "recorder.txt": "a026c665752b78d43232db2bf42c8dd7a90d0ee1d5e1721251d037a29085edbc",
+        "httpx.mp4": "f735527caa78b202e73511c3a0b6ebb24f294019e47ee378a199443919707037",
+        "results.txt": "5ee056d3e4d63a87b8b0e53d8b0cbd9f2ddacfcd5625654a471823111919ba02",
+        "demo.yml": "54bd137902271b19030d5b99bd34ccc65b66ed8b91dd374b1265563f51597116",
+        "httpx.tape": "601a0f20661f37512a6fd5f1e26160625ba081f64048d87f43871ece13ded20f",
+        "exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "terminal.ascii": "b63d06528e7beb07e9478926a584cd5a12cf4a778269e1bd75518e3bf83d45fa",
+        "responses/response/index.txt": "5517126b0855c077d15f1738f28bc44736ecebfd16e5b841f7fe780ec940103b",
+        "responses/response/platform.openai.com/60c17ee40eecf35c38cb4e661cc4d285d365678b.txt": "b6773af6e25080d3f186f41fea017ca374f947588dd6c293d240ddc7664245d3",
+        "responses/response/www.npmjs.com/9413d228f62752d042633e009c65a1b37ac1cf4a.txt": "e500d39c2f459f8e9d3fc6642ac4d9b4832d087a5d4d47f2bb281d47737319df",
+        "responses/response/ir.tripadvisor.com/d5f5702caa8dd135abc32272b5922a357be41879.txt": "eca95a843639ebac4bc1ed42f0015d16c85746706bb752c08ded27d4f8394f29",
+        "responses/response/openai.com/684fc19810b16a25c59c6d15871b4b6ac61733f1.txt": "9b99ac29750a625a88862102cfadee9e20d5fd731fd3ba26d2d4ab29e81e1fcb",
+        "responses/response/www.adobe.com/832eca2e40a331e29155baebe7cf67b98eb4f0b0.txt": "7d6317c6391f1bb939362961ba7e2c3a930a2e5501c2e755e87f77b2ab9329ff"
+      }
+    },
+    "fork": {
+      "binary_sha256": "ed6b74bd7b77674269e3257091a173e6997d688c6f14c87c47f96b5808944649",
+      "command": [
+        "undetected-httpx",
+        "-l",
+        "list.txt",
+        "-sc",
+        "-silent",
+        "-config",
+        "demo.yml"
+      ],
+      "started_at": "2026-10-16T21:54:47.481487+00:00",
+      "finished_at": "2026-10-16T21:55:01.517054+00:00",
+      "recorder_exit_code": 0,
+      "tool_exit_code": 0,
+      "results": [
+        "https://ir.tripadvisor.com/ [200]",
+        "https://openai.com/ [200]",
+        "https://platform.openai.com/ [200]",
+        "https://www.adobe.com/ [200]",
+        "https://www.npmjs.com/ [200]"
+      ],
+      "files_sha256": {
+        "list.txt": "aa79c26a39dde40f3d2ad6abec0877bc33841bb60480c7fd6dfed71e699c892b",
+        "style.tape": "a2a8695e11a195173c2e506c71fa53685dca0404423086034097a706cf3ce371",
+        "undetected-httpx.tape": "84620dad5c97c27d7fc48b4a4ade7b88b6ed5739c55410d4563617804f564a23",
+        "recorder.txt": "d5cf6570e717e336cb9f40120996f9780952973bf645408ec8fb09436f5fbbf4",
+        "results.txt": "2239e518eee39e92be6525e39f5793578abb17fb9366aebab23bf7ddd2b7229a",
+        "undetected-httpx.gif": "3fca15c3ce0ac39ce8ede9bd9055554c1bab2c935a9f1e7ff92a518de78a1fbe",
+        "demo.yml": "54bd137902271b19030d5b99bd34ccc65b66ed8b91dd374b1265563f51597116",
+        "undetected-httpx.mp4": "b12c74e3662f6a57d5658c2225ad56c2a33a79a5bb788c602358c8dd4bc5f995",
+        "exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "terminal.ascii": "cb6764b26ca7e505f85cac7bec4591377859c147442b65aa820f16a078e2ea16",
+        "responses/response/index.txt": "50f6480961e7c75160defc20cd8508adabbc68a584bcdbbef8504b11a125bea7",
+        "responses/response/platform.openai.com/60c17ee40eecf35c38cb4e661cc4d285d365678b.txt": "00691668f4fc6e8230308692ab009ad5df05edd75bc6f632f5de2bfe093f2568",
+        "responses/response/www.npmjs.com/9413d228f62752d042633e009c65a1b37ac1cf4a.txt": "9b412f2d21d661b816d9273d7edea32c4d936e91404a9e237b58cbdecb8a63b7",
+        "responses/response/ir.tripadvisor.com/d5f5702caa8dd135abc32272b5922a357be41879.txt": "8cd5b133044436606b9e44d599955913d22a9af2845f2a89f541fd8ee792542b",
+        "responses/response/openai.com/684fc19810b16a25c59c6d15871b4b6ac61733f1.txt": "9b2e80f77ae01ba2d8ae9ba5f6dc96c80a71dbd8d72b9af98cbca98bbe64fe26",
+        "responses/response/www.adobe.com/832eca2e40a331e29155baebe7cf67b98eb4f0b0.txt": "1e9d70d77081bec45d33e0173d02993ce0f1a9b6d8444aad7e71f2f788953f2d"
+      },
+      "original_files_sha256": {
+        "list.txt": "aa79c26a39dde40f3d2ad6abec0877bc33841bb60480c7fd6dfed71e699c892b",
+        "style.tape": "a2a8695e11a195173c2e506c71fa53685dca0404423086034097a706cf3ce371",
+        "undetected-httpx.tape": "84620dad5c97c27d7fc48b4a4ade7b88b6ed5739c55410d4563617804f564a23",
+        "recorder.txt": "d5cf6570e717e336cb9f40120996f9780952973bf645408ec8fb09436f5fbbf4",
+        "results.txt": "2239e518eee39e92be6525e39f5793578abb17fb9366aebab23bf7ddd2b7229a",
+        "undetected-httpx.gif": "3fca15c3ce0ac39ce8ede9bd9055554c1bab2c935a9f1e7ff92a518de78a1fbe",
+        "demo.yml": "54bd137902271b19030d5b99bd34ccc65b66ed8b91dd374b1265563f51597116",
+        "undetected-httpx.mp4": "b12c74e3662f6a57d5658c2225ad56c2a33a79a5bb788c602358c8dd4bc5f995",
+        "exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "terminal.ascii": "cb6764b26ca7e505f85cac7bec4591377859c147442b65aa820f16a078e2ea16",
+        "responses/response/index.txt": "50f6480961e7c75160defc20cd8508adabbc68a584bcdbbef8504b11a125bea7",
+        "responses/response/platform.openai.com/60c17ee40eecf35c38cb4e661cc4d285d365678b.txt": "96575e395704d80ddd6bdb02c5d67a3ccea5912897a9218d32fff75972346c59",
+        "responses/response/www.npmjs.com/9413d228f62752d042633e009c65a1b37ac1cf4a.txt": "e8286d24ee37cff89a030d4fda5e7ac9b86b44ef2f902fa01d7c93e00c212e1e",
+        "responses/response/ir.tripadvisor.com/d5f5702caa8dd135abc32272b5922a357be41879.txt": "d14b5b1b6074018280463091ddfdb09fa04c46110c811b8b1894f9d4807465b8",
+        "responses/response/openai.com/684fc19810b16a25c59c6d15871b4b6ac61733f1.txt": "0a89268cbbd41ac6825d5dea9e4823739bd797832a5c5ceb1769283056366d25",
+        "responses/response/www.adobe.com/832eca2e40a331e29155baebe7cf67b98eb4f0b0.txt": "20c8a812ad155dd48dc2865fbd074b0cb1c32572eb0ea9bbdaa547345217d3b4"
+      }
+    }
+  },
+  "script_sha256": "17ca289e7833d6c570800ede265fed12583a3454e83662ca8abbe2a4cc494937",
+  "config_sha256": "54bd137902271b19030d5b99bd34ccc65b66ed8b91dd374b1265563f51597116",
+  "input_sha256": "aa79c26a39dde40f3d2ad6abec0877bc33841bb60480c7fd6dfed71e699c892b",
+  "playback_speed": 1,
+  "source_files": {
+    "style.tape": "a2a8695e11a195173c2e506c71fa53685dca0404423086034097a706cf3ce371",
+    "undetected-httpx.tape": "84620dad5c97c27d7fc48b4a4ade7b88b6ed5739c55410d4563617804f564a23",
+    "httpx.tape": "601a0f20661f37512a6fd5f1e26160625ba081f64048d87f43871ece13ded20f"
+  },
+  "environment": "Fresh HOME/XDG and allowlisted environment, no inherited proxies/accounts/cookies",
+  "finished_at": "2026-10-16T21:55:01.523859+00:00",
+  "publication": {
+    "sanitized": true,
+    "manifest": "../redaction-manifest.json",
+    "note": "Saved HTTP text redacts anonymous cookies, tokens, response nonces and embedded challenge payloads. Original file hashes remain recorded. Statuses, results, recordings and media files are unchanged; stored Content-Length describes the original response."
+  }
+}

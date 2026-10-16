@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "sanitized_at": "2026-10-17",
+  "originals_archived_outside_repository": true,
+  "scope": "Privacy redaction for publication; no network requests and no changes to measured status, timing, title, content-length, result rows or recorded media.",
+  "original_content_hashes": "Body/header hashes in benchmark records describe original captured responses, not redacted published headers. Original/published file hashes below distinguish the evidence copies.",
+  "totals": {
+    "cookie_header_fields": 15,
+    "embedded_challenge_scripts": 7,
+    "known_embedded_token_occurrences": 18,
+    "nonce_values": 7,
+    "embedded_token_values": 1
+  },
+  "files": [
+    {
+      "path": "docs/demos/v2-live/capture/fork/responses/response/ir.tripadvisor.com/d5f5702caa8dd135abc32272b5922a357be41879.txt",
+      "original_sha256": "d14b5b1b6074018280463091ddfdb09fa04c46110c811b8b1894f9d4807465b8",
+      "published_sha256": "8cd5b133044436606b9e44d599955913d22a9af2845f2a89f541fd8ee792542b",
+      "redactions": {
+        "cookie_header_fields": 2
+      }
+    },
+    {
+      "path": "docs/demos/v2-live/capture/fork/responses/response/openai.com/684fc19810b16a25c59c6d15871b4b6ac61733f1.txt",
+      "original_sha256": "0a89268cbbd41ac6825d5dea9e4823739bd797832a5c5ceb1769283056366d25",
+      "published_sha256": "9b2e80f77ae01ba2d8ae9ba5f6dc96c80a71dbd8d72b9af98cbca98bbe64fe26",
+      "redactions": {
+        "cookie_header_fields": 5,
+        "embedded_challenge_scripts": 1
+      }
+    },
+    {
+      "path": "docs/demos/v2-live/capture/fork/responses/response/platform.openai.com/60c17ee40eecf35c38cb4e661cc4d285d365678b.txt",
+      "original_sha256": "96575e395704d80ddd6bdb02c5d67a3ccea5912897a9218d32fff75972346c59",
+      "published_sha256": "00691668f4fc6e8230308692ab009ad5df05edd75bc6f632f5de2bfe093f2568",
+      "redactions": {
+        "cookie_header_fields": 2,
+        "embedded_challenge_scripts": 1,
+        "known_embedded_token_occurrences": 8,
+        "nonce_values": 7
+      }
+    },
+    {
+      "path": "docs/demos/v2-live/capture/fork/responses/response/www.adobe.com/832eca2e40a331e29155baebe7cf67b98eb4f0b0.txt",
+      "original_sha256": "20c8a812ad155dd48dc2865fbd074b0cb1c32572eb0ea9bbdaa547345217d3b4",
+      "published_sha256": "1e9d70d77081bec45d33e0173d02993ce0f1a9b6d8444aad7e71f2f788953f2d",
+      "redactions": {
+        "cookie_header_fields": 1
+      }
+    },
+    {
+      "path": "docs/demos/v2-live/capture/fork/responses/response/www.npmjs.com/9413d228f62752d042633e009c65a1b37ac1cf4a.txt",
+      "original_sha256": "e8286d24ee37cff89a030d4fda5e7ac9b86b44ef2f902fa01d7c93e00c212e1e",
+      "published_sha256": "9b412f2d21d661b816d9273d7edea32c4d936e91404a9e237b58cbdecb8a63b7",
+      "redactions": {
+        "cookie_header_fields": 2,
+        "known_embedded_token_occurrences": 2,
+        "embedded_token_values": 1
+      }
+    },
+    {
+      "path": "docs/demos/v2-live/capture/upstream/responses/response/ir.tripadvisor.com/d5f5702caa8dd135abc32272b5922a357be41879.txt",
+      "original_sha256": "eca95a843639ebac4bc1ed42f0015d16c85746706bb752c08ded27d4f8394f29",
+      "published_sha256": "eca95a843639ebac4bc1ed42f0015d16c85746706bb752c08ded27d4f8394f29",
+      "redactions": {}
+    },
+    {
+      "path": "docs/demos/v2-live/capture/upstream/responses/response/openai.com/684fc19810b16a25c59c6d15871b4b6ac61733f1.txt",
+      "original_sha256": "9b99ac29750a625a88862102cfadee9e20d5fd731fd3ba26d2d4ab29e81e1fcb",
+      "published_sha256": "c132ec44a21af60db43e163350dcc9e90a703a24becad3ab3d02bfaf03396659",
+      "redactions": {
+        "cookie_header_fields": 1,
+        "embedded_challenge_scripts": 2,
+        "known_embedded_token_occurrences": 2
+      }
+    },
+    {
+      "path": "docs/demos/v2-live/capture/upstream/responses/response/platform.openai.com/60c17ee40eecf35c38cb4e661cc4d285d365678b.txt",
+      "original_sha256": "b6773af6e25080d3f186f41fea017ca374f947588dd6c293d240ddc7664245d3",
+      "published_sha256": "46e932c2c15ac7f9816200cf6d4cd34e05c0a661a6c98499b3fe9a2ca0136c3e",
+      "redactions": {
+        "cookie_header_fields": 1,
+        "embedded_challenge_scripts": 2,
+        "known_embedded_token_occurrences": 2
+      }
+    },
+    {
+      "path": "docs/demos/v2-live/capture/upstream/responses/response/www.adobe.com/832eca2e40a331e29155baebe7cf67b98eb4f0b0.txt",
+      "original_sha256": "7d6317c6391f1bb939362961ba7e2c3a930a2e5501c2e755e87f77b2ab9329ff",
+      "published_sha256": "7d6317c6391f1bb939362961ba7e2c3a930a2e5501c2e755e87f77b2ab9329ff",
+      "redactions": {}
+    },
+    {
+      "path": "docs/demos/v2-live/capture/upstream/responses/response/www.npmjs.com/9413d228f62752d042633e009c65a1b37ac1cf4a.txt",
+      "original_sha256": "e500d39c2f459f8e9d3fc6642ac4d9b4832d087a5d4d47f2bb281d47737319df",
+      "published_sha256": "beda09d3f870a9928c3f31b6dce0394c83681f8e0f07a2287834dc72b6c218e1",
+      "redactions": {
+        "cookie_header_fields": 1,
+        "embedded_challenge_scripts": 1,
+        "known_embedded_token_occurrences": 4
+      }
+    }
+  ]
+}

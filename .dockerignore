@@ -1,0 +1,10 @@
+.git
+.github
+bin
+dist
+legacy
+*.log
+*.jsonl
+*.resume
+.env
+.env.*

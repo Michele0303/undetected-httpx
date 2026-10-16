@@ -1,0 +1,30 @@
+GET / HTTP/1.1
+Host: ir.tripadvisor.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 403 Forbidden
+Connection: close
+Content-Length: 368
+Cache-Control: max-age=0
+Content-Type: text/html
+Date: Fri, 16 Oct 2026 21:54:37 GMT
+Expires: Fri, 16 Oct 2026 21:54:37 GMT
+Mime-Version: 1.0
+X-Reference-Error: 18.f284655f.1792187677.e85735
+
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;ir&#46;tripadvisor&#46;com&#47;" on this server.<P>
+Reference&#32;&#35;18&#46;f284655f&#46;1792187677&#46;e85735
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;f284655f&#46;1792187677&#46;e85735</P>
+</BODY>
+</HTML>
+
+
+
+https://ir.tripadvisor.com/

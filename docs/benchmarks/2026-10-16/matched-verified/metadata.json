@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-10-16T21:23:36.732852+00:00",
+  "mode": "matched",
+  "round": 1,
+  "mode_description": "Same explicit User-Agent; transport/header behavior can still differ",
+  "targets_sha256": "b53a198582ef9c54dff02e024012cf9a7cb59f231f8f06524a620f24eecc41de",
+  "target_count": 96,
+  "script_sha256": "f00b346cea85350a95d4e551f77207b378720150d02105aa495c14a8cca25215",
+  "environment": {
+    "PATH": "/bin:/usr/bin",
+    "HOME": "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/home",
+    "USERPROFILE": "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/home",
+    "XDG_CONFIG_HOME": "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/home/.config",
+    "XDG_CACHE_HOME": "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/home/.cache",
+    "TMPDIR": "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/tmp",
+    "TMP": "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/tmp",
+    "TEMP": "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/tmp",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "TZ": "UTC",
+    "NO_COLOR": "1"
+  },
+  "runtime": {
+    "python": "3.14.8",
+    "platform": "darwin",
+    "machine": "arm64"
+  },
+  "environment_policy": "Allowlisted clean environment, isolated HOME/XDG, no inherited proxy or cloud credentials",
+  "body_read_limit_bytes": 2097152,
+  "initial_probe_rate_limit_per_second": 3,
+  "threads": 3,
+  "timeout_seconds": 12,
+  "retries": 0,
+  "order": [
+    "upstream",
+    "fork"
+  ],
+  "binaries": {
+    "upstream": {
+      "path": "/Users/michele0303/Documents/Progetti/undetected-httpx/bin/httpx-upstream-v1.12.0",
+      "sha256": "5861aa7ee38cea98e0d6561a09e062f02435cfe8599c0a79093ee325bda3579b",
+      "version_command": [
+        "/Users/michele0303/Documents/Progetti/undetected-httpx/bin/httpx-upstream-v1.12.0",
+        "-version"
+      ],
+      "version_exit_code": 0,
+      "version_stdout": "",
+      "version_stderr": "\n    __    __  __       _  __\n   / /_  / /_/ /_____ | |/ /\n  / __ \\/ __/ __/ __ \\|   /\n / / / / /_/ /_/ /_/ /   |\n/_/ /_/\\__/\\__/ .___/_/|_|\n             /_/\n\n\t\tprojectdiscovery.io\n\n[\u001b[34mINF\u001b[0m] Current Version: v1.12.0\n"
+    },
+    "fork": {
+      "path": "/Users/michele0303/Documents/Progetti/undetected-httpx/bin/undetected-httpx",
+      "sha256": "ed6b74bd7b77674269e3257091a173e6997d688c6f14c87c47f96b5808944649",
+      "version_command": [
+        "/Users/michele0303/Documents/Progetti/undetected-httpx/bin/undetected-httpx",
+        "-version"
+      ],
+      "version_exit_code": 0,
+      "version_stdout": "",
+      "version_stderr": "undetected-httpx v2.0.0-dev\nProjectDiscovery httpx probes with HTTPCloak browser transport\n[\u001b[34mINF\u001b[0m] Current Version: v2.0.0-dev\n"
+    }
+  },
+  "arms": {
+    "upstream": {
+      "command": [
+        "/Users/michele0303/Documents/Progetti/undetected-httpx/bin/httpx-upstream-v1.12.0",
+        "-l",
+        "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/targets.txt",
+        "-config",
+        "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/empty-config.yaml",
+        "-json",
+        "-silent",
+        "-duc",
+        "-nfs",
+        "-probe",
+        "-sc",
+        "-title",
+        "-server",
+        "-location",
+        "-cl",
+        "-ct",
+        "-rt",
+        "-irh",
+        "-bp=300",
+        "-hash",
+        "sha256",
+        "-rstr",
+        "2097152",
+        "-threads",
+        "3",
+        "-rate-limit",
+        "3",
+        "-timeout",
+        "12",
+        "-retries",
+        "0",
+        "-random-agent=false",
+        "-H",
+        "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+      ],
+      "started_at": "2026-10-16T21:23:37.100506+00:00",
+      "timed_out": false,
+      "exit_code": 0,
+      "finished_at": "2026-10-16T21:24:10.022153+00:00",
+      "duration_seconds": 32.92202075000387,
+      "stdout_sha256": "096225d24b871b06ce1aed5eac1af02a24826d3dfc6ddefcad3570d469633b68",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_stdout_sha256": "17e3167615443b2a834a1633225900f04b6dc6da57966b65279fdf8faf292113",
+      "publication_redactions": {
+        "nonce_values": 22,
+        "cookie_header_fields": 52,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    },
+    "fork": {
+      "command": [
+        "/Users/michele0303/Documents/Progetti/undetected-httpx/bin/undetected-httpx",
+        "-l",
+        "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/targets.txt",
+        "-config",
+        "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/matched-verified/empty-config.yaml",
+        "-json",
+        "-silent",
+        "-duc",
+        "-nfs",
+        "-probe",
+        "-sc",
+        "-title",
+        "-server",
+        "-location",
+        "-cl",
+        "-ct",
+        "-rt",
+        "-irh",
+        "-bp=300",
+        "-hash",
+        "sha256",
+        "-rstr",
+        "2097152",
+        "-threads",
+        "3",
+        "-rate-limit",
+        "3",
+        "-timeout",
+        "12",
+        "-retries",
+        "0",
+        "-random-agent=false",
+        "-H",
+        "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+      ],
+      "started_at": "2026-10-16T21:24:10.023132+00:00",
+      "timed_out": false,
+      "exit_code": 0,
+      "finished_at": "2026-10-16T21:24:43.741646+00:00",
+      "duration_seconds": 33.71891550003784,
+      "stdout_sha256": "0b4f761ea4a3004fcdb650af8dda5cfd3a73947bf30f8a1c1ddbbe137dc75fb2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_stdout_sha256": "0f08f50ca1b5c2573d4f2a33bd53b97a397a8e5573d65ff822a99d04c684a0a3",
+      "publication_redactions": {
+        "nonce_values": 21,
+        "cookie_header_fields": 55,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    }
+  },
+  "process_timeout_seconds": 476.0,
+  "finished_at": "2026-10-16T21:24:43.742566+00:00",
+  "publication": {
+    "sanitized": true,
+    "manifest": "../redaction-manifest.json",
+    "note": "Published JSONL redacts echoed client IP, cookie values and response nonces. Original capture hashes are retained; measured statuses, times, content lengths and body/header hash fields are unchanged."
+  }
+}

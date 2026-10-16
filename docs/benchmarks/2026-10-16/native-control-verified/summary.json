@@ -1,0 +1,650 @@
+{
+  "schema_version": 1,
+  "mode": "native",
+  "round": 1,
+  "target_count": 96,
+  "groups": 32,
+  "arms": {
+    "upstream": {
+      "states": {
+        "http_response": 96
+      },
+      "http_statuses": {
+        "200": 60,
+        "202": 1,
+        "301": 10,
+        "302": 15,
+        "307": 1,
+        "308": 1,
+        "403": 8
+      },
+      "http_responses": 96,
+      "http_2xx": 61,
+      "challenge_heuristic": 6,
+      "process": {
+        "command": [
+          "/Users/michele0303/Documents/Progetti/undetected-httpx/bin/httpx-upstream-v1.12.0",
+          "-l",
+          "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/native-control-verified/targets.txt",
+          "-config",
+          "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/native-control-verified/empty-config.yaml",
+          "-json",
+          "-silent",
+          "-duc",
+          "-nfs",
+          "-probe",
+          "-sc",
+          "-title",
+          "-server",
+          "-location",
+          "-cl",
+          "-ct",
+          "-rt",
+          "-irh",
+          "-bp=300",
+          "-hash",
+          "sha256",
+          "-rstr",
+          "2097152",
+          "-threads",
+          "3",
+          "-rate-limit",
+          "3",
+          "-timeout",
+          "12",
+          "-retries",
+          "0",
+          "-random-agent=false",
+          "-H",
+          "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+        ],
+        "started_at": "2026-10-16T21:27:57.473879+00:00",
+        "timed_out": false,
+        "exit_code": 0,
+        "finished_at": "2026-10-16T21:28:36.368765+00:00",
+        "duration_seconds": 38.89542254200205,
+        "stdout_sha256": "a7c727814232302b75be13f039ba40993db050af254b9000cd15de74a770092f",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "original_stdout_sha256": "c884d133e241507f356ad4818814b021794dc48e3e3a4ba049f159813f995e4d",
+        "publication_redactions": {
+          "nonce_values": 22,
+          "cookie_header_fields": 53,
+          "client_ip_occurrences": 8,
+          "anonymous_identifier_header_fields": 1
+        }
+      }
+    },
+    "fork": {
+      "states": {
+        "http_response": 96
+      },
+      "http_statuses": {
+        "200": 60,
+        "202": 1,
+        "301": 10,
+        "302": 14,
+        "307": 1,
+        "308": 1,
+        "403": 9
+      },
+      "http_responses": 96,
+      "http_2xx": 61,
+      "challenge_heuristic": 7,
+      "process": {
+        "command": [
+          "/Users/michele0303/Documents/Progetti/undetected-httpx/bin/undetected-httpx",
+          "-l",
+          "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/native-control-verified/targets.txt",
+          "-config",
+          "/Users/michele0303/Documents/Progetti/undetected-httpx/docs/benchmarks/2026-10-16/native-control-verified/empty-config.yaml",
+          "-json",
+          "-silent",
+          "-duc",
+          "-nfs",
+          "-probe",
+          "-sc",
+          "-title",
+          "-server",
+          "-location",
+          "-cl",
+          "-ct",
+          "-rt",
+          "-irh",
+          "-bp=300",
+          "-hash",
+          "sha256",
+          "-rstr",
+          "2097152",
+          "-threads",
+          "3",
+          "-rate-limit",
+          "3",
+          "-timeout",
+          "12",
+          "-retries",
+          "0",
+          "-random-agent=false",
+          "-H",
+          "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+          "-native-http"
+        ],
+        "started_at": "2026-10-16T21:28:36.373287+00:00",
+        "timed_out": false,
+        "exit_code": 0,
+        "finished_at": "2026-10-16T21:29:13.969160+00:00",
+        "duration_seconds": 37.59604820801178,
+        "stdout_sha256": "9ab940d9572f8d3a186583d2d9e921291f40370e6faf5ac5646f18dbc16f6995",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "original_stdout_sha256": "d5247bc1096aa47c20e4112ca811e24d38a3ce358cacbdc22a08f2366fa41cee",
+        "publication_redactions": {
+          "nonce_values": 22,
+          "cookie_header_fields": 52,
+          "client_ip_occurrences": 8,
+          "anonymous_identifier_header_fields": 1
+        }
+      }
+    }
+  },
+  "status_pairs": {
+    "200 -> 200": 60,
+    "202 -> 202": 1,
+    "301 -> 301": 10,
+    "302 -> 302": 14,
+    "302 -> 403": 1,
+    "307 -> 307": 1,
+    "308 -> 308": 1,
+    "403 -> 403": 8
+  },
+  "transitions": {
+    "paired_http_responses": 96,
+    "both_2xx": 61,
+    "non_2xx_to_2xx": 0,
+    "2xx_to_non_2xx": 0,
+    "same_status": 95,
+    "different_status": 1,
+    "different_title": 1,
+    "different_redirect_chain": 0,
+    "different_location": 1,
+    "different_final_url": 0,
+    "challenge_to_2xx_without_evidence": 0,
+    "2xx_without_evidence_to_challenge": 0
+  },
+  "differences": [
+    {
+      "id": "github-main",
+      "url": "https://github.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "gitlab-forum",
+      "url": "https://forum.gitlab.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "openai-main",
+      "url": "https://openai.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "403",
+      "fork": "403"
+    },
+    {
+      "id": "openai-help",
+      "url": "https://help.openai.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "403",
+      "fork": "403"
+    },
+    {
+      "id": "openai-platform",
+      "url": "https://platform.openai.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "403",
+      "fork": "403"
+    },
+    {
+      "id": "python-forum",
+      "url": "https://discuss.python.org/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "npm-main",
+      "url": "https://www.npmjs.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "403",
+      "fork": "403"
+    },
+    {
+      "id": "docker-hub",
+      "url": "https://hub.docker.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "google-main",
+      "url": "https://www.google.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "google-developers",
+      "url": "https://developers.google.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "google-help",
+      "url": "https://support.google.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "stackoverflow-meta",
+      "url": "https://meta.stackoverflow.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "stackoverflow-chat",
+      "url": "https://chat.stackoverflow.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "reddit-main",
+      "url": "https://www.reddit.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "reddit-developers",
+      "url": "https://developers.reddit.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "discord-main",
+      "url": "https://discord.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "twitch-main",
+      "url": "https://www.twitch.tv/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "shopify-community",
+      "url": "https://community.shopify.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "shopify-help",
+      "url": "https://help.shopify.com/",
+      "fields": [
+        "status",
+        "title",
+        "location",
+        "content_type",
+        "content_length",
+        "body_sha256",
+        "challenge_heuristic"
+      ],
+      "upstream": "302",
+      "fork": "403"
+    },
+    {
+      "id": "stripe-docs",
+      "url": "https://docs.stripe.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "stripe-help",
+      "url": "https://support.stripe.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "paypal-developers",
+      "url": "https://developer.paypal.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "paypal-news",
+      "url": "https://newsroom.paypal-corp.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "booking-main",
+      "url": "https://www.booking.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "202",
+      "fork": "202"
+    },
+    {
+      "id": "booking-news",
+      "url": "https://news.booking.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "booking-careers",
+      "url": "https://careers.booking.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "tripadvisor-main",
+      "url": "https://www.tripadvisor.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "403",
+      "fork": "403"
+    },
+    {
+      "id": "tripadvisor-investor",
+      "url": "https://ir.tripadvisor.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "403",
+      "fork": "403"
+    },
+    {
+      "id": "tripadvisor-news",
+      "url": "https://tripadvisor.mediaroom.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "adobe-main",
+      "url": "https://www.adobe.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "403",
+      "fork": "403"
+    },
+    {
+      "id": "adobe-help",
+      "url": "https://helpx.adobe.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "403",
+      "fork": "403"
+    },
+    {
+      "id": "vercel-community",
+      "url": "https://community.vercel.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "vercel-status",
+      "url": "https://www.vercel-status.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "netlify-community",
+      "url": "https://answers.netlify.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "digitalocean-status",
+      "url": "https://status.digitalocean.com/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "elastic-community",
+      "url": "https://discuss.elastic.co/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "sentry-status",
+      "url": "https://status.sentry.io/",
+      "fields": [
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "dropbox-main",
+      "url": "https://www.dropbox.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    },
+    {
+      "id": "dropbox-help",
+      "url": "https://help.dropbox.com/",
+      "fields": [
+        "content_length",
+        "body_sha256"
+      ],
+      "upstream": "200",
+      "fork": "200"
+    }
+  ],
+  "diagnostics": {
+    "upstream": {
+      "invalid_json_lines": [],
+      "unmatched_records": [],
+      "raw_record_count": 96
+    },
+    "fork": {
+      "invalid_json_lines": [],
+      "unmatched_records": [],
+      "raw_record_count": 96
+    }
+  },
+  "validity": {
+    "controlled_comparison_valid": true,
+    "status": "no_known_cli_error",
+    "reasons": [],
+    "scope": "Static checks for known CLI errors; use a localhost control to verify effective runtime options"
+  },
+  "analysis": {
+    "revision": 3,
+    "analyzed_at": "2026-10-16T22:13:50.073125+00:00",
+    "script_sha256": "18c17ac94cfed0df7ed7933079bfedc307d2996b685b58138328bd07302e4f26",
+    "capture_script_sha256": "f00b346cea85350a95d4e551f77207b378720150d02105aa495c14a8cca25215"
+  },
+  "latency": {
+    "selection": "Paired 2xx HTTP responses, same status/final URL/media type, both timings present, no challenge-like evidence on either side; dynamic bodies may differ",
+    "pair_count": 59,
+    "upstream_median_seconds": 0.29244925,
+    "fork_median_seconds": 0.27412225,
+    "paired_delta_fork_minus_upstream_median_seconds": -0.006625958000000015,
+    "paired_ratio_fork_over_upstream_median": 0.9777280533163738,
+    "ids": [
+      "github-main",
+      "gitlab-main",
+      "gitlab-docs",
+      "gitlab-forum",
+      "cloudflare-main",
+      "cloudflare-docs",
+      "cloudflare-blog",
+      "mozilla-main",
+      "python-main",
+      "python-docs",
+      "python-forum",
+      "npm-docs",
+      "npm-registry",
+      "docker-main",
+      "docker-docs",
+      "docker-hub",
+      "google-main",
+      "google-developers",
+      "google-help",
+      "apple-main",
+      "apple-developers",
+      "apple-help",
+      "wikipedia-main",
+      "wikimedia-main",
+      "stackoverflow-meta",
+      "stackoverflow-chat",
+      "reddit-main",
+      "reddit-developers",
+      "discord-main",
+      "spotify-developers",
+      "twitch-main",
+      "twitch-developers",
+      "shopify-community",
+      "stripe-docs",
+      "stripe-help",
+      "paypal-developers",
+      "paypal-news",
+      "booking-main",
+      "booking-news",
+      "booking-careers",
+      "tripadvisor-news",
+      "adobe-developers",
+      "notion-main",
+      "vercel-main",
+      "vercel-community",
+      "vercel-status",
+      "netlify-main",
+      "netlify-docs",
+      "netlify-community",
+      "digitalocean-main",
+      "digitalocean-docs",
+      "digitalocean-status",
+      "elastic-main",
+      "elastic-community",
+      "sentry-docs",
+      "sentry-status",
+      "dropbox-main",
+      "dropbox-help",
+      "hackerone-main"
+    ]
+  },
+  "interpretation": [
+    "A missing output, failed process, request failure, and HTTP response are separate outcomes.",
+    "A 403-to-200 transition alone does not establish anti-bot bypass or equivalent content.",
+    "Challenge-like labels include challenge and block-page header/title heuristics. They can produce false positives or miss challenges; they do not prove a WAF, bypass, or usable content.",
+    "The two arms run sequentially; time, CDN routing, cache, server load, and request order can affect differences.",
+    "Body hashes can differ for timestamps, cookies, localization, and other dynamic content.",
+    "The 2 MiB response-read cap can truncate bodies and affect content hashes, lengths, and timing.",
+    "A matched User-Agent still permits differences in DNS, connection reuse, HTTP version, compression, and headers.",
+    "The configured rate limits initial probes; redirects and internal transport requests can add traffic.",
+    "Redirect mode uses -maxr 3; upstream's limit counts the initial request, allowing at most two followed redirects.",
+    "Per-request times describe these requests; they do not measure maximum throughput."
+  ]
+}

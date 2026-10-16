@@ -1,0 +1,1102 @@
+GET / HTTP/1.1
+Host: ir.tripadvisor.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36
+Accept-Encoding: gzip
+
+HTTP/2.0 200 OK
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0, s-maxage=2592000
+Content-Language: en
+Content-Security-Policy: default-src 'self' bam-cell.nr-data.net bam.nr-data.net cm.everesttech.net thomsonreuterscorporategroupweb.sc.omtrdc.net *.demdex.net www.google-analytics.com www.googletagmanager.com www.adobetag.com *.facebook.net api.nasdaqomx.wallst.com www.google.com *.addthis.com *.addthisedge.com www.googleadservices.com thomsonreuterscorporategroupweb.d2.sc.omtrdc.net stats.g.doubleclick.net *.sharethis.com *.pixel.parsely.com www.recaptcha.net *.gstatic.com c212.net pixel.mathtag.com *.kscope.io *.globenewswire.com *.accesswire.com *.businesswire.com *.prnewswire.com *.c212.net *.youtube.com *.vimeo.com *.media-server.com *.akamaihd.net media.corporate-ir.net *.unisonir.com cloudinary.com *.segment.com *.notified.com *.pendo.io data: https://cdn.cookielaw.org/; connect-src 'self' *.uni.wdc.west.com *.sharethis.com *.unisonir.com *.demdex.net bam-cell.nr-data.net bam.nr-data.net api.segment.io thomsonreuterscorporategroupweb.sc.omtrdc.net *.akamaihd.net *.notified.com *.pendo.io *.kscope.io *.imirwin.com *.google.com https://cdn.cookielaw.org/ https://geolocation.onetrust.com/ https://privacyportal.onetrust.com/; font-src 'self' fonts.googleapis.com cloud.typography.com fonts.gstatic.com uninav.notified.com stackpath.bootstrapcdn.com *.kscope.io https://use.fontawesome.com/ data:; frame-src 'self' s7.addthis.com tools.eurolandir.com www.google.com *.sharethis.com api.nasdaqomx.wallst.com *.demdex.net www.recaptcha.net cloudinary.com player.cloudinary.com *.notified.com *.globenewswire.com; object-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.recaptcha.net js-agent.newrelic.com *.jquery.com *.gstatic.com bam-cell.nr-data.net bam.nr-data.net *.akamaihd.net uninav.notified.com maxcdn.bootstrapcdn.com stackpath.bootstrapcdn.com https://assets.adobedtm.com https://code.jquery.com https://media-library.cloudinary.com https://uninav.notified.com https://unpkg.com https://upload-widget.cloudinary.com https://www.google.com https://www.recaptcha.net www.google.com; script-src-elem 'self' 'unsafe-inline' *.uni.wdc.west.com s7.addthis.com www.google.com www.googletagmanager.com www.google-analytics.com siteimproveanalytics.com cdn.parsely.com www.adobetag.com www.recaptcha.net *.gstatic.com *.sharethis.com *.akamaihd.net *.kscope.io *.unisonir.com js-agent.newrelic.com bam-cell.nr-data.net bam.nr-data.net code.jquery.com cdn.segment.com *.pendo.io *.notified.com *.imirwin.com https://cdn.cookielaw.org/ https://assets.adobedtm.com https://code.jquery.com https://media-library.cloudinary.com https://uninav.notified.com https://unpkg.com https://upload-widget.cloudinary.com https://www.google.com https://www.recaptcha.net; style-src 'self' 'unsafe-inline' uninav.notified.com fonts.googleapis.com maxcdn.bootstrapcdn.com stackpath.bootstrapcdn.com *.gstatic.com https://fonts.googleapis.com https://uninav.notified.com https://unpkg.com https://use.fontawesome.com; style-src-elem 'self' 'unsafe-inline' fonts.googleapis.com *.uni.wdc.west.com *.sharethis.com www.google.com ajax.googleapis.com *.kscope.io *.unisonir.com *.gstatic.com stackpath.bootstrapcdn.com maxcdn.bootstrapcdn.com *.notified.com *.pendo.io https://fonts.googleapis.com https://uninav.notified.com https://unpkg.com https://use.fontawesome.com; form-action 'self'
+Content-Type: text/html; charset=UTF-8
+Date: Fri, 16 Oct 2026 21:54:50 GMT
+Etag: "1792086368"
+Expect-Ct: max-age=0, report-uri="/report-expect-ct-violation"
+Expires: Fri, 16 Oct 2026 21:54:50 GMT
+Feature-Policy: accelerometer 'none';ambient-light-sensor 'none';autoplay 'self';camera 'none';encrypted-media 'none';fullscreen 'self';geolocation 'self';gyroscope 'none';magnetometer 'none';microphone 'none';midi 'none';payment 'none';picture-in-picture 'none';speaker 'self';sync-xhr 'self';usb 'none';vibrate 'none';vr 'none'
+From-Origin: same
+Last-Modified: Thu, 15 Oct 2026 17:46:08 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Set-Cookie: [REDACTED_COOKIE_VALUES]
+Set-Cookie: [REDACTED_COOKIE_VALUES]
+Strict-Transport-Security: max-age=31536000
+Vary: Accept-Encoding
+X-Age: 39415
+X-Akamai-Transformed: 0 - 0 -
+X-Cache-Hits: 130
+X-Content-Type-Options: nosniff
+X-Drupal-Dynamic-Cache: UNCACHEABLE (poor cacheability)
+X-Edgeconnect-Midmile-Rtt: 12
+X-Edgeconnect-Origin-Mex-Latency: 86
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: v-4d7768a6-c8c0-11f1-abb4-73c183d49132
+X-Xss-Protection: 1; mode=block
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="The Investor Relations website contains information about Tripadvisor&#039;s business for stockholders, potential investors, and financial analysts." />
+<link rel="canonical" href="https://ir.tripadvisor.com/" />
+<link rel="shortlink" href="https://ir.tripadvisor.com/" />
+<meta name="referrer" content="no-referrer" />
+<meta property="og:site_name" content="Tripadvisor" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ir.tripadvisor.com/investor-relations" />
+<meta property="og:title" content="Investor Relations | Tripadvisor" />
+<meta property="og:description" content="The Investor Relations website contains information about Tripadvisor&#039;s business for stockholders, potential investors, and financial analysts." />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "name": "Tripadvisor",
+            "url": "https://ir.tripadvisor.com"
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://ir.tripadvisor.com",
+            "name": "Investor Relations | Tripadvisor",
+            "description": "The Investor Relations website contains information about Tripadvisor\u0027s business for stockholders, potential investors, and financial analysts."
+        },
+        {
+            "@type": "WebSite",
+            "name": "Tripadvisor",
+            "url": "https://ir.tripadvisor.com"
+        }
+    ]
+}</script>
+<link rel="icon" href="/sites/g/files/knoqqb101981/files/favicon_2025.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="en" href="https://ir.tripadvisor.com/" />
+
+    <title>Investor Relations | Tripadvisor</title>
+    <link rel="stylesheet" media="all" href="/sites/g/files/knoqqb101981/files/css/css_Dy4PLX1k8WYhYBv8rbhzwnW3PwmTpFanuP16AihtATc.css?delta=0&amp;language=en&amp;theme=client_site&amp;include=eJyNj8EOg0AIRH_IuJ9EcJdY2l0wgFr_vqu9tIcmvZDJZIA3uTJJgHNQ0o1st658yGqUiq0L1hHv-PwyCmPVeRA2mNApnYKzil9WQ3tQQMFAmKrmR0LBeniAYbDMfccg39Dir7hD4FTpR7YRChhlbY2k-6zycXvB-U13irETxtX1kNwhRMgG74-opbPGsDHtnq45Ni1rpRfUZ3Cv" />
+<link rel="stylesheet" media="all" href="/sites/g/files/knoqqb101981/files/css/css_br7_k56da-6ZYd2HQHD39_oFYIkpqZPeS8hM2ZyH34k.css?delta=1&amp;language=en&amp;theme=client_site&amp;include=eJyNj8EOg0AIRH_IuJ9EcJdY2l0wgFr_vqu9tIcmvZDJZIA3uTJJgHNQ0o1st658yGqUiq0L1hHv-PwyCmPVeRA2mNApnYKzil9WQ3tQQMFAmKrmR0LBeniAYbDMfccg39Dir7hD4FTpR7YRChhlbY2k-6zycXvB-U13irETxtX1kNwhRMgG74-opbPGsDHtnq45Ni1rpRfUZ3Cv" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
+<link rel="stylesheet" media="all" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" media="all" href="/sites/g/files/knoqqb101981/files/css/css_tlh9LcYZtsL7x-B3W0pGI7tNFjNOE1-UeFV5l6lsnCA.css?delta=5&amp;language=en&amp;theme=client_site&amp;include=eJyNj8EOg0AIRH_IuJ9EcJdY2l0wgFr_vqu9tIcmvZDJZIA3uTJJgHNQ0o1st658yGqUiq0L1hHv-PwyCmPVeRA2mNApnYKzil9WQ3tQQMFAmKrmR0LBeniAYbDMfccg39Dir7hD4FTpR7YRChhlbY2k-6zycXvB-U13irETxtX1kNwhRMgG74-opbPGsDHtnq45Ni1rpRfUZ3Cv" />
+<link rel="stylesheet" media="print" href="/sites/g/files/knoqqb101981/files/css/css_X0YDnEE3lcW9pcBCHjEkjEGYEDTzB0mvb0wnmYp9W4U.css?delta=6&amp;language=en&amp;theme=client_site&amp;include=eJyNj8EOg0AIRH_IuJ9EcJdY2l0wgFr_vqu9tIcmvZDJZIA3uTJJgHNQ0o1st658yGqUiq0L1hHv-PwyCmPVeRA2mNApnYKzil9WQ3tQQMFAmKrmR0LBeniAYbDMfccg39Dir7hD4FTpR7YRChhlbY2k-6zycXvB-U13irETxtX1kNwhRMgG74-opbPGsDHtnq45Ni1rpRfUZ3Cv" />
+<link rel="stylesheet" media="all" href="/sites/g/files/knoqqb101981/files/css/css_AaIDr3qNVWMaNoCbDNNKbK9UQj_4Ul3lFzj4NAxpz9I.css?delta=7&amp;language=en&amp;theme=client_site&amp;include=eJyNj8EOg0AIRH_IuJ9EcJdY2l0wgFr_vqu9tIcmvZDJZIA3uTJJgHNQ0o1st658yGqUiq0L1hHv-PwyCmPVeRA2mNApnYKzil9WQ3tQQMFAmKrmR0LBeniAYbDMfccg39Dir7hD4FTpR7YRChhlbY2k-6zycXvB-U13irETxtX1kNwhRMgG74-opbPGsDHtnq45Ni1rpRfUZ3Cv" />
+
+    <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+<script src="/sites/g/files/knoqqb101981/files/js/js_qR0cYUNtbWEth78hF6ocxKdSeNGTU-hkQkoKAPnDTxA.js?scope=header&amp;delta=1&amp;language=en&amp;theme=client_site&amp;include=eJyVUFEOwjAIvZBpz-IJCGtR62hZKHN6e-uqMTN-aEjgAe8l8AInKgY1GXm5kC7aUN2VpIAF-WYpVL_pHEYZCBjnEk4_ECeVuNLCSDGZKES0FgNT9W_oDirFqHRuRh3JViYMLGH0X6cuSM74p6Zay_tZjLpsZku5nYZ-267bCY_kX8DhGa-AMUJgrBWQSa2btdDw8BCKtNepO_Exc896B0WEk5w"></script>
+
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="750167a5-efc5-4aad-aea3-3ff22bb51bc7" data-document-language="true" data-ignore-ga="true"></script>
+      </head>
+  <body class="nir-node nir-node--type-nir-landing-page nir-node--5806 reborn_lite reborn_lite_301 path-frontpage page-node-type-nir-landing-page">
+    <div id="skip">
+      <a class="visually-hidden focusable skip-link" href="#main-menu">
+        Skip to main navigation
+      </a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+  
+<header class="d-flex flex-column">
+
+      <div class="bg-secondary bg-dark fixed-top ndm-utility font-12">
+      <div class="container llf-px-lg-5 llf-px-4 py-1">
+        <div class="d-flex justify-content-lg-end">  <div class="region region-utility">
+    <div id="block-client-site-stockquote" data-storage-id="node:5876:flexible_layout" class="block--market-data-block__stock-quote block--market-data-block__stock-quote--5876 block--utility--market-data-block__stock-quote block--utility--market-data-block__stock-quote--5876 block--aec8f9bf-d206-449f-9049-4a8b4b6692ec block--aec8f9bf-d206-449f-9049-4a8b4b6692ec--5876 block block-nir-market-data-block block-market-data-block__stock-quote">
+  
+    
+      <div class='stock-quote stock-quote__short'>
+    <div class="quote-wrapper">
+                                                                                        <span class=""></span>
+            <span class=" price-change"></span>
+            </div>
+</div>
+
+  </div>
+
+  </div>
+</div>
+      </div>
+    </div>
+  
+      
+
+<nav class="ndm-main-nav navbar navbar-light navbar-expand-xl fixed-top py-0 ndm-navBg" aria-label="Main Navigation">
+    <div class="container-xl llf-px-md-5 llf-px-4">
+                <a class="navbar-brand py-4 me-xl-4 d-flex align-items-center" href="https://www.tripadvisor.com/">
+            <div class="ndm-logo-container me-2">
+                <div class="ndm-logo-wrap">
+                    <img src="/sites/g/files/knoqqb101981/themes/site/client_site/dist/images/Tripadvisor_NoOllie_Black.png" alt="Visit Tripadvisor Corporate site"/>
+                </div>
+            </div>
+        </a>
+
+                                            
+        
+
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span aria-hidden="true" class="navbar-toggler-icon"><span></span></span>
+            </button>
+            <div class="collapse navbar-collapse ps-xl-5" id="navbarNav">
+                <ul class="navbar-nav flex-grow-1 justify-content-xl-end">
+                    
+<li  class="nav-item align-content-center dropdown"><div><a href="/" title="Main Investor Relations Page" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle is-active" data-drupal-link-system-path="&lt;front&gt;" aria-current="page">Overview</a><ul class="dropdown-menu"><li ><a href="/" class="dropdown-item is-active" data-drupal-link-system-path="&lt;front&gt;" aria-current="page">IR Home</a></li><li ><a href="https://tripadvisor.mediaroom.com/US-about-us" target="_blank" class="dropdown-item">About Us</a></li></ul></div></li><li  class="nav-item align-content-center"><div><a href="/press-releases" class="nav-link" data-drupal-link-system-path="node/5816">Press Releases</a></div></li><li  class="nav-item align-content-center"><div><a href="/events-and-presentations" target="" rel="" class="nav-link" data-drupal-link-system-path="node/15416">Events &amp; Presentations</a></div></li><li  class="nav-item align-content-center dropdown"><div><a href="/corporate-governance/corporate-governance" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-drupal-link-system-path="node/15351">Governance</a><ul class="dropdown-menu"><li ><a href="/corporate-governance/corporate-governance" class="dropdown-item" data-drupal-link-system-path="node/15351">Governance Documents</a></li><li ><a href="https://tripadvisor.mediaroom.com/US-about-us" target="_blank" class="dropdown-item">Management</a></li><li ><a href="/corporate-governance/board-of-directors" class="dropdown-item" data-drupal-link-system-path="node/5841">Board of Directors</a></li><li ><a href="/corporate-governance/committee-composition" class="dropdown-item" data-drupal-link-system-path="node/5851">Committee Composition</a></li><li ><a href="/corporate-governance/contact-the-board" class="dropdown-item" data-drupal-link-system-path="node/5866">Contact the Board</a></li><li ><a href="" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-item dropdown-toggle">Corporate Responsibility</a><ul class="dropdown-menu"><li ><a href="https://www.purpose.tripadvisor.com/diversity" target="_blank" class="dropdown-item">Equity, Diversity &amp; Inclusion</a></li><li ><a href="https://www.purpose.tripadvisor.com/social-impact" target="_blank" class="dropdown-item">Social Impact</a></li></ul></li></ul></div></li><li  class="nav-item align-content-center dropdown"><div><a href="/financial-information/sec-filings" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-drupal-link-system-path="node/5876">Financials</a><ul class="dropdown-menu"><li ><a href="/financial-information/sec-filings" class="dropdown-item" data-drupal-link-system-path="node/5876">SEC Filings</a></li><li ><a href="/financial-information/annual-reports" target="" rel="" class="dropdown-item" data-drupal-link-system-path="node/15421">Annual Reports</a></li><li ><a href="/financial-information/quarterly-results" class="dropdown-item" data-drupal-link-system-path="node/5986">Quarterly Results</a></li></ul></div></li><li  class="nav-item align-content-center dropdown"><div><a href="/stock-information/stock-quote-chart" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-drupal-link-system-path="node/5911">Stock</a><ul class="dropdown-menu"><li ><a href="/stock-information/stock-quote-chart" class="dropdown-item" data-drupal-link-system-path="node/5911">Stock Quote &amp; Chart</a></li><li ><a href="/stock-information/historic-stock-lookup" class="dropdown-item" data-drupal-link-system-path="node/5921">Historic Stock Lookup</a></li><li ><a href="/stock-information/investment-calculator" class="dropdown-item" data-drupal-link-system-path="node/5926">Investment Calculator</a></li><li ><a href="/stock-information/analyst-coverage" class="dropdown-item" data-drupal-link-system-path="node/5896">Analyst Coverage</a></li></ul></div></li><li  class="nav-item align-content-center dropdown"><div><a href="/ir-resources/investor-faqs" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-drupal-link-system-path="node/5941">IR Resources</a><ul class="dropdown-menu"><li ><a href="/ir-resources/investor-faqs" class="dropdown-item" data-drupal-link-system-path="node/5941">Investor FAQs</a></li><li ><a href="/ir-resources/contact-ir" target="" rel="" class="dropdown-item" data-drupal-link-system-path="node/5981">Contact IR</a></li><li ><a href="/ir-resources/email-alert-subscription" class="dropdown-item" data-drupal-link-system-path="node/5946">Email Alerts</a></li></ul></div></li>
+                </ul>
+            </div>
+            </div>
+</nav>
+
+  
+
+    <div
+    class="jumbotron ndm-full-image-sect flex-grow-1 d-flex flex-column bg-black-20 ndm-overlay-dark" >
+
+    <div class="z0 ndm-hero-media ndm-hero-movement">
+      <img class="object-fit plax" src="/sites/g/files/knoqqb101981/themes/site/client_site/dist/images/caption.jpg" alt=""/>
+    </div>
+
+    <div
+      class="container llf-px-lg-5 llf-px-4 position-relative d-flex flex-column flex-grow-1 justify-content-center ndm-pt-6">
+            <div class="row row-cols-2">
+        <div class="flex-grow-1">
+
+                      <div class="row">
+              <div class="col-12">
+                <h1 class="home-h1 mb-0">Investor Relations</h1>
+              </div>
+            </div>
+          
+        </div>
+
+      </div>
+
+      
+    </div>
+  </div>
+</header>
+
+<main class="clearfix" id="main" aria-label="Main content">
+
+  
+  <div id="content">
+    <div id="content-area">
+
+              <div class="container llf-px-lg-5 llf-px-4">
+            <div class="region region-status">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </div>
+      
+      
+            
+            
+              <div  class="lf-5806" id="lfg-content">
+          
+            <div class="region region-content">
+    
+<div id="block-client-site-content" class="block--system-main-block block--system-main-block--5806 block--content--system-main-block block--content--system-main-block--5806 block--001e47f0-ceaf-4465-a572-c24f9a5fa5ac block--001e47f0-ceaf-4465-a572-c24f9a5fa5ac--5806 block block-system block-system-main-block">
+  
+    
+      <article class="node node--type-nir_landing_page node--view-mode-full clearfix">
+    <div>
+    
+
+
+<div  class="panel-display pond clearfix">
+
+            <section class="pt-5 pb-0 pt-lg-5 home-profile-results">
+            <div class="container llf-px-lg-5 llf-px-3">
+                <div class="row gx-md-5 justify-content-between">
+
+                                            <div class="col-lg-7 mb-4 mb-lg-0 home-profile">
+                            <div class="radix-layouts-header panel-panel h-100">
+                                <div  class="panel-panel-inner">
+                                  <div class="block-region-header"><div class="block-content--nir-lp-block block-content--nir-lp-block--6021 block--block-contentba9864cb-2831-49c6-8b31-85a191bd4d20 block--block-contentba9864cb-2831-49c6-8b31-85a191bd4d20--5806 block--header--block-content--ba9864cb-2831-49c6-8b31-85a191bd4d20 block--header--block-content--ba9864cb-2831-49c6-8b31-85a191bd4d20--5806 block--ffdf2b3e-ccff-4e90-a6d3-79e558b79740 block--ffdf2b3e-ccff-4e90-a6d3-79e558b79740--5806 block block-block-content block-block-contentba9864cb-2831-49c6-8b31-85a191bd4d20">
+  
+    
+      
+            <div class="field field--name-field-nir-lp-block-node field--type-entity-reference field--label-hidden field__item">  
+            <div class="field field--name-field-nir-lp-block-body field--type-text-long field--label-hidden field__item"><div class="contentLeft floatLeft"><h2 class="headerText">Tripadvisor Group</h2><p class="contentParagraph">The Tripadvisor Group connects people to experiences worth sharing, and aims to be the world's most trusted source for travel and experiences. We leverage our brands, technology, and capabilities to connect our global audience with partners through rich content, travel guidance, and two-sided marketplaces for experiences, accommodations, restaurants, and other travel categories. The subsidiaries of Tripadvisor, Inc. (Nasdaq: TRIP), include a portfolio of travel brands and businesses, including Tripadvisor, Viator, and TheFork.</p><p class="contentParagraph">&nbsp;</p><div class="row logos"><div class="col-4"><a href="https://www.viator.com/" target="_blank"><img src="/system/files-encrypted/nasdaq_kms/inline-images/Viator_Logo_RGB_Green_0.png" data-entity-uuid="2fdfc468-7dde-4d38-95b0-5c1526649491" data-entity-type="file" alt="viator logo"></a></div><div class="col-4"><a href="https://www.tripadvisor.com/" target="_blank"><img src="/system/files-encrypted/nasdaq_kms/inline-images/Tripadvisor_Logo.png" data-entity-uuid="2e6a61e9-137d-4e81-861f-2bf8e756986f" data-entity-type="file" alt></a></div><div class="col-4"><a href="https://www.thefork.com/" target="_blank"><img src="/system/files-encrypted/nasdaq_kms/inline-images/thefork.png" data-entity-uuid="705a07ce-d1ef-40c6-b26c-cd02d0da4264" data-entity-type="file" alt></a></div></div></div></div>
+      
+</div>
+      
+  </div>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                                            <div class="col-lg-5 col-xxl-4 mb-5 mb-lg-0 home-results">
+                            <div class="radix-layouts-column1 panel-panel h-100">
+                                <div  class="panel-panel-inner">
+                                    <div class="block-region-column1"><div class="views-element-container block--views-blockwidget-bundled-content-block-1 block--views-blockwidget-bundled-content-block-1--5806 block--column1--views-block--widget-bundled-content-block-1 block--column1--views-block--widget-bundled-content-block-1--5806 block--e9540227-3fd9-4280-946f-be5e4c26e0fa block--e9540227-3fd9-4280-946f-be5e4c26e0fa--5806 block block-views block-views-blockwidget-bundled-content-block-1">
+  
+    
+      <div data-block-uuid="e9540227-3fd9-4280-946f-be5e4c26e0fa">
+
+
+
+<div class="acc-wrap view view-widget-bundled-content view-id-widget_bundled_content view-display-id-block_1 js-view-dom-id-12038e5de38bac43d23b29703f369e0031fdf5cfdd389a6af96a73d0ad428059 view-with-footer">
+
+      
+            
+                    <div class="view-filters">
+          <form class="views-exposed-form" data-drupal-selector="views-exposed-form-widget-bundled-content-block-1" action="/" method="get" id="views-exposed-form-widget-bundled-content-block-1" accept-charset="UTF-8">
+  <div class="form--inline clearfix">
+  
+</div>
+
+</form>
+
+        </div>
+            
+              <div class="view-content">
+          
+
+<div class="view-grouping llf-mb-3">
+          <div class="view-grouping-content">
+
+  
+      
+        
+    <h2><span class="latest-quarter">Second Quarter</span> <span class="latest-year">2026</span> <span class="">Results</span></h2>
+
+    <div class="views-row ">
+      
+
+<article>
+  <div class="llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters llf-flex-sm-nowrap">
+
+      
+    <div class="llf-col-md-12 lfg-details ">
+      <div class="views-field views-field-field-nir-bundle-content"><div class="field-content"><div class="item-list"><ul><li><div class=" clearfix">
+  <div class="content">
+    
+            <div class="field field--name-field-nir-content-ref field--type-entity-reference field--label-hidden field__item webcast-link"><a href="/index.php/events/event-details/tripadvisor-second-quarter-2026-conference-call" hreflang="en">Tripadvisor Second Quarter 2026 Conference Call</a></div>
+      
+  </div>
+</div>
+</li><li><div class=" clearfix">
+  <div class="content">
+    
+            <div class="field field--name-field-nir-content-ref field--type-entity-reference field--label-hidden field__item">  
+
+
+
+    
+
+        <div class="file-link" data-type="application/pdf">
+        <span class="file file--mime-application-pdf file--application-pdf"> <a href="/index.php/index.php/static-files/7dc6e8d2-6c05-4cb8-a1ce-cc630ab7fb6e" type="application/pdf" title="TRIP 2Q2026 Press Release.pdf">Tripadvisor Reports Second Quarter 2026 Financial Results</a></span>    </div>
+
+
+</div>
+      
+  </div>
+</div>
+</li><li><div class=" clearfix">
+  <div class="content">
+    
+            <div class="field field--name-field-nir-content-ref field--type-entity-reference field--label-hidden field__item">  
+
+
+
+    
+
+        <div class="file-link" data-type="application/pdf">
+        <span class="file file--mime-application-pdf file--application-pdf"> <a href="/index.php/index.php/static-files/641e2685-57c6-40fb-8e04-d8b0d90d1d97" type="application/pdf" title="TRIP 2Q2026_Prepared Remarks.pdf">Tripadvisor Second Quarter 2026 Prepared Remarks</a></span>    </div>
+
+
+</div>
+      
+  </div>
+</div>
+</li><li><div class=" clearfix">
+  <div class="content">
+    
+            <div class="field field--name-field-nir-content-ref field--type-entity-reference field--label-hidden field__item">  
+
+
+
+    
+
+        <div class="file-link" data-type="application/pdf">
+        <span class="file file--mime-application-pdf file--application-pdf"> <a href="/index.php/index.php/static-files/e5f343ac-e58d-4e83-a3b3-8191bdef739c" type="application/pdf" title="TRIP 2Q2026 Investor Presentation.pdf">Tripadvisor Second Quarter 2026 Investor Presentation	</a></span>    </div>
+
+
+</div>
+      
+  </div>
+</div>
+</li><li><div class=" clearfix">
+  <div class="content">
+    
+            <div class="field field--name-field-nir-content-ref field--type-entity-reference field--label-hidden field__item html-link"><a href="/index.php/sec-filings/sec-filing/10-q/0001193125-26-336693" hreflang="en">Form 10-Q</a></div>
+      
+  </div>
+</div>
+</li></ul></div></div></div>    </div>
+
+    </div>
+  </div>
+</article>
+
+    </div>
+  
+</div>
+  </div>
+
+        </div>
+      
+
+        <div class="llf-row llf-no-gutters lfg-widget-footer llf-align-items-center llf-justify-content-center">
+
+        
+        
+      </div>
+    
+  
+</div>
+</div>
+
+  </div>
+
+    
+
+
+
+
+              
+              
+<nav aria-label="See All Results" class="block--system-menu-blocksee-all-results block--system-menu-blocksee-all-results--5806 block--column1--system-menu-block--see-all-results block--column1--system-menu-block--see-all-results--5806 block--6ea59516-2055-4805-9e68-80d8356b910b block--6ea59516-2055-4805-9e68-80d8356b910b--5806 block block-menu navigation block-system-menublock menu--see-all-results">
+
+                
+
+    
+    
+
+                    
+              
+          <ul  data-block-uuid="6ea59516-2055-4805-9e68-80d8356b910b" class="menu side-menu">
+          
+        
+                  <li class="side-menu__item">
+        
+          <a href="/financial-information/quarterly-results" class="btn btn-lg btn-outline-primary ndm-learn-more w-100 justify-content-center" data-drupal-link-system-path="node/5986">All Quarterly Results</a>
+          
+                  </li>
+        
+      
+      </ul>
+  
+  
+
+
+
+    
+      </nav>
+  </div>
+                                </div>
+                            </div>
+                        </div>
+                                        
+                </div>
+            </div>
+        </section>
+    
+
+            <section class="py-0 pb-lg-5 news-events-reports-section">
+            <div class="container py-0 py-lg-5 llf-px-lg-5 llf-px-3">
+                <div class="row gx-md-5">
+
+                                            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 home-news">
+                            <div class="radix-layouts-column2 panel-panel h-100">
+                                <div  class="panel-panel-inner h-100">
+                                    <div class="block-region-column2">
+<div class="block--home-news block--nir-news__widget block--nir-news__widget--5806 block--column2--nir-news__widget block--column2--nir-news__widget--5806 block--0e4a9a0a-eb34-4c6e-b0da-5c0be6b84e38 block--0e4a9a0a-eb34-4c6e-b0da-5c0be6b84e38--5806 block block-nir-news block-nir-news__widget">
+  
+    
+      
+
+
+
+<div class="nir-widget llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters">
+        <div class="llf-col-12">
+                            <h2 class="nir-widget--label ">News</h2>
+                        <div class="nir-widget--content">
+                                <div class="nir-widget--list ">
+                                      
+    
+<article class="clearfix node node--nir-news--nir-widget-list node--type-nir-news node--view-mode-nir-widget-list node--promoted nir-widget-article llf-border" data-title="Tripadvisor Group and Airbnb Announce Experiences Partnership">
+  <div class="llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters llf-flex-sm-nowrap">
+
+    
+      <div class="llf-col-md-12 llf-px-0 lfg-details ">
+
+              <div class="nir-widget--field nir-widget--news--date-time" data-label="Date">
+          August 11, 2026
+        </div>
+      
+        <div class="nir-widget--field" data-label="Title">
+
+                      <div class="nir-widget--field nir-widget--news--headline">
+                                                        <a href="/news-releases/news-release-details/tripadvisor-group-and-airbnb-announce-experiences-partnership" hreflang="en">Tripadvisor Group and Airbnb Announce Experiences Partnership</a>
+                                              </div>
+          
+          
+        </div>
+
+      
+      
+      
+
+
+      
+      </div>
+    </div>
+  </div>
+</article>
+
+    
+<article class="clearfix node node--nir-news--nir-widget-list node--type-nir-news node--view-mode-nir-widget-list node--promoted nir-widget-article llf-border" data-title="Tripadvisor Announces Participation at Upcoming Conferences">
+  <div class="llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters llf-flex-sm-nowrap">
+
+    
+      <div class="llf-col-md-12 llf-px-0 lfg-details ">
+
+              <div class="nir-widget--field nir-widget--news--date-time" data-label="Date">
+          August 7, 2026
+        </div>
+      
+        <div class="nir-widget--field" data-label="Title">
+
+                      <div class="nir-widget--field nir-widget--news--headline">
+                                                        <a href="/news-releases/news-release-details/tripadvisor-announces-participation-upcoming-conferences-7" hreflang="en">Tripadvisor Announces Participation at Upcoming Conferences</a>
+                                              </div>
+          
+          
+        </div>
+
+      
+      
+      
+
+
+      
+      </div>
+    </div>
+  </div>
+</article>
+
+                                  </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  </div>
+
+    
+
+
+
+
+              
+              
+<nav aria-label="See All News" class="block--system-menu-blocksee-all-news block--system-menu-blocksee-all-news--5806 block--column2--system-menu-block--see-all-news block--column2--system-menu-block--see-all-news--5806 block--7e8685b2-67a3-4040-9dd1-091c9610aee1 block--7e8685b2-67a3-4040-9dd1-091c9610aee1--5806 block block-menu navigation block-system-menublock menu--see-all-news">
+
+                
+
+    
+    
+
+                    
+              
+          <ul  data-block-uuid="7e8685b2-67a3-4040-9dd1-091c9610aee1" class="menu side-menu">
+          
+        
+                  <li class="side-menu__item">
+        
+          <a href="/press-releases" class="btn btn-lg btn-outline-primary ndm-learn-more w-100 justify-content-center" data-drupal-link-system-path="node/5816">All News Releases</a>
+          
+                  </li>
+        
+      
+      </ul>
+  
+  
+
+
+
+    
+      </nav>
+  </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                                            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 home-events">
+                            <div class="radix-layouts-column3 panel-panel h-100">
+                                <div  class="panel-panel-inner h-100">
+                                    <div class="block-region-column3">
+<div class="block--home-events block--nir-events__widget block--nir-events__widget--5806 block--column3--nir-events__widget block--column3--nir-events__widget--5806 block--bb354537-4ad0-4ab1-925c-70939374c1a9 block--bb354537-4ad0-4ab1-925c-70939374c1a9--5806 block block-nir-events block-nir-events__widget">
+  
+    
+      
+
+
+
+<div class="nir-widget llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters">
+        <div class="llf-col-12">
+                            <h2 class="nir-widget--label ">Events</h2>
+                        <div class="nir-widget--content">
+                                <div class="nir-widget--list ">
+                                      
+    
+<article class="clearfix node node--nir-event--nir-widget-list node--type-nir-event node--view-mode-nir-widget-list nir-widget-article llf-border" data-title="Tripadvisor Second Quarter 2026 Conference Call">
+  <div class="llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters llf-flex-sm-nowrap">
+
+
+      
+      <div class="llf-col-12 llf-px-0 lfg-details">
+
+                  <div class="nir-widget--field nir-widget--event--date">
+            
+
+                        
+			
+			    	          		August 6, 2026 <span class="lfg_time">| 8:30 AM EDT</span>
+    	  	
+
+          </div>
+        
+                  <div class="nir-widget--field nir-widget--event--title">
+              
+<div class="field-nir-event-title">
+      <div class="field__item"><a href="/events/event-details/tripadvisor-second-quarter-2026-conference-call" hreflang="en">Tripadvisor Second Quarter 2026 Conference Call</a></div>
+  </div>
+          </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+              </div>
+
+
+    </div>
+  </div>
+</article>
+
+    
+<article class="clearfix node node--nir-event--nir-widget-list node--type-nir-event node--view-mode-nir-widget-list nir-widget-article llf-border" data-title="Bernstein 42nd Annual Strategic Decisions Conference">
+  <div class="llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters llf-flex-sm-nowrap">
+
+
+      
+      <div class="llf-col-12 llf-px-0 lfg-details">
+
+                  <div class="nir-widget--field nir-widget--event--date">
+            
+
+                        
+			
+			    	          		May 28, 2026 <span class="lfg_time">| 8:00 AM EDT</span>
+    	  	
+
+          </div>
+        
+                  <div class="nir-widget--field nir-widget--event--title">
+              
+<div class="field-nir-event-title">
+      <div class="field__item"><a href="/events/event-details/bernstein-42nd-annual-strategic-decisions-conference" hreflang="en">Bernstein 42nd Annual Strategic Decisions Conference</a></div>
+  </div>
+          </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+              </div>
+
+
+    </div>
+  </div>
+</article>
+
+    
+<article class="clearfix node node--nir-event--nir-widget-list node--type-nir-event node--view-mode-nir-widget-list nir-widget-article llf-border" data-title="Tripadvisor First Quarter 2026 Conference Call">
+  <div class="llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters llf-flex-sm-nowrap">
+
+
+      
+      <div class="llf-col-12 llf-px-0 lfg-details">
+
+                  <div class="nir-widget--field nir-widget--event--date">
+            
+
+                        
+			
+			    	          		May 7, 2026 <span class="lfg_time">| 8:30 AM EDT</span>
+    	  	
+
+          </div>
+        
+                  <div class="nir-widget--field nir-widget--event--title">
+              
+<div class="field-nir-event-title">
+      <div class="field__item"><a href="/events/event-details/tripadvisor-first-quarter-2026-conference-call" hreflang="en">Tripadvisor First Quarter 2026 Conference Call</a></div>
+  </div>
+          </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+              </div>
+
+
+    </div>
+  </div>
+</article>
+
+                                  </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  </div>
+
+    
+
+
+
+
+              
+              
+<nav aria-label="See All Events" class="block--system-menu-blocksee-all-events block--system-menu-blocksee-all-events--5806 block--column3--system-menu-block--see-all-events block--column3--system-menu-block--see-all-events--5806 block--fee7aa40-9e01-4d3e-a32f-4916a179d692 block--fee7aa40-9e01-4d3e-a32f-4916a179d692--5806 block block-menu navigation block-system-menublock menu--see-all-events">
+
+                
+
+    
+    
+
+                    
+              
+          <ul  data-block-uuid="fee7aa40-9e01-4d3e-a32f-4916a179d692" class="menu side-menu">
+          
+        
+                  <li class="side-menu__item">
+        
+          <a href="/events-and-presentations" class="btn btn-lg btn-outline-primary ndm-learn-more w-100 justify-content-center" data-drupal-link-system-path="node/15416">All Events</a>
+          
+                  </li>
+        
+      
+      </ul>
+  
+  
+
+
+
+    
+      </nav>
+  </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                                            <div class="col-lg-4 mb-5 mb-lg-0 home-reports">
+                            <div class="radix-layouts-secondarycolumn1 panel-panel h-100">
+                                <div  class="panel-panel-inner h-100">
+                                    <div class="block-region-secondarycolumn1">
+<div class="block--home-reports block--nir-assets__widget block--nir-assets__widget--5806 block--secondarycolumn1--nir-assets__widget block--secondarycolumn1--nir-assets__widget--5806 block--a16d5ff4-09ce-46b7-ab5e-ba20c454a85f block--a16d5ff4-09ce-46b7-ab5e-ba20c454a85f--5806 block block-nir-assets block-nir-assets__widget">
+  
+    
+      
+
+
+
+<div class="nir-widget llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters">
+        <div class="llf-col-12">
+                            <h2 class="nir-widget--label ">Recent Reports</h2>
+                        <div class="nir-widget--content">
+                                <div class="nir-widget--list ">
+                                      
+    
+<article class="clearfix node node--nir-asset--nir-widget-list node--type-nir-asset node--view-mode-nir-widget-list nir-widget-article llf-border home-reports" data-title="2025 Annual Report">
+  <div class="llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters llf-flex-sm-nowrap llf-flex-column">
+
+      
+      <div class="llf-col-md-12 llf-px-0 lfg-details">
+
+        
+        
+        
+        
+        
+        
+
+                  <div class="nir-widget--field nir-widget--asset--list-of-files">
+            
+<div class="field-nir-document">
+      <div class="nir-widgets--file-list--hide-filesize field__item"><article class="node node--nir-asset--asset-link node--type-nir-asset node--view-mode-asset-link">
+  <div class="node__content">
+    
+      <div class="field field--name-field-nir-document field--type-file field--label-hidden field__items">
+              <div class="field__item">
+            
+
+
+
+    
+
+        <div class="file-link" data-type="application/pdf">
+        <span class="file file--mime-application-pdf file--application-pdf"> <a href="/static-files/bdba7b19-a350-4d78-a244-759d2ec2538c" type="application/pdf" title="Trip ARS.pdf">2025 Annual Report</a></span>    </div>
+
+
+
+        </div>
+          </div>
+  
+  </div>
+</article>
+</div>
+  </div>
+          </div>
+        
+      </div>
+
+    </div>
+  </div>
+</article>
+
+    
+<article class="clearfix node node--nir-asset--nir-widget-list node--type-nir-asset node--view-mode-nir-widget-list nir-widget-article llf-border home-reports" data-title="2024 Annual Report">
+  <div class="llf-container-fluid-full">
+    <div class="llf-row llf-no-gutters llf-flex-sm-nowrap llf-flex-column">
+
+      
+      <div class="llf-col-md-12 llf-px-0 lfg-details">
+
+        
+        
+        
+        
+        
+        
+
+                  <div class="nir-widget--field nir-widget--asset--list-of-files">
+            
+<div class="field-nir-document">
+      <div class="nir-widgets--file-list--hide-filesize field__item"><article class="node node--nir-asset--asset-link node--type-nir-asset node--view-mode-asset-link">
+  <div class="node__content">
+    
+      <div class="field field--name-field-nir-document field--type-file field--label-hidden field__items">
+              <div class="field__item">
+            
+
+
+
+    
+
+        <div class="file-link" data-type="application/pdf">
+        <span class="file file--mime-application-pdf file--application-pdf"> <a href="/static-files/f8cf7e46-bef7-4989-86ae-3bf327544555" type="application/pdf" title="Tripadvisor - ARS (Final).pdf">2024 Annual Report</a></span>    </div>
+
+
+
+        </div>
+          </div>
+  
+  </div>
+</article>
+</div>
+  </div>
+          </div>
+        
+      </div>
+
+    </div>
+  </div>
+</article>
+
+                                  </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  </div>
+
+    
+
+
+
+
+              
+              
+<nav aria-label="See All Reports" class="block--system-menu-blocksee-all-reports block--system-menu-blocksee-all-reports--5806 block--secondarycolumn1--system-menu-block--see-all-reports block--secondarycolumn1--system-menu-block--see-all-reports--5806 block--16cfdfec-abed-45e3-8ce6-fc99176e2f11 block--16cfdfec-abed-45e3-8ce6-fc99176e2f11--5806 block block-menu navigation block-system-menublock menu--see-all-reports">
+
+                
+
+    
+    
+
+                    
+              
+          <ul  data-block-uuid="16cfdfec-abed-45e3-8ce6-fc99176e2f11" class="menu side-menu">
+          
+        
+                  <li class="side-menu__item">
+        
+          <a href="/financial-information/annual-reports" class="btn btn-lg btn-outline-primary ndm-learn-more w-100 justify-content-center" data-drupal-link-system-path="node/15421">All Reports</a>
+          
+                  </li>
+        
+      
+      </ul>
+  
+  
+
+
+
+    
+      </nav>
+  </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </section>
+    
+    
+    
+</div>
+
+<!-- /.radix-pond -->
+  </div>
+</article>
+
+  </div>
+<div id="block-client-site-websitenoticeblock" class="block--website-notice-block block--website-notice-block--5806 block--content--website-notice-block block--content--website-notice-block--5806 block--aa58b6c8-83d8-430a-9f0e-2c7f0ce8f6ee block--aa58b6c8-83d8-430a-9f0e-2c7f0ce8f6ee--5806 block block-nir-website-notices block-website-notice-block">
+  
+    
+      
+  </div>
+
+  </div>
+
+        </div>
+      
+      
+    </div>
+  </div>
+
+</main>
+
+<footer class="bg-dark bg-secondary">
+
+      <div class="container llf-py-5 llf-px-lg-5 llf-px-4 position-relative sign-up-for-email-alerts">
+      <div class="mb-3">
+        <div class="row gx-md-5 justify-content-between">
+                      <div class="col-md-6 mb-5 mb-md-0">
+                <div class="region region-template-footer">
+    <div id="block-client-site-globalinvestorcontact" class="block-content--nir-global-block block-content--nir-global-block--21096 block--block-contente8bcf68f-f631-4aba-8c2d-3a4374aa2a8b block--block-contente8bcf68f-f631-4aba-8c2d-3a4374aa2a8b--5806 block--template-footer--block-content--e8bcf68f-f631-4aba-8c2d-3a4374aa2a8b block--template-footer--block-content--e8bcf68f-f631-4aba-8c2d-3a4374aa2a8b--5806 block--661cd81e-a45b-4870-a389-659421c9b116 block--661cd81e-a45b-4870-a389-659421c9b116--5806 block block-block-content block-block-contente8bcf68f-f631-4aba-8c2d-3a4374aa2a8b">
+  
+    
+      
+            <div class="field field--name-field-nir-global-block-node field--type-entity-reference field--label-hidden field__item">  
+            <div class="field field--name-field-nir-global-block-body field--type-text-long field--label-hidden field__item"><h2 class="h3">Investor Contact</h2><!--p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</p--><div class="d-flex align-items-center my-2"><span class="material-symbols-outlined me-2" aria-hidden="true">drafts</span> <a class="text-decoration-underline" href="mailto:ir@tripadvisor.com">ir@tripadvisor.com</a></div><!--div class="d-flex align-items-center my-2">
+    <span class="material-symbols-outlined me-2" aria-hidden="true">phone_iphone</span> <a class="text-decoration-underline" href="#">+999 999-9999</a>
+</div--></div>
+      
+</div>
+      
+  </div>
+
+  </div>
+
+            </div>
+                                          <div class="col-md-6">
+              <form action="https://ir.tripadvisor.com/ir-resources/email-alert-subscription" class="footer-alerts-form">
+                <div id="block-client-site-gbemailalerts" class="block-content--nir-global-block block-content--nir-global-block--21091 block--block-content6d3c2f16-2bed-425e-a28d-871bdb1ebc28 block--block-content6d3c2f16-2bed-425e-a28d-871bdb1ebc28--5806 block--email-alerts--block-content--6d3c2f16-2bed-425e-a28d-871bdb1ebc28 block--email-alerts--block-content--6d3c2f16-2bed-425e-a28d-871bdb1ebc28--5806 block--13e4b9e8-5452-43e1-ab90-f1f145dcac9f block--13e4b9e8-5452-43e1-ab90-f1f145dcac9f--5806 block block-block-content block-block-content6d3c2f16-2bed-425e-a28d-871bdb1ebc28">
+  
+    
+      
+            <div class="field field--name-field-nir-global-block-node field--type-entity-reference field--label-hidden field__item">  
+            <div class="field field--name-field-nir-global-block-body field--type-text-long field--label-hidden field__item"><h2 class="h3">Subscribe to our Email Alerts</h2><p><label class="small mb-2" for="irEmail1">Email Address<span class="req-symbol" aria-hidden="true">*</span><span class="visually-hidden"> Required</span></label></p><div class="row g-3"><div class="col"><input class="form-control h-100" id="irEmail1" name="nir_email_alerts_signup_email" placeholder type="email" autocomplete="email"></div><div class="col-auto"><button class="btn btn-primary" type="submit">Submit</button></div></div></div>
+      
+</div>
+      
+  </div>
+
+              </form>
+            </div>
+                            </div>
+      </div>
+    </div>
+  
+  <div class="bg-dark bg-primary">
+    <div class="container llf-px-lg-5 llf-px-4">
+      <div class="row align-items-center gx-md-5 ">
+        <div class="col-6">
+
+          <div class=" color-black-20">&copy; 2026 Tripadvisor</div>
+
+        </div>
+        <div class="col-6">
+                        <div class="region region-social-links">
+    
+    
+<nav aria-label="social media links" class="justify-content-center justify-content-md-end navbar navbar-dark navbar-expand">
+            
+                    
+<ul class="navbar-nav navbar-expand"><li class="nav-item"><a href="https://www.tripadvisor.com/ShowUrl-a_partnerKey.1-a_url.http%3A__2F____2F__www__2E__facebook__2E__com__2F__TripAdvisor-a_urlKey.15090f72418302936.html" target="_blank" class="nav-link hover-scale-1 d-block" aria-label="Facebook (opens in new tab)" title="Facebook (opens in new tab)"><span class="fab fa-lg fa-facebook" aria-hidden="true"></span></a></li><li class="nav-item"><a href="https://www.tripadvisor.com/ShowUrl-a_partnerKey.1-a_url.https%3A__2F____2F__twitter__2E__com__2F__TripAdvisor-a_urlKey.44b19b8408425e091.html" target="_blank" class="nav-link hover-scale-1 d-block" aria-label="x-twitter (opens in new tab)" title="x-twitter (opens in new tab)"><span class="fab fa-lg fa-x-twitter" aria-hidden="true"></span></a></li><li class="nav-item"><a href="https://www.tripadvisor.com/ShowUrl-a_partnerKey.1-a_url.https%3A__2F____2F__www__2E__pinterest__2E__com__2F__tripadvisor__2F__-a_urlKey.37f0c4f6234c37ed3.html" target="_blank" class="nav-link hover-scale-1 d-block" aria-label="Pinterest (opens in new tab)" title="Pinterest (opens in new tab)"><span class="fab fa-lg fa-pinterest" aria-hidden="true"></span></a></li><li class="nav-item"><a href="https://www.tripadvisor.com/ShowUrl-a_partnerKey.1-a_url.https%3A__2F____2F__instagram__2E__com__2F__tripadvisor__2F__-a_urlKey.95e728d4c18d14f29.html" target="_blank" class="nav-link hover-scale-1 d-block" aria-label="Instagram (opens in new tab)" title="Instagram (opens in new tab)"><span class="fab fa-lg fa-instagram" aria-hidden="true"></span></a></li><li class="nav-item"><a href="https://www.tripadvisor.com/ShowUrl-a_partnerKey.1-a_url.https%3A__2F____2F__www__2E__youtube__2E__com__2F__TripAdvisor-a_urlKey.e62613873848f484d.html" target="_blank" class="nav-link hover-scale-1 d-block" aria-label="YouTube (opens in new tab)" title="YouTube (opens in new tab)"><span class="fab fa-lg fa-youtube" aria-hidden="true"></span></a></li><li class="nav-item"><a href="https://www.tripadvisor.com/ShowUrl-a_partnerKey.1-a_url.https%3A__2F____2F__www__2E__tiktok__2E__com__2F__%40tripadvisor-a_urlKey.5777c7492e159d99c.html" target="_blank" class="nav-link hover-scale-1 d-block" aria-label="Tiktok (opens in new tab)" title="Tiktok (opens in new tab)"><span class="fab fa-lg fa-tiktok" aria-hidden="true"></span></a></li></ul>
+        </nav>
+
+  </div>
+
+                  </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Video Modal -->
+<div class="ndm-modal fade" id="videoModal" tabindex="-1" role="dialog" aria-label="Video Modal" aria-hidden="true">
+  <div class="ndm-modal-dialog ndm-modal-dialog-centered ndm-modal-xl">
+    <div class="ndm-modal-content">
+      <div class="ndm-modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="ndm-modal" aria-label="Close"></button>
+      </div>
+      <div class="ndm-modal-body">
+        <div class="videoWrapper"><iframe title="video-player" src=""></iframe></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bio Modal -->
+<div class="ndm-modal bios-modal fade" id="modalBio" tabindex="-1" role="dialog" aria-labelledby="modalBioTitle" aria-hidden="true">
+  <div class="ndm-modal-dialog ndm-modal-dialog-centered ndm-modal-lg" role="document">
+    <div class="ndm-modal-content border-0 p-4 idm-rounded">
+      <div class="ndm-modal-header">
+        <div class="row w-100 d-flex flex-row-reverse">
+          <div class="col text-end">
+            <button type="button" class="btn-close" data-bs-dismiss="ndm-modal" aria-label="Close"></button>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-5 align-self-end">
+            <div class="h4 mb-0 modal-bio-name text-primary" id="modalBioTitle"><!-- dynamic from JS --></div>
+            <div class="h5 body-font mb-0 modal-bio-title"><!-- dynamic from JS --></div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-3 ">
+            <div class="portrait modal-bio-pic">
+              <!-- dynamic from JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ndm-modal-body modal-bio-body"><!-- dynamic from JS --></div>
+    </div>
+  </div>
+</div>
+
+<!-- Bio Offcanvas -->
+<div class="offcanvas offcanvas-end bios-offcanvas" tabindex="-1" id="bioCanvas" aria-labelledby="biosOffcanvasLabel">
+  <div class="offcanvas-header flex-column-reverse">
+    <div class="align-self-start w-100">
+
+      <div class="row w-100">
+        <div class="col-md-3">
+          <div class="portrait mt-5 offcanvas-bio-pic">
+            <!-- dynamic from JS -->
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          <div class="h4 offcanvas-title mt-5 offcanvas-bio-name" id="biosOffcanvasLabel"><!-- dynamic from JS --></div>
+          <div class=" offcanvas-bio-title h6 body-font"><!-- dynamic from JS --></div>
+        </div>
+
+      </div>
+    </div>
+    <button type="button" class="btn-close text-reset align-self-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="offcanvas-bio-body"><!-- dynamic from JS --></div>
+  </div>
+</div>
+
+<!-- Search Modal -->
+<div class="ndm-modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="ndm-modal-dialog ndm-modal-dialog-centered ndm-modal-lg">
+    <div class="ndm-modal-content">
+      <div class="ndm-modal-header">
+        <div class="h5 modal-title" id="searchModalLabel">Search Investors</div>
+        <button type="button" class="btn-close" data-bs-dismiss="ndm-modal" aria-label="Close"></button>
+      </div>
+      <div class="ndm-modal-body">
+        <form action="/search" class="row g-3">
+
+          <div class="col-auto flex-grow-1">
+            <label for="siteSearch" class="visually-hidden">Search this site</label>
+            <input type="search" class="form-control" id="siteSearch" name="query" placeholder="Search">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+    
+          <script type="text/javascript">var s_CCSWebHostingAccount = "TRCGCLIENTWEB2611";</script>
+            <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/5806","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en","themeUrl":"sites\/g\/files\/knoqqb101981\/themes\/site\/client_site"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJyNUgFuwzAI_FAUv2UvsIjNWq82VECa5vcjTqUqUztVljDgg7MOUi1IFrUYBr6hLOKeDlQkAkFdrSQNh2iEzBPGCjOl8wfAq3DusAkUO6IkJj2mjLlOID2ZLpiLscQM5meqqOHpjt_CZEh7zwZyQevIOFVOl9Dp1aKAFTo5gzc8g9hHcI2d5A22IVAUTNya83sB07-9X2bHrRzefv91jZrbr5nt8bW5WmmuEoRj2F-vcNpF3ZwRfuAeIeeYKqhGqCimL3Cpq-qbsFJy1Yhwn8aC07YckdhnivuI_-TGxz0I5HL3zVh5Ng2HaFBXGVvYJj7cCi4auh0b57niL6hiAVk","theme":"client_site","theme_token":null},"ajaxTrustedUrl":{"\/investor-relations":true},"nir_admin_use_chosen":false,"nir_admin_use_select2":false,"accessible_accordions":true,"chairtextvars":{"chairpersontext":"Chair","chairtext":"Chair"},"lfg_accordions":{"no_functionality":1,"speed":"fast","show_text":"Show All","hide_text":"Hide All","show_all":0},"lfg_chosen":{"enabled":1,"blank_text":"Choose from list","disable_search":1,"disable_search_threshold":10},"membertextvars":{"memberpersontext":"Member"},"lfg_bs_menu":{"hover_menu":0},"user":{"uid":0,"permissionsHash":"633ca5942874ceb0d0d7fae5cef9eff3f52a40647e81fd9ee11aafe2f227ed3c"}}</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/sites/g/files/knoqqb101981/files/js/js_ZBmk9FXnFhsv2VFdTK2X4XIOlKFasmXmkLuCCeMuaKc.js?scope=footer&amp;delta=1&amp;language=en&amp;theme=client_site&amp;include=eJyVUFEOwjAIvZBpz-IJCGtR62hZKHN6e-uqMTN-aEjgAe8l8AInKgY1GXm5kC7aUN2VpIAF-WYpVL_pHEYZCBjnEk4_ECeVuNLCSDGZKES0FgNT9W_oDirFqHRuRh3JViYMLGH0X6cuSM74p6Zay_tZjLpsZku5nYZ-267bCY_kX8DhGa-AMUJgrBWQSa2btdDw8BCKtNepO_Exc896B0WEk5w"></script>
+<script src="https://assets.adobedtm.com/898335afd880/c52ee8aa1e90/launch-5ef258dce664.min.js" crossorigin="anonymous" async integrity="sha384-9QSqHMB+yiy/V4i+d2Au+ydEWbBz4E9DqsE+oYKOnL+kj4XAZGYZxabd0P3OGHkf"></script>
+<script src="/profiles/nasdaqir/modules/custom/nir_ckeditor_datatables/js/datatables.js?v=1.x"></script>
+<script src="/sites/g/files/knoqqb101981/files/js/js_ovI38CY5vj-FYII0O-muxsTB4v3XntfKO7pwaEd_8HI.js?scope=footer&amp;delta=4&amp;language=en&amp;theme=client_site&amp;include=eJyVUFEOwjAIvZBpz-IJCGtR62hZKHN6e-uqMTN-aEjgAe8l8AInKgY1GXm5kC7aUN2VpIAF-WYpVL_pHEYZCBjnEk4_ECeVuNLCSDGZKES0FgNT9W_oDirFqHRuRh3JViYMLGH0X6cuSM74p6Zay_tZjLpsZku5nYZ-267bCY_kX8DhGa-AMUJgrBWQSa2btdDw8BCKtNepO_Exc896B0WEk5w"></script>
+
+    
+  <script type="text/javascript"  src="/_sKlsaFegVqjb/CSZyT/OXq35oTzo/NGN7h2m53b/TRUqIAE/IVRzHX/5MNT8W?v=592e7c0c-51ad-45bc-fbd1-1705bcc6addf" defer></script></body>
+</html>
+
+
+
+https://ir.tripadvisor.com/

@@ -1,0 +1,916 @@
+GET / HTTP/1.1
+Host: www.adobe.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36
+Accept-Encoding: gzip
+
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Akamai-Cache-Status: Hit from child
+Akamai-Grn-Www.adobe.com: 0.0f6fdd58.1792187691.4c754ef
+Alt-Svc: h3=":443"; ma=93600
+Cache-Control: must-revalidate, max-age=7200
+Content-Type: text/html; charset=utf-8
+Date: Fri, 16 Oct 2026 21:54:51 GMT
+Last-Modified: Thu, 15 Oct 2026 12:12:59 GMT
+Link: </libs/utils/utils.js>; rel=preload; as=script; crossorigin, </libs/martech/martech.js>; rel=preload; as=script; crossorigin, </libs/deps/imslib.min.js>; rel=preload; as=script, </upp/scripts/scripts.js>; rel=preload; as=script; crossorigin, </upp/scripts/utils.js>; rel=preload; as=script; crossorigin, <https://bfp.adobe.com/bfp/v1/bfp.min.js>; rel=preload; as=script
+Server-Timing: cdn-cache; desc=HIT
+Server-Timing: edge; dur=1
+Server-Timing: sis; desc=0
+Server-Timing: geo; desc=IT
+Server-Timing: ak_p; desc="1792187691914_1490906895_80172271_45_15930_23_29_255";dur=1
+Set-Cookie: [REDACTED_COOKIE_VALUES]
+Strict-Transport-Security: max-age=15768000
+Vary: Accept-Encoding
+X-Adobe-Content: DA UPP HOMEPAGE
+X-Cache-Hits: 0, 12, 1
+X-Served-By: cache-iad-kiad7000165-IAD, cache-iad-kiad7000165-IAD, cache-par-lfpg1960095-PAR
+X-Timer: S1792066386.722381,VS0,VE0
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adobe: Creative, marketing and document management solutions</title>
+    <link rel="canonical" href="https://www.adobe.com/">
+    <meta name="description" content="Adobe is changing the world through digital experiences. We help our customers create, deliver and optimize content and applications.">
+    <meta property="og:title" content="Adobe: Creative, marketing and document management solutions">
+    <meta property="og:description" content="Adobe is changing the world through digital experiences. We help our customers create, deliver and optimize content and applications.">
+    <meta property="og:image" content="https://www.adobe.com/homepage/assets/product-icons/jpg/media_1e1d6ce6caa68dfd49689c46528c152d9fdeaad6f.jpg">
+    <meta property="og:image:secure_url" content="https://www.adobe.com/homepage/assets/product-icons/jpg/media_1e1d6ce6caa68dfd49689c46528c152d9fdeaad6f.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Adobe: Creative, marketing and document management solutions">
+    <meta name="twitter:description" content="Adobe is changing the world through digital experiences. We help our customers create, deliver and optimize content and applications.">
+    <meta name="twitter:image" content="https://www.adobe.com/homepage/assets/product-icons/jpg/media_1e1d6ce6caa68dfd49689c46528c152d9fdeaad6f.jpg">
+    <meta name="target" content="on">
+    <meta name="personalization-v2" content="on">
+    <meta name="footer" content="global-footer">
+    <meta name="header" content="global-navigation">
+    <meta name="universal-nav" content="profile,appswitcher,notifications,cart">
+    <meta name="mobile-gnav-v2" content="on">
+    <meta name="jarvis-on-demand" content="off">
+    <meta name="mas-ff-3in1" content="on">
+    <meta name="hreflinksuseragents" content="Googlebot, Tokowaka, ChatGPT-User, Google-InspectionTool">
+    <meta name="ims-guest-token" content="on">
+    <meta name="content-language" content="en">
+    <meta name="manifestnames" content="en-lingo-ip,
+separate-de,
+separate-kr,
+
+us-acrobat-l1-q4-193084,
+us-premier-app-q4-194862,
+us-blk-frdy-q4-promo-195644">
+    <meta name="schedule" content="en-lingo-ip | 2026-08-11T15:30:00 | 2026-12-31T15:30:00 | https://main--upp--adobecom.aem.page/homepage/manifests/2026/global/en-lingo-ip/en-lingo-ip.json | us; |  | , separate-de | 2026-09-15T05:00:00 | 2040-07-22T17:00:00 | https://main--upp--adobecom.aem.page/homepage/manifests/2026/lingo-customization/footer-de-kr/separate-de.json | us; uk; au; in |  | , separate-kr | 2026-09-15T05:00:00 | 2040-07-22T17:00:00 | https://main--upp--adobecom.aem.page/homepage/manifests/2026/lingo-customization/footer-de-kr/separate-kr.json | us; uk; au; in |  | , kr-q4-bts-camp-192554 | 2026-09-10T05:00:00 | 2026-09-30T05:00:00 | https://main--upp--adobecom.aem.page/homepage/manifests/2026/apac/kr-bts-campaign/kr-q4-bts-camp-192554.json | kr; |  | , us-acrobat-l1-q4-193084 | 2026-09-09T03:00:00 | 2026-09-22T14:55:00 | https://main--upp--adobecom.aem.page/homepage/manifests/2026/global/acrobat-l1-q426/us-acrobat-l1-q4-193084.json | us; uk; au; in; mena_en; africa |  | , us-premier-app-q4-194862 | 2026-09-22T15:00:00 | 2026-10-06T15:00:00 | https://main--upp--adobecom.aem.page/homepage/manifests/2026/global/premier-app-q426/us-premier-app-q4-194862.json  | us; fr; lu_de; my_ms; ph_fil; au; th_th; in_hi; in; hk_zh; jp; id_id; kr; tw; vn_vi; cl; ca; la; gt; mx; br; co; ec; pe; pr; ar; cr; ro; fi; ng; tr; qa_ar; bg; si; nl; at; ch_de; kw_ar; pt; hu; ch_it; se; uk; pl; gr_el; ee; mena_ar; de; es; sa_ar; ae_ar; cz; il_he; be_nl; dk; lv; no; sk; eg_ar; ua; it; lt; |  | , hp-rowcol-feature | 2026-09-18T15:00:00 | 2026-09-25T15:00:00 | https://main--upp--adobecom.aem.page/homepage/manifests/2026/testing/hp-rowcol-feature.json | us; |  | , us-blk-frdy-q4-promo-195644 | 2026-11-13T15:00:00 | 2026-12-07T17:00:00 | https://main--upp--adobecom.aem.page/homepage/manifests/2026/latam/blk-frdy-q4-promo/us-blk-frdy-q4-promo-195644.json | us; |  |">
+    <meta name="georouting" content="on">
+    <meta name="langfirst" content="on">
+    <meta name="mas-geo-detection" content="on">
+    <meta name="languagebanner" content="on">
+    <meta name="foundation" content="c2">
+    <meta name="gnav-source" content="https://main--federal--adobecom.aem.page/federal/site-redesign/gnav">
+    <meta name="footer-source" content="https://main--federal--adobecom.aem.page/federal/site-redesign/footer/footer">
+    <meta name="unav" content="on">
+    <meta name="personalization" content="https://main--upp--adobecom.aem.page/homepage/fragments/mep/hp-06-02-26-redesign-pzn.json">
+    <meta name="mepgeolocation" content="on">
+    <meta name="pageperf" content="on">
+    <meta name="pageperf-rate" content="20">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.adobe.com/#website",
+      "url": "https://www.adobe.com",
+      "name": "Adobe",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.adobe.com/#organization"
+      }
+    },
+    {
+      "@type": [
+        "Organization",
+        "Corporation"
+      ],
+      "@id": "https://www.adobe.com/#organization",
+      "name": "Adobe",
+      "legalName": "Adobe Inc.",
+      "url": "https://www.adobe.com",
+      "tickerSymbol": "NASDAQ:ADBE",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.adobe.com/#logo",
+        "url": "https://www.adobe.com/content/dam/cc/icons/adobe_wordmark_red.svg",
+        "caption": "Adobe Corporate Logo"
+      },
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Adobe_Inc.",
+        "https://www.wikidata.org/wiki/Q11463",
+        "https://www.linkedin.com/company/adobe",
+        "https://www.google.com/finance/quote/ADBE:NASDAQ",
+        "https://www.youtube.com/user/AdobeSystems",
+        "https://www.instagram.com/adobe/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "345 Park Avenue",
+        "addressLocality": "San Jose",
+        "addressRegion": "CA",
+        "postalCode": "95110",
+        "addressCountry": "US"
+      }
+    }
+  ]
+}</script><!-- Modifying this file will impact your performance -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="head-loaded" content="false">
+    <script>
+  const flagMeta = document.querySelector('meta[name="head-loaded"]');
+  const headAlreadyLoaded = flagMeta.content === 'true';
+
+  const HOME_LOCALES = ['ae_ar', 'ae_en', 'africa', 'ar', 'at', 'au', 'be_en', 'be_fr', 'be_nl', 'bg', 'br', 'ca', 'ca_fr', 'ch_de', 'ch_fr', 'ch_it', 'cis_en', 'cis_ru', 'cl', 'cn', 'co', 'cr', 'cz', 'de', 'dk', 'ec', 'ee', 'eg_ar', 'eg_en', 'es', 'fi', 'fr', 'gr_el', 'gr_en', 'gt', 'hk_en', 'hk_zh', 'hu', 'id_en', 'id_id', 'ie', 'il_en', 'il_he', 'in', 'in_hi', 'it', 'jp', 'kr', 'kw_ar', 'kw_en', 'la', 'lt', 'lu_de', 'lu_en', 'lu_fr', 'lv', 'mena_ar', 'mena_en', 'mx', 'my_en', 'my_ms', 'ng', 'nl', 'no', 'nz', 'pe', 'ph_en', 'ph_fil', 'pl', 'pr', 'pt', 'qa_ar', 'qa_en', 'ro', 'ru', 'sa_ar', 'sa_en', 'se', 'sg', 'si', 'sk', 'th_en', 'th_th', 'tr', 'tw', 'ua', 'uk', 'vn_en', 'vn_vi', 'za'];
+  const PLANS_LOCALES = [...HOME_LOCALES.filter((l) => l !== 'cn' && l !== 'ru'), 'cy_en', 'mt', 'sea'];
+
+  if (!headAlreadyLoaded) {
+    (async () => {
+      const HREFLANG_ORIGIN = 'https://www.adobe.com';
+      const HOME_SITEMAP = `${HREFLANG_ORIGIN}/home-sitemap.xml`;
+      const PLANS_SITEMAP = `${HREFLANG_ORIGIN}/plans-catalog-sitemap.xml`;
+      const PLANS_PATHS = ['/creativecloud/plans', '/products/catalog'];
+      const HREFLANG_CACHE_PREFIX = 'hreflang-';
+      const HREFLANG_TIMEOUT_MS = 5000;
+
+      function buildHreflangMap(xmlDoc) {
+        const map = {};
+        xmlDoc.querySelectorAll('url').forEach((urlEl) => {
+          const loc = urlEl.querySelector('loc')?.textContent;
+          if (!loc) return;
+          const links = [...urlEl.querySelectorAll('link[rel="alternate"]')]
+            .map((el) => ({ hreflang: el.getAttribute('hreflang'), href: el.getAttribute('href') }))
+            .filter((l) => l.hreflang && l.href);
+          if (links.length) map[loc] = links;
+        });
+        return map;
+      }
+
+      function getCachedMap(cacheKey) {
+        try { return JSON.parse(sessionStorage.getItem(cacheKey)); } catch { return null; }
+      }
+
+      function setCachedMap(cacheKey, map) {
+        try {
+          Object.keys(sessionStorage)
+            .filter((k) => k.startsWith(HREFLANG_CACHE_PREFIX) && k !== cacheKey)
+            .forEach((k) => sessionStorage.removeItem(k));
+          sessionStorage.setItem(cacheKey, JSON.stringify(map));
+        } catch {
+          window.lana?.log('hreflang: sessionStorage quota exceeded', { tags: 'hreflang', severity: 'warning' });
+        }
+      }
+
+      async function fetchSitemapMap(sitemapUrl) {
+        const ctrl = new AbortController();
+        const tid = setTimeout(() => ctrl.abort(), HREFLANG_TIMEOUT_MS);
+        try {
+          const res = await fetch(sitemapUrl, { signal: ctrl.signal });
+          if (!res.ok) {
+            window.lana?.log(`hreflang: fetch failed (${res.status}) ${sitemapUrl}`, { tags: 'hreflang', severity: 'error' });
+            return null;
+          }
+          const xmlDoc = new DOMParser().parseFromString(await res.text(), 'text/xml');
+          if (xmlDoc.querySelector('parsererror')) {
+            window.lana?.log(`hreflang: parse failed ${sitemapUrl}`, { tags: 'hreflang', severity: 'error' });
+            return null;
+          }
+          return buildHreflangMap(xmlDoc);
+        } catch (e) {
+          const msg = e.name === 'AbortError'
+            ? `hreflang: timeout fetching ${sitemapUrl}`
+            : `hreflang: error fetching ${sitemapUrl} - ${e.message}`;
+          window.lana?.log(msg, { tags: 'hreflang', severity: 'error' });
+          return null;
+        } finally {
+          clearTimeout(tid);
+        }
+      }
+
+      function getPageUrl(pathname) {
+        if (pathname.endsWith('/')) return `${HREFLANG_ORIGIN}${pathname}`;
+        const withoutHtml = pathname.replace(/\.html$/, '');
+        return `${HREFLANG_ORIGIN}${withoutHtml}.html`;
+      }
+
+      function injectHreflangLinks(links) {
+        const titleEl = document.head.querySelector('title');
+        if (!titleEl) return;
+        titleEl.after(...links.map(({ hreflang, href }) => {
+          const el = document.createElement('link');
+          el.setAttribute('rel', 'alternate');
+          el.setAttribute('hreflang', hreflang);
+          el.setAttribute('href', href);
+          return el;
+        }));
+      }
+
+      const uaMeta = document.querySelector('meta[name="hreflinksuseragents"]');
+      if (!uaMeta?.content) return;
+      if (!uaMeta.content.split(',').some((a) => navigator.userAgent.includes(a.trim()))) return;
+
+      const { pathname } = window.location;
+      const firstSegment = pathname.split('/')[1];
+
+      const isHomePage = pathname === '/' || (HOME_LOCALES.includes(firstSegment) && pathname === `/${firstSegment}/`);
+      const isPlansPage = PLANS_PATHS.some((p) => pathname.includes(p))
+        && (!HOME_LOCALES.includes(firstSegment) || PLANS_LOCALES.includes(firstSegment));
+
+      let sitemapUrl;
+      if (isHomePage) {
+        sitemapUrl = HOME_SITEMAP;
+      } else if (isPlansPage) {
+        sitemapUrl = PLANS_SITEMAP;
+      } else {
+        return;
+      }
+
+      const cacheKey = HREFLANG_CACHE_PREFIX + sitemapUrl;
+      let map = getCachedMap(cacheKey);
+      if (!map) {
+        map = await fetchSitemapMap(sitemapUrl);
+        if (!map) return;
+        setCachedMap(cacheKey, map);
+      }
+
+      const pageUrl = getPageUrl(pathname);
+      const links = map[pageUrl] ?? map[pageUrl.replace(/\/$/, '')];
+      if (links?.length) injectHreflangLinks(links);
+    })();
+  }
+
+  flagMeta.content = 'true';
+</script>
+    <script src="/upp/scripts/fallback.js" nomodule></script>
+    <script src="/upp/scripts/scripts.js" type="module"></script>
+    <style>body { display: none; }</style>
+    <link rel="icon" href="data:,">
+    <style id="ims-body-style">
+  body:first-of-type {
+      opacity: 0.01 !important;
+  }
+</style>
+    <script>
+  // in case scripts.js fails to remove.
+  setTimeout(function() {
+      document.getElementById('ims-body-style')?.remove();
+  }, 5000);
+</script>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div>
+        <div class="visually-hidden">
+          <div>
+            <div>
+              <h1 id="adobe-homepage">Adobe homepage</h1>
+            </div>
+          </div>
+        </div>
+        <div class="router-marquee">
+          <div>
+            <div>mobile</div>
+          </div>
+          <div>
+            <div>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=4e3e071a-1d80-47a8-ab9f-d25ca2eb3592&#x26;field=subtitle">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Subtitle</a></p>
+              <h2 id="mas-field-acom--headless--individual--com--creative-cloud-individual--title"><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=4e3e071a-1d80-47a8-ab9f-d25ca2eb3592&#x26;field=cardTitle">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Title</a></h2>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=4e3e071a-1d80-47a8-ab9f-d25ca2eb3592&#x26;field=description">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Product description</a></p>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=4e3e071a-1d80-47a8-ab9f-d25ca2eb3592&#x26;field=shortDescription">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Short Description</a></p>
+              <p><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=4e3e071a-1d80-47a8-ab9f-d25ca2eb3592&#x26;field=ctas%5B2u25ddjvjn%5D">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → ctas[</a></strong><em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=4e3e071a-1d80-47a8-ab9f-d25ca2eb3592&#x26;field=ctas%5B2u25ddjvjn%5D">Free trial</a></strong></em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=4e3e071a-1d80-47a8-ab9f-d25ca2eb3592&#x26;field=ctas%5B2u25ddjvjn%5D"> - segmentation - modal]</a></strong></p>
+              <p><em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=4e3e071a-1d80-47a8-ab9f-d25ca2eb3592&#x26;field=ctas%5B0412463yth%5D">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → ctas[KR Buy now only]</a></strong></em></p>
+              <p><a href="/federal/assets/svgs/creative-cloud.svg">https://main--federal--adobecom.aem.page/federal/assets/svgs/creative-cloud.svg</a></p>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=4e3e071a-1d80-47a8-ab9f-d25ca2eb3592&#x26;field=callout">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Callout text</a></p>
+            </div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_15d0c67d468c6ab860bd67d3af2d0998c15f45bbc.webp?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_15d0c67d468c6ab860bd67d3af2d0998c15f45bbc.webp?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/webp" srcset="./media_15d0c67d468c6ab860bd67d3af2d0998c15f45bbc.webp?width=2000&#x26;format=webp&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="" src="./media_15d0c67d468c6ab860bd67d3af2d0998c15f45bbc.webp?width=750&#x26;format=webp&#x26;optimize=medium" width="3074" height="5464">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=883af3cb-8dcb-45c7-bd0c-1dfbe6196079&#x26;field=subtitle">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Subtitle</a></p>
+              <h2 id="mas-field-acom--headless--individual--com--creative-cloud-individual--title-1"><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=883af3cb-8dcb-45c7-bd0c-1dfbe6196079&#x26;field=cardTitle">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Title</a></h2>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=883af3cb-8dcb-45c7-bd0c-1dfbe6196079&#x26;field=description">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Product description</a></p>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=883af3cb-8dcb-45c7-bd0c-1dfbe6196079&#x26;field=shortDescription">mas-field: ACOM / Headless / Individual / com / Firefly Pro Plus → Short Description</a></p>
+              <p><em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=883af3cb-8dcb-45c7-bd0c-1dfbe6196079&#x26;field=ctas%5Bq5bu0x0jqo%5D">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → ctas[Create with Firefly]</a></strong></em></p>
+              <p><a href="/federal/assets/svgs/firefly-appicon-256.svg">https://main--federal--adobecom.aem.page/federal/assets/svgs/firefly-appicon-256.svg</a></p>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=883af3cb-8dcb-45c7-bd0c-1dfbe6196079&#x26;field=callout">mas-field: ACOM / Headless / Individual / com / Firefly Pro Plus → Callout text</a></p>
+            </div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_180a8327664c8013005414b32d539cb95ce16ef7a.webp?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_180a8327664c8013005414b32d539cb95ce16ef7a.webp?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/webp" srcset="./media_180a8327664c8013005414b32d539cb95ce16ef7a.webp?width=2000&#x26;format=webp&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="" src="./media_180a8327664c8013005414b32d539cb95ce16ef7a.webp?width=750&#x26;format=webp&#x26;optimize=medium" width="3074" height="5464">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=08350c9b-b3aa-4dbb-8905-95fb10d7784b&#x26;field=subtitle">mas-field: ACOM / Headless / Individual / com / Acrobat Studio → Subtitle</a></p>
+              <h2 id="mas-field-acom--headless--individual--com--creative-cloud-individual--title-2"><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=08350c9b-b3aa-4dbb-8905-95fb10d7784b&#x26;field=cardTitle">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Title</a></h2>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=08350c9b-b3aa-4dbb-8905-95fb10d7784b&#x26;field=description">mas-field: ACOM / Headless / Individual / com / Creative Cloud Individual → Product description</a></p>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=08350c9b-b3aa-4dbb-8905-95fb10d7784b&#x26;field=shortDescription">mas-field: ACOM / Headless / Individual / com / Acrobat Studio → Short Description</a><br><em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=08350c9b-b3aa-4dbb-8905-95fb10d7784b&#x26;field=ctas%5Btspga7lgtl%5D">mas-field: ACOM / Headless / Individual / com / Acrobat Studio → ctas[Free trial - segmentation - modal]</a></strong></em></p>
+              <p><em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=ctas%5Br3c06qn3rq%5D">mas-field: ACOM / Headless / Individual / EDU / Creative Cloud Individual → ctas[KR Only Buy Now]</a></strong></em></p>
+              <p><a href="/federal/assets/svgs/acrobat-pro.svg">https://main--federal--adobecom.aem.page/federal/assets/svgs/acrobat-pro.svg</a></p>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=08350c9b-b3aa-4dbb-8905-95fb10d7784b&#x26;field=callout">mas-field: ACOM / Headless / Individual / com / Acrobat Studio → Callout text</a></p>
+            </div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_13dac5079e7f5c35eb785e3e282b020d3859f4c5a.webp?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_13dac5079e7f5c35eb785e3e282b020d3859f4c5a.webp?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/webp" srcset="./media_13dac5079e7f5c35eb785e3e282b020d3859f4c5a.webp?width=2000&#x26;format=webp&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="" src="./media_13dac5079e7f5c35eb785e3e282b020d3859f4c5a.webp?width=750&#x26;format=webp&#x26;optimize=medium" width="3074" height="5464">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>Adobe for Business</p>
+              <h2 id="mas-field-acom--headless--team--com--creative-cloud-team--title"><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=1f0f7ca5-bdcc-4294-8dc7-5497bedd54a7&#x26;field=cardTitle">mas-field: ACOM / Headless / Team / com / Creative Cloud Team → Title</a></h2>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=1f0f7ca5-bdcc-4294-8dc7-5497bedd54a7&#x26;field=description">mas-field: ACOM / Headless / Team / com / Creative Cloud Team → Product description</a></p>
+              <p><em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=1f0f7ca5-bdcc-4294-8dc7-5497bedd54a7&#x26;field=ctas%5Bbq2chz9b6m%5D">mas-field: ACOM / Headless / Team / com / Creative Cloud Team → ctas[It starts with Adobe]</a></strong></em></p>
+              <p><a href="/federal/assets/svgs/experience-cloud-logo.svg">https://main--federal--adobecom.aem.page/federal/assets/svgs/experience-cloud-logo.svg</a></p>
+              <p><a href="https://business.adobe.com">Adobe for Business</a></p>
+            </div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_117290bb35cebd4038b07dd09d84f6b7bb026c5e9.webp?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_117290bb35cebd4038b07dd09d84f6b7bb026c5e9.webp?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/webp" srcset="./media_117290bb35cebd4038b07dd09d84f6b7bb026c5e9.webp?width=2000&#x26;format=webp&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="" src="./media_117290bb35cebd4038b07dd09d84f6b7bb026c5e9.webp?width=750&#x26;format=webp&#x26;optimize=medium" width="3074" height="5464">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=subtitle">mas-field: ACOM / Headless / Individual / EDU / Creative Cloud Individual → Subtitle</a></p>
+              <h2 id="mas-field-acom--headless--individual--edu--creative-cloud-individual--title"><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=cardTitle">mas-field: ACOM / Headless / Individual / EDU / Creative Cloud Individual → Title</a></h2>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=description">mas-field: ACOM / Headless / Individual / EDU / Creative Cloud Individual → Product description</a><br><br><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=prices">mas-field: ACOM / Headless / Individual / EDU / Creative Cloud Individual → Product price</a></p>
+              <p><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=ctas%5B2u25ddjvjn%5D">mas-field: ACOM / Headless / Individual / EDU / Creative Cloud Individual → ctas[</a></strong><em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=ctas%5B2u25ddjvjn%5D">Free trial</a></strong></em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=ctas%5B2u25ddjvjn%5D"> - segmentation - modal]</a></strong></p>
+              <p><em><strong><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=ctas%5Br3c06qn3rq%5D">mas-field: ACOM / Headless / Individual / EDU / Creative Cloud Individual → ctas[KR Only Buy Now]</a></strong></em></p>
+              <p><a href="/federal/assets/svgs/creative-cloud.svg">https://main--federal--adobecom.aem.page/federal/assets/svgs/creative-cloud.svg</a></p>
+              <p><a href="https://mas.adobe.com/studio.html#content-type=merch-card&#x26;page=content&#x26;path=acom&#x26;query=45b98b9f-55cf-4cbd-97ea-ece1175a0a83&#x26;field=callout">mas-field: ACOM / Headless / Individual / EDU / Creative Cloud Individual → Callout text</a></p>
+            </div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_1690113d62812c36efb9ae3f8ddbb15bbb7a3b242.webp?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_1690113d62812c36efb9ae3f8ddbb15bbb7a3b242.webp?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/webp" srcset="./media_1690113d62812c36efb9ae3f8ddbb15bbb7a3b242.webp?width=2000&#x26;format=webp&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="" src="./media_1690113d62812c36efb9ae3f8ddbb15bbb7a3b242.webp?width=750&#x26;format=webp&#x26;optimize=medium" width="3074" height="5464">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div>tablet</div>
+          </div>
+          <div>
+            <div></div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_13242b5f4fbac166bb046b25eacc1fd0b026aeff4.png?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_13242b5f4fbac166bb046b25eacc1fd0b026aeff4.png?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/png" srcset="./media_13242b5f4fbac166bb046b25eacc1fd0b026aeff4.png?width=2000&#x26;format=png&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="https://main--upp--adobecom.aem.page/homepage/assets/video/sr/router-marquee/media_12b79042476ff5306e627654877c58085eacf9cf0.mp4#_autoplay |" src="./media_13242b5f4fbac166bb046b25eacc1fd0b026aeff4.png?width=750&#x26;format=png&#x26;optimize=medium" width="2880" height="1620">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div></div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_1d6cf09d5960d93d4029aac69a11ae9fc1495295e.png?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_1d6cf09d5960d93d4029aac69a11ae9fc1495295e.png?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/png" srcset="./media_1d6cf09d5960d93d4029aac69a11ae9fc1495295e.png?width=2000&#x26;format=png&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="https://main--upp--adobecom.aem.page/homepage/assets/video/sr/router-marquee/media_1b79b8d240c8d6ea3dd5235f681a2bea24f0c5582.mp4#_autoplay |" src="./media_1d6cf09d5960d93d4029aac69a11ae9fc1495295e.png?width=750&#x26;format=png&#x26;optimize=medium" width="3840" height="2160">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div></div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_18b3975a3c8bb81f52849b273dcb0c840d80f2687.png?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_18b3975a3c8bb81f52849b273dcb0c840d80f2687.png?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/png" srcset="./media_18b3975a3c8bb81f52849b273dcb0c840d80f2687.png?width=2000&#x26;format=png&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="https://main--upp--adobecom.aem.page/homepage/assets/video/sr/router-marquee/media_1a42397066428d422823ffd54e7a66ec4998a3fd8.mp4#_autoplay |" src="./media_18b3975a3c8bb81f52849b273dcb0c840d80f2687.png?width=750&#x26;format=png&#x26;optimize=medium" width="2880" height="1620">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div></div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_18b56a41a7083c38202882bad11d7c37da794e951.png?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_18b56a41a7083c38202882bad11d7c37da794e951.png?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/png" srcset="./media_18b56a41a7083c38202882bad11d7c37da794e951.png?width=2000&#x26;format=png&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="https://main--upp--adobecom.aem.page/homepage/assets/video/sr/router-marquee/media_1fa8617c753dadad2b5de772c544a1091570c94b4.mp4#_autoplay |" src="./media_18b56a41a7083c38202882bad11d7c37da794e951.png?width=750&#x26;format=png&#x26;optimize=medium" width="2880" height="1620">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div></div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_1b9b294da3361c68f12b431695d1972cb866324e9.png?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_1b9b294da3361c68f12b431695d1972cb866324e9.png?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/png" srcset="./media_1b9b294da3361c68f12b431695d1972cb866324e9.png?width=2000&#x26;format=png&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="https://main--upp--adobecom.aem.page/homepage/assets/video/sr/router-marquee/media_172ab3221a924e6451f0eeae9224a41c84f93724e.mp4#_autoplay |" src="./media_1b9b294da3361c68f12b431695d1972cb866324e9.png?width=750&#x26;format=png&#x26;optimize=medium" width="3840" height="2160">
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="section-metadata">
+          <div>
+            <div>starting-marquee</div>
+            <div>1</div>
+          </div>
+          <div>
+            <div>style</div>
+            <div>parallax-move-up-fast</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p><a href="/homepage/fragments/loggedout/redesign/default/everything-you-need/everything-you-need">https://main--upp--adobecom.aem.page/homepage/fragments/loggedout/redesign/default/everything-you-need/everything-you-need</a></p>
+      </div>
+      <div>
+        <p><a href="/homepage/fragments/loggedout/redesign/default/explore-whats-new/explore-whats-new">https://main--upp--adobecom.aem.page/homepage/fragments/loggedout/redesign/default/explore-whats-new/explore-whats-new</a></p>
+      </div>
+      <div>
+        <div class="block-group-start hide-block">
+          <div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p><a href="/homepage/fragments/loggedout/redesign/default/customer-testimonials/customer-testimonials">https://main--upp--adobecom.aem.page/homepage/fragments/loggedout/redesign/default/customer-testimonials/customer-testimonials</a></p>
+      </div>
+      <div>
+        <div class="block-group-end hide-block">
+          <div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p><a href="/homepage/fragments/loggedout/redesign/default/news/news">https://main--upp--adobecom.aem.page/homepage/fragments/loggedout/redesign/default/news/news</a></p>
+      </div>
+      <div>
+        <div class="section-metadata">
+          <div>
+            <div>anchor</div>
+            <div>brand-concierge</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="rich-content center dark hero body-lg button-lg container">
+          <div>
+            <div>
+              <h2 id="tools-that-work-for-you">Tools that work for you.</h2>
+              <p>Bring any idea to life with products for creators, businesses, and beyond.</p>
+              <p><em><a href="https://www.adobe.com/products/catalog.html">See all products</a></em></p>
+            </div>
+          </div>
+        </div>
+        <div class="section-metadata">
+          <div>
+            <div>background</div>
+            <div>
+              <picture>
+                <source type="image/webp" srcset="./media_172052cb5b8572f330e80da31f57777f7252dc36a.jpg?width=2000&#x26;format=webply&#x26;optimize=medium" media="(min-width: 600px)">
+                <source type="image/webp" srcset="./media_172052cb5b8572f330e80da31f57777f7252dc36a.jpg?width=750&#x26;format=webply&#x26;optimize=medium">
+                <source type="image/jpeg" srcset="./media_172052cb5b8572f330e80da31f57777f7252dc36a.jpg?width=2000&#x26;format=jpg&#x26;optimize=medium" media="(min-width: 600px)">
+                <img loading="lazy" alt="" src="./media_172052cb5b8572f330e80da31f57777f7252dc36a.jpg?width=750&#x26;format=jpg&#x26;optimize=medium" width="5760" height="2360">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div>style</div>
+            <div>spacing-4xl-top, parallax-garage-door-reveal</div>
+          </div>
+          <div>
+            <div>images</div>
+            <div>3x</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p><a href="/homepage/fragments/loggedout/redesign/default/all-products-card/all-products-card">https://main--upp--adobecom.aem.page/homepage/fragments/loggedout/redesign/default/all-products-card/all-products-card</a></p>
+      </div>
+      <div>
+        <div class="martech-metadata">
+          <div>
+            <div>
+              <h3 id="adobe-homepage-1">Adobe homepage</h3>
+            </div>
+            <div>
+              <h3 id="adobe-homepage-2">Adobe homepage</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="create-at-the-highest-level">Create at the highest level.</h3>
+            </div>
+            <div>
+              <h3 id="create-at-the-highest-level-1">Create at the highest level.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="see-terms">See terms</h3>
+            </div>
+            <div>
+              <h3 id="see-terms-1">See terms</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="free-trial">Free trial</h3>
+            </div>
+            <div>
+              <h3 id="free-trial-1">Free trial</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="creativity-and-design">Creativity and design</h3>
+            </div>
+            <div>
+              <h3 id="creativity-and-design-1">Creativity and design</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="all-the-best-models-all-in-one-place">All the best models, all in one place.</h3>
+            </div>
+            <div>
+              <h3 id="all-the-best-models-all-in-one-place-1">All the best models, all in one place.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="create-with-firefly">Create with Firefly</h3>
+            </div>
+            <div>
+              <h3 id="create-with-firefly-1">Create with Firefly</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="content-creation">Content creation</h3>
+            </div>
+            <div>
+              <h3 id="content-creation-1">Content creation</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="get-work-done-faster">Get work done. Faster.</h3>
+            </div>
+            <div>
+              <h3 id="get-work-done-faster-1">Get work done. Faster.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="pdf-and-document-essentials">PDF and document essentials</h3>
+            </div>
+            <div>
+              <h3 id="pdf-and-document-essentials-1">PDF and document essentials</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="orchestrate-customer-experiences-with-ai">Orchestrate customer experiences with AI.</h3>
+            </div>
+            <div>
+              <h3 id="orchestrate-customer-experiences-with-ai-1">Orchestrate customer experiences with AI.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="it-starts-with-adobe">It starts with Adobe</h3>
+            </div>
+            <div>
+              <h3 id="it-starts-with-adobe-1">It starts with Adobe</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="adobe-for-business">Adobe for Business</h3>
+            </div>
+            <div>
+              <h3 id="adobe-for-business-1">Adobe for Business</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="students-and-teachers-save-71">Students and teachers save 71%.</h3>
+            </div>
+            <div>
+              <h3 id="students-and-teachers-save-71-1">Students and teachers save 71%.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="students-and-teachers">Students and teachers</h3>
+            </div>
+            <div>
+              <h3 id="students-and-teachers-1">Students and teachers</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="everything-you-need-to-make-anything">Everything you need to make anything.</h3>
+            </div>
+            <div>
+              <h3 id="everything-you-need-to-make-anything-1">Everything you need to make anything.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="create-with-the-top-tools">Create with the top tools.</h3>
+            </div>
+            <div>
+              <h3 id="create-with-the-top-tools-1">Create with the top tools.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="generate-stunning-content-easily">Generate stunning content easily.</h3>
+            </div>
+            <div>
+              <h3 id="generate-stunning-content-easily-1">Generate stunning content easily.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="do-it-all-in-less-time">Do it all in less time.</h3>
+            </div>
+            <div>
+              <h3 id="do-it-all-in-less-time-1">Do it all in less time.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="orchestrate-customer-experiences">Orchestrate customer experiences.</h3>
+            </div>
+            <div>
+              <h3 id="orchestrate-customer-experiences-1">Orchestrate customer experiences.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="students-and-teachers-save-big">Students and teachers save big.</h3>
+            </div>
+            <div>
+              <h3 id="students-and-teachers-save-big-1">Students and teachers save big.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="explore-whats-new">Explore what's new.</h3>
+            </div>
+            <div>
+              <h3 id="explore-whats-new-1">Explore what's new.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="introducing-color-mode">Introducing Color Mode.​</h3>
+            </div>
+            <div>
+              <h3 id="introducing-color-mode-1">Introducing Color Mode.​</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="explore-premiere">Explore Premiere</h3>
+            </div>
+            <div>
+              <h3 id="explore-premiere-1">Explore Premiere</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="one-place-to-make-anything">One place to make anything.</h3>
+            </div>
+            <div>
+              <h3 id="one-place-to-make-anything-1">One place to make anything.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="explore-firefly">Explore Firefly</h3>
+            </div>
+            <div>
+              <h3 id="explore-firefly-1">Explore Firefly</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="blend-images-seamlessly-with-harmonize">Blend images seamlessly with Harmonize.</h3>
+            </div>
+            <div>
+              <h3 id="blend-images-seamlessly-with-harmonize-1">Blend images seamlessly with Harmonize.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="explore-photoshop">Explore Photoshop</h3>
+            </div>
+            <div>
+              <h3 id="explore-photoshop-1">Explore Photoshop</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="creative-cloud-lets-me-create-effortlessly-and-allows-me-to-focus-on-whats-important">"Creative Cloud lets me create effortlessly and allows me to focus on what's important."</h3>
+            </div>
+            <div>
+              <h3 id="creative-cloud-lets-me-create-effortlessly-and-allows-me-to-focus-on-whats-important-1">"Creative Cloud lets me create effortlessly and allows me to focus on what's important."</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="see-all-plans">See all plans</h3>
+            </div>
+            <div>
+              <h3 id="see-all-plans-1">See all plans</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="with-acrobat-i-can-summarize-key-contract-details-in-seconds">"With Acrobat, I can summarize key contract details in seconds."</h3>
+            </div>
+            <div>
+              <h3 id="with-acrobat-i-can-summarize-key-contract-details-in-seconds-1">"With Acrobat, I can summarize key contract details in seconds."</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="if-it-wasnt-for-creative-cloud-i-dont-think-id-be-here-i-feel-like-i-can-create-anything">"If it wasn't for Creative Cloud, I don't think I'd be here. I feel like I can create anything."</h3>
+            </div>
+            <div>
+              <h3 id="if-it-wasnt-for-creative-cloud-i-dont-think-id-be-here-i-feel-like-i-can-create-anything-1">"If it wasn't for Creative Cloud, I don't think I'd be here. I feel like I can create anything."</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="adobe-news">Adobe News</h3>
+            </div>
+            <div>
+              <h3 id="adobe-news-1">Adobe News</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="explore-new-ways-to-share-information-with-pdf-spaces">Explore new ways to share information with PDF Spaces.</h3>
+            </div>
+            <div>
+              <h3 id="explore-new-ways-to-share-information-with-pdf-spaces-1">Explore new ways to share information with PDF Spaces.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="read-story">Read story</h3>
+            </div>
+            <div>
+              <h3 id="read-story-1">Read story</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="how-adobe-transformed-its-email-marketing">How Adobe transformed its email marketing.</h3>
+            </div>
+            <div>
+              <h3 id="how-adobe-transformed-its-email-marketing-1">How Adobe transformed its email marketing.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="adobe-for-creativity-a-new-way-to-create-now-in-claude">Adobe for creativity: a new way to create, now in Claude.</h3>
+            </div>
+            <div>
+              <h3 id="adobe-for-creativity-a-new-way-to-create-now-in-claude-1">Adobe for creativity: a new way to create, now in Claude.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="tools-that-work-for-you-1">Tools that work for you.</h3>
+            </div>
+            <div>
+              <h3 id="tools-that-work-for-you-2">Tools that work for you.</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="see-all-products">See all products</h3>
+            </div>
+            <div>
+              <h3 id="see-all-products-1">See all products</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="firefly">Firefly</h3>
+            </div>
+            <div>
+              <h3 id="firefly-1">Firefly</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="link">link</h3>
+            </div>
+            <div>
+              <h3 id="link-1">link</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="adobe-acrobat">Adobe Acrobat</h3>
+            </div>
+            <div>
+              <h3 id="adobe-acrobat-1">Adobe Acrobat</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="photoshop">Photoshop</h3>
+            </div>
+            <div>
+              <h3 id="photoshop-1">Photoshop</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="premiere">Premiere</h3>
+            </div>
+            <div>
+              <h3 id="premiere-1">Premiere</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="creative-cloud">Creative Cloud</h3>
+            </div>
+            <div>
+              <h3 id="creative-cloud-1">Creative Cloud</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="genstudio">GenStudio</h3>
+            </div>
+            <div>
+              <h3 id="genstudio-1">GenStudio</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="business-products">Business Products</h3>
+            </div>
+            <div>
+              <h3 id="business-products-1">Business Products</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="illustrator">Illustrator</h3>
+            </div>
+            <div>
+              <h3 id="illustrator-1">Illustrator</h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 id="all-products">All products</h3>
+            </div>
+            <div>
+              <h3 id="all-products-1">All products</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
+
+
+
+https://www.adobe.com/

@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "sanitized_at": "2026-10-17",
+  "originals_archived_outside_repository": true,
+  "scope": "Privacy redaction for publication; no network requests and no changes to measured status, timing, title, content-length, result rows or recorded media.",
+  "original_content_hashes": "Body/header hashes in benchmark records describe original captured responses, not redacted published headers. Original/published file hashes below distinguish the evidence copies.",
+  "totals": {
+    "nonce_values": 222,
+    "cookie_header_fields": 534,
+    "client_ip_occurrences": 80,
+    "anonymous_identifier_header_fields": 12
+  },
+  "files": [
+    {
+      "path": "docs/benchmarks/2026-10-16/baseline-ab-verified/upstream.jsonl",
+      "original_sha256": "9ce530c2f93baf94e44a7a67a6dd5b8bd305f6c47863e3780084abfc9a762741",
+      "published_sha256": "87369e50e9fc459ba0fb32b2d4131bf0aa0e85dcfb905104db6697194c457235",
+      "redactions": {
+        "nonce_values": 18,
+        "cookie_header_fields": 49,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    },
+    {
+      "path": "docs/benchmarks/2026-10-16/baseline-ab-verified/fork.jsonl",
+      "original_sha256": "9d1f6ced23e106768506571e5d61478e77bc6990cee45eaef10da82dfdadc027",
+      "published_sha256": "a41864e26f80a961ef4c4cfeb11ee16104e8393692f021a5ff63d243fccac25d",
+      "redactions": {
+        "nonce_values": 22,
+        "cookie_header_fields": 56,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    },
+    {
+      "path": "docs/benchmarks/2026-10-16/baseline-ba-verified/upstream.jsonl",
+      "original_sha256": "b60406ebd46944beb9df2248f4ad057dd82df5e2edf3b5ff035b1e0a3a1a8628",
+      "published_sha256": "521427a23a9c1d07930f16785a74bed197747b435f23c076e34c927d9f607518",
+      "redactions": {
+        "nonce_values": 18,
+        "cookie_header_fields": 48,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    },
+    {
+      "path": "docs/benchmarks/2026-10-16/baseline-ba-verified/fork.jsonl",
+      "original_sha256": "3c0e4413951ebd0698e74e1cbbf8649195bd434a76e7cfd9eef55032b40dc5f5",
+      "published_sha256": "471d0a3275d04d923184dcbf992ef430de1ebe59fa828bb7f2a352c00e4f0524",
+      "redactions": {
+        "nonce_values": 22,
+        "cookie_header_fields": 55,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    },
+    {
+      "path": "docs/benchmarks/2026-10-16/matched-verified/upstream.jsonl",
+      "original_sha256": "17e3167615443b2a834a1633225900f04b6dc6da57966b65279fdf8faf292113",
+      "published_sha256": "096225d24b871b06ce1aed5eac1af02a24826d3dfc6ddefcad3570d469633b68",
+      "redactions": {
+        "nonce_values": 22,
+        "cookie_header_fields": 52,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    },
+    {
+      "path": "docs/benchmarks/2026-10-16/matched-verified/fork.jsonl",
+      "original_sha256": "0f08f50ca1b5c2573d4f2a33bd53b97a397a8e5573d65ff822a99d04c684a0a3",
+      "published_sha256": "0b4f761ea4a3004fcdb650af8dda5cfd3a73947bf30f8a1c1ddbbe137dc75fb2",
+      "redactions": {
+        "nonce_values": 21,
+        "cookie_header_fields": 55,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    },
+    {
+      "path": "docs/benchmarks/2026-10-16/redirects-verified/upstream.jsonl",
+      "original_sha256": "9dc2af1ccb674682a7652287c2686377daeaf21722236cc38380feb9abe0b4dd",
+      "published_sha256": "fd84b3cb99cb10b5c510b908e823f7068ebae2b1e12794df2c2a5dceb48c5b72",
+      "redactions": {
+        "nonce_values": 24,
+        "cookie_header_fields": 53,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 2
+      }
+    },
+    {
+      "path": "docs/benchmarks/2026-10-16/redirects-verified/fork.jsonl",
+      "original_sha256": "3f12e170f882de2a17b7a107d5b55d75613dd5939cac19d69756e0ae96ed147c",
+      "published_sha256": "7b5f0bfd6e6678a084f02c05e936c6f2957a158dce2063ceb2d1a12cea2e9b9b",
+      "redactions": {
+        "nonce_values": 31,
+        "cookie_header_fields": 61,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 2
+      }
+    },
+    {
+      "path": "docs/benchmarks/2026-10-16/native-control-verified/upstream.jsonl",
+      "original_sha256": "c884d133e241507f356ad4818814b021794dc48e3e3a4ba049f159813f995e4d",
+      "published_sha256": "a7c727814232302b75be13f039ba40993db050af254b9000cd15de74a770092f",
+      "redactions": {
+        "nonce_values": 22,
+        "cookie_header_fields": 53,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    },
+    {
+      "path": "docs/benchmarks/2026-10-16/native-control-verified/fork.jsonl",
+      "original_sha256": "d5247bc1096aa47c20e4112ca811e24d38a3ce358cacbdc22a08f2366fa41cee",
+      "published_sha256": "9ab940d9572f8d3a186583d2d9e921291f40370e6faf5ac5646f18dbc16f6995",
+      "redactions": {
+        "nonce_values": 22,
+        "cookie_header_fields": 52,
+        "client_ip_occurrences": 8,
+        "anonymous_identifier_header_fields": 1
+      }
+    }
+  ]
+}

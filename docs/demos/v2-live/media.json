@@ -1,0 +1,34 @@
+{
+  "input_sha256": {
+    "upstream/httpx.mp4": "f735527caa78b202e73511c3a0b6ebb24f294019e47ee378a199443919707037",
+    "fork/undetected-httpx.mp4": "b12c74e3662f6a57d5658c2225ad56c2a33a79a5bb788c602358c8dd4bc5f995"
+  },
+  "capture_metadata_sha256": "da45fb0ba720252d25fa3f467b8ce9a55d934d93bba2e97cdfcd84b9d7d9b804",
+  "durations_seconds": [
+    8.72,
+    9.36
+  ],
+  "output": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 2400,
+        "height": 552,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "9.360000"
+    }
+  },
+  "output_sha256": "1b22661d0c01eff8448b57e4afeeeb7eb058c35386767e7e716c620343f8b785",
+  "composer_sha256": "fac7ca478bc5664ca4e9f79cd0fd3091082ff3e1e37d08c377e121848c9debd9",
+  "edit": "Side-by-side labels; shorter completed clip held on its last frame. No execution-speed changes.",
+  "original_capture_metadata_sha256": "7c7a9c88cfff583f113e9e20f7ec21544b07d5625bd52e298270b7101022787b",
+  "publication": {
+    "sanitized_capture_metadata": true,
+    "note": "Only capture metadata provenance changed; input recordings, composite output and their hashes are unchanged."
+  }
+}

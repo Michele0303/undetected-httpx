@@ -1,0 +1,87 @@
+GET / HTTP/1.1
+Host: platform.openai.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36
+Accept-Encoding: gzip
+
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=86400
+Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+Cf-Cache-Status: DYNAMIC
+Cf-Ray: a4ba4df0bf497677-FCO
+Content-Security-Policy: default-src 'self'; script-src 'report-sample' 'nonce-[REDACTED_TOKEN]' 'unsafe-inline' 'strict-dynamic' https://openaiapi-site.azureedge.net https://js.intercomcdn.com https://app.intercom.io https://widget.intercom.io https://js.stripe.com https://chatgpt.com; style-src 'report-sample' 'self' 'unsafe-inline' https://openaiapi-site.azureedge.net; object-src 'none'; base-uri 'none'; connect-src 'self' blob: https://api.openai.com https://cdn.openai.com https://cdn.platform.openai.com https://us.api.openai.com https://eu.api.openai.com https://au.api.openai.com https://jp.api.openai.com https://sg.api.openai.com https://in.api.openai.com https://ca.api.openai.com https://kr.api.openai.com https://ae.api.openai.com https://gb.api.openai.com https://api.unified-3s.api.openai.org https://api.unified-0s.api.openai.org https://api.openai.org https://api.openai-staging.com wss://api.openai.com wss://eu.api.openai.com wss://us.api.openai.com wss://au.api.openai.com wss://jp.api.openai.com wss://sg.api.openai.com wss://in.api.openai.com wss://ca.api.openai.com wss://kr.api.openai.com wss://ae.api.openai.com wss://gb.api.openai.com wss://api.openai.org wss://api.openai-staging.com wss://ws.chatgpt.com wss://ws.chatgpt-staging.com https://auth0.openai.com https://auth.openai.com https://chatgpt.com https://504-SWE-347.mktoweb.com https://browser-intake-datadoghq.com https://api.stripe.com https://*.intercom.io wss://*.intercom.io https://uploads.intercomcdn.com https://uploads.intercomusercontent.com https://*.sentry.io https://api.hsforms.com https://*.algolia.net https://*.algolia.io https://*.oaiusercontent.com https://status.openai.com https://chatgpt.com https://featureassets.org https://prodregistryv2.org https://ab.chatgpt.com https://dot-control-plane.gateway.unified-1.api.openai.com;  font-src 'self' data: https://cdn.openai.com/  https://cdn.platform.openai.com https://js.intercomcdn.com http://fonts.intercomcdn.com; child-src 'self' blob: https://js.stripe.com https://hooks.stripe.com https://auth0.openai.com https://auth.openai.com https://share.hsforms.com https://intercom-sheets.com https://www.intercom-reporting.com https://www.youtube.com https://player.vimeo.com https://fast.wistia.net https://www.youtube-nocookie.com https://inquiry.withpersona.com https://chatgpt.com https://integrity.openai.com; frame-src 'self' https://gpt5-coding-examples.vercel.app https://js.stripe.com https://*.js.stripe.com https://cdn.openai.com/ https://hooks.stripe.com https://auth0.openai.com https://auth.openai.com https://504-SWE-347.mktoweb.com https://share.hsforms.com https://intercom-sheets.com https://www.intercom-reporting.com https://www.youtube.com https://player.vimeo.com https://fast.wistia.net https://www.youtube-nocookie.com https://inquiry.withpersona.com https://chatgpt.com https://integrity.openai.com https://cdn.platform.openai.com/; img-src 'self' blob: https: android-webview-video-poster: data:; manifest-src 'self' https://openaiapi-site.azureedge.net; media-src 'self' blob: data: https://openaiassets.blob.core.windows.net https://js.intercomcdn.com https://cdn.openai.com; form-action 'self' https://504-SWE-347.mktoweb.com https://intercom.help https://api-iam.intercom.io https://messenger-apps.intercom.io https://*.statuspage.io; report-uri https://o33249.ingest.sentry.io/api/5415417/security/?sentry_key=a420f427111d4831b9e18763b745d20e&sentry_environment=production;
+Content-Type: text/html
+Date: Fri, 16 Oct 2026 21:54:51 GMT
+Nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=V4HGLeoh1IUQQ9QB98tnFyGb5bidRte4QADM1mfXwy6Ubygl0W4thoGPSgusNs7bBLGAujnl7Byu3TNdHFZNAJ7ZrmIfqBjSdU20Cz5TdMF9GmDYxIelUd%2F5skF12b%2FQsJX2xOE%3D"}]}
+Server: cloudflare
+Set-Cookie: [REDACTED_COOKIE_VALUES]
+Set-Cookie: [REDACTED_COOKIE_VALUES]
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Oai-Base: base
+X-Openai-Proxy-Wasm: v0.1
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="/favicon-platform.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon-platform.svg" />
+        <link rel="preconnect" href="https://cdn.openai.com" />
+        <link rel="preconnect" href="https://OWZ3QOIIJA-dsn.algolia.net" crossorigin />
+        <!-- Preload critical fonts -->
+        <link
+            rel="preload"
+            href="https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISans-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="preload"
+            href="https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISans-Semibold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <title>OpenAI Platform</title>
+        <link rel="manifest" href="/manifest.json" />
+
+        <!-- Facebook / LinkedIn Meta Tags -->
+        <meta property="og:title" content="OpenAI Platform" />
+        <meta
+            property="og:image"
+            content="https://cdn.openai.com/API/images/platform-opengraph.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://platform.openai.com" />
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="platform.openai.com" />
+        <meta property="twitter:url" content="https://platform.openai.com" />
+        <meta name="twitter:title" content="OpenAI Platform" />
+        <meta
+            name="twitter:image"
+            content="https://cdn.openai.com/API/images/platform-opengraph.png"
+        />
+      <script nonce="[REDACTED_NONCE]" type="module" crossorigin src="/static/index-BvuMbhwy.js"></script>
+      <link rel="stylesheet" crossorigin href="/static/CvcdKiPfJ6.css">
+      <script nonce="[REDACTED_NONCE]" type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
+      <script nonce="[REDACTED_NONCE]" type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script nonce="[REDACTED_NONCE]">window.OPENAI_REQUEST_CONTEXT={user:{country:"IT"}};</script>
+      <script nonce="[REDACTED_NONCE]" nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+      <script nonce="[REDACTED_NONCE]" nomodule crossorigin id="vite-legacy-polyfill" src="/static/polyfills-legacy-DHVxRXif.js"></script>
+      <script nonce="[REDACTED_NONCE]" nomodule crossorigin id="vite-legacy-entry" data-src="/static/index-legacy-BcNZtuIw.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+    <script>[REDACTED_CHALLENGE_PAYLOAD]</script></body>
+</html>
+
+
+
+https://platform.openai.com/

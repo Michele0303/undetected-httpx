@@ -1,0 +1,36 @@
+File: undetected-httpx.tape
+Output .gif undetected-httpx.gif
+Output .mp4 undetected-httpx.mp4
+Output .ascii terminal.ascii
+Require undetected-httpx
+Set Shell bash
+Set FontFamily Menlo
+Set FontSize 28
+Set Width 1200
+Set Height 440
+Set Framerate 25
+Set PlaybackSpeed 1
+Set Padding 36
+Set Margin 16
+Set MarginFill #11111b
+Set BorderRadius 12
+Set WindowBar Colorful
+Set WindowBarSize 36
+Set CursorBlink true
+Set TypingSpeed 25ms
+Set Theme {"name":"v1-terminal","background":"#1d1c2d","foreground":"#cdd6f4","black":"#45475a","red":"#f38ba8","green":"#a6e3a1","yellow":"#f9e2af","blue":"#89b4fa","magenta":"#cba6f7","cyan":"#94e2d5","white":"#bac2de","brightBlack":"#585b70","brightRed":"#f38ba8","brightGreen":"#a6e3a1","brightYellow":"#f9e2af","brightBlue":"#89b4fa","brightMagenta":"#cba6f7","brightCyan":"#94e2d5","brightWhite":"#a6adc8","selection":"#585b70","cursor":"#f5e0dc"}
+Hide 
+Type 0ms export PS1='❯ '; PROMPT_COMMAND='echo $? > exit-code.txt'; clear
+Enter 1
+Sleep 500ms
+Show 
+Type undetected-httpx -l list.txt -sc -silent -config demo.yml
+Sleep 300ms
+Enter 1
+Sleep 300ms
+Wait Line ^❯$
+Sleep 6s
+Screenshot final.png
+Creating undetected-httpx.gif...
+Creating undetected-httpx.mp4...
+Host your GIF on vhs.charm.sh: vhs publish <file>.gif

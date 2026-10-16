@@ -1,0 +1,38 @@
+GET / HTTP/1.1
+Host: www.adobe.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 403 Forbidden
+Connection: close
+Content-Length: 363
+Akamai-Cache-Status: NotCacheable from child
+Akamai-Grn-Www.adobe.com: 0.0e355552.1792187678.aa1ed9f
+Alt-Svc: h3=":443"; ma=93600
+Content-Type: text/html
+Date: Fri, 16 Oct 2026 21:54:38 GMT
+Expires: Fri, 16 Oct 2026 21:54:38 GMT
+Mime-Version: 1.0
+Server: AkamaiGHost
+Server-Timing: cdn-cache; desc=HIT
+Server-Timing: edge; dur=1
+Server-Timing: sis; desc=0
+Server-Timing: geo; desc=IT
+Server-Timing: ak_p; desc="1792187678436_1381315854_178384287_17_12336_14_17_-";dur=1
+Strict-Transport-Security: max-age=15768000
+
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;www&#46;adobe&#46;com&#47;" on this server.<P>
+Reference&#32;&#35;18&#46;e355552&#46;1792187678&#46;aa1ed9f
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;e355552&#46;1792187678&#46;aa1ed9f</P>
+</BODY>
+</HTML>
+
+
+
+https://www.adobe.com/

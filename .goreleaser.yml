@@ -1,0 +1,65 @@
+version: 2
+project_name: undetected-httpx
+
+snapshot:
+  version_template: '2.0.0-dev'
+
+before:
+  hooks:
+    - go mod download
+
+builds:
+  - id: undetected-httpx
+    main: ./cmd/undetected-httpx
+    binary: undetected-httpx
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+
+archives:
+  - formats: [tar.gz]
+    name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+    files:
+      - LICENSE
+      - LICENSE.md
+      - README.md
+      - src: docs/*.*
+        dst: docs
+        strip_parent: false
+      - src: docs/benchmarks/2026-10-16/*.*
+        dst: docs/benchmarks/2026-10-16
+        strip_parent: false
+      - src: docs/benchmarks/2026-10-16/*-verified/*.*
+        dst: docs/benchmarks/2026-10-16
+        strip_parent: false
+      - src: docs/demos/v2-live/*.*
+        dst: docs/demos/v2-live
+        strip_parent: false
+      - src: docs/demos/v2-live/capture/*.*
+        dst: docs/demos/v2-live/capture
+        strip_parent: false
+      - src: docs/demos/v2-live/capture/**/*
+        dst: docs/demos/v2-live/capture
+        strip_parent: false
+      - src: legacy/python/README.md
+        dst: legacy/python/README.md
+        strip_parent: false
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  disable: true
+
+# Packaging only. Publishing requires a separate release decision.
+release:
+  disable: true

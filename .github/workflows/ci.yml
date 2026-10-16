@@ -1,0 +1,34 @@
+name: Go CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.x'
+          cache: true
+      - name: Compile packages and run local fork regressions
+        run: make test
+      - name: Build both executable names
+        run: |
+          go build -trimpath -o bin/undetected-httpx ./cmd/undetected-httpx
+          go build -trimpath -o bin/httpx ./cmd/httpx
+      - name: Check version and help
+        run: |
+          bin/undetected-httpx -version
+          bin/undetected-httpx -h

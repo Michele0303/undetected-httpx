@@ -1,0 +1,5 @@
+/private/var/folders/d4/5xhs2sm905d7g3v47_n1lb8r0000gn/T/httpx-live-fork-kxlznemb/responses/response/ir.tripadvisor.com/d5f5702caa8dd135abc32272b5922a357be41879.txt https://ir.tripadvisor.com/ (200 OK)
+/private/var/folders/d4/5xhs2sm905d7g3v47_n1lb8r0000gn/T/httpx-live-fork-kxlznemb/responses/response/openai.com/684fc19810b16a25c59c6d15871b4b6ac61733f1.txt https://openai.com/ (200 OK)
+/private/var/folders/d4/5xhs2sm905d7g3v47_n1lb8r0000gn/T/httpx-live-fork-kxlznemb/responses/response/platform.openai.com/60c17ee40eecf35c38cb4e661cc4d285d365678b.txt https://platform.openai.com/ (200 OK)
+/private/var/folders/d4/5xhs2sm905d7g3v47_n1lb8r0000gn/T/httpx-live-fork-kxlznemb/responses/response/www.adobe.com/832eca2e40a331e29155baebe7cf67b98eb4f0b0.txt https://www.adobe.com/ (200 OK)
+/private/var/folders/d4/5xhs2sm905d7g3v47_n1lb8r0000gn/T/httpx-live-fork-kxlznemb/responses/response/www.npmjs.com/9413d228f62752d042633e009c65a1b37ac1cf4a.txt https://www.npmjs.com/ (200 OK)

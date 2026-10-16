@@ -1,0 +1,14 @@
+# Shared by both real binaries. No redirect following or inherited credentials.
+threads: 1
+rate-limit: 3
+timeout: 12
+retries: 0
+random-agent: false
+no-fallback-scheme: true
+disable-update-check: true
+header:
+  - "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+response-size-to-read: 2097152
+output: results.txt
+store-response: true
+store-response-dir: responses

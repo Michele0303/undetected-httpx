@@ -1,0 +1,594 @@
+package httpx
+
+import (
+	"bytes"
+	"context"
+	"crypto/tls"
+	"fmt"
+	"io"
+	"net"
+	"net/http"
+	"net/textproto"
+	"net/url"
+	"strconv"
+	"strings"
+	"time"
+
+	"github.com/Michele0303/undetected-httpx/v2/common/httputilz"
+	"github.com/microcosm-cc/bluemonday"
+	"github.com/projectdiscovery/cdncheck"
+	"github.com/projectdiscovery/fastdialer/fastdialer"
+	"github.com/projectdiscovery/fastdialer/fastdialer/ja3"
+	"github.com/projectdiscovery/fastdialer/fastdialer/ja3/impersonate"
+	"github.com/projectdiscovery/gologger"
+	"github.com/projectdiscovery/networkpolicy"
+	"github.com/projectdiscovery/rawhttp"
+	retryablehttp "github.com/projectdiscovery/retryablehttp-go"
+	"github.com/projectdiscovery/useragent"
+	"github.com/projectdiscovery/utils/generic"
+	pdhttputil "github.com/projectdiscovery/utils/http"
+	stringsutil "github.com/projectdiscovery/utils/strings"
+	urlutil "github.com/projectdiscovery/utils/url"
+	"golang.org/x/net/http2"
+)
+
+// HTTPX represent an instance of the library client
+type HTTPX struct {
+	client        *retryablehttp.Client
+	client2       *http.Client
+	Filters       []Filter
+	Options       *Options
+	htmlPolicy    *bluemonday.Policy
+	CustomHeaders map[string][]string
+	cdn           *cdncheck.Client
+	Dialer        *fastdialer.Dialer
+	NetworkPolicy *networkpolicy.NetworkPolicy
+}
+
+// New httpx instance
+func New(options *Options) (*HTTPX, error) {
+	if options == nil {
+		return nil, fmt.Errorf("HTTP options are required")
+	}
+	// Keep per-client cookie parsing and defaults out of caller-owned options.
+	copyOptions := *options
+	options = &copyOptions
+	if !options.NativeHTTP {
+		if options.Unsafe || options.ZTLS || options.TLSGrab || options.ExcludeCdn || options.SniName != "" || options.TlsImpersonate != "" || len(options.Resolvers) > 0 || options.NetworkPolicy != nil {
+			return nil, fmt.Errorf("raw HTTP, custom TLS, TLS metadata, CDN exclusions, resolvers and network policy require --native-http")
+		}
+		if options.Protocol != "" && options.Protocol != HTTP11 && options.Protocol != HTTP2 {
+			return nil, fmt.Errorf("browser transport supports automatic negotiation, -pr http11 or -pr http2")
+		}
+		if options.Browser == "" {
+			options.Browser = "chrome-latest"
+		}
+		options.RandomAgent = false
+		options.CdnCheck = "false"
+	}
+	httpx := &HTTPX{}
+	fastdialerOpts := fastdialer.DefaultOptions
+
+	// if the user specified any custom resolver disables system resolvers and syscall lookup fallback
+	if len(options.Resolvers) > 0 {
+		fastdialerOpts.ResolversFile = false
+		fastdialerOpts.EnableFallback = false
+	}
+
+	if options.NetworkPolicy != nil {
+		httpx.NetworkPolicy = options.NetworkPolicy
+		fastdialerOpts.NetworkPolicy = options.NetworkPolicy
+	}
+	fastdialerOpts.WithDialerHistory = true
+	fastdialerOpts.WithZTLS = options.ZTLS
+	if len(options.Resolvers) > 0 {
+		fastdialerOpts.BaseResolvers = options.Resolvers
+	}
+	fastdialerOpts.SNIName = options.SniName
+	dialer, err := fastdialer.NewDialer(fastdialerOpts)
+	if err != nil {
+		return nil, fmt.Errorf("could not create resolver cache: %s", err)
+	}
+	httpx.Dialer = dialer
+	initialized := false
+	defer func() {
+		if !initialized {
+			httpx.Close()
+		}
+	}()
+
+	httpx.Options = options
+
+	httpx.Options.parseCustomCookies()
+
+	var retryablehttpOptions = retryablehttp.DefaultOptionsSpraying
+	retryablehttpOptions.Timeout = httpx.Options.Timeout
+	retryablehttpOptions.RetryMax = httpx.Options.RetryMax
+	retryablehttpOptions.Trace = options.Trace
+	handleHSTS := func(req *http.Request) {
+		if req.Response.Header.Get("Strict-Transport-Security") == "" {
+			return
+		}
+
+		req.URL.Scheme = "https"
+	}
+
+	var redirectFunc = func(_ *http.Request, _ []*http.Request) error {
+		// Tell the http client to not follow redirect
+		return http.ErrUseLastResponse
+	}
+
+	if httpx.Options.FollowRedirects {
+		// Follow redirects up to a maximum number
+		redirectFunc = func(redirectedRequest *http.Request, previousRequests []*http.Request) error {
+			// add custom cookies if necessary
+			httpx.setCustomCookies(redirectedRequest)
+
+			if len(previousRequests) >= options.MaxRedirects {
+				// https://github.com/golang/go/issues/10069
+				return http.ErrUseLastResponse
+			}
+
+			if options.RespectHSTS {
+				handleHSTS(redirectedRequest)
+			}
+
+			return nil
+		}
+	}
+
+	if httpx.Options.FollowHostRedirects {
+		// Only follow redirects on the same host up to a maximum number
+		redirectFunc = func(redirectedRequest *http.Request, previousRequests []*http.Request) error {
+			// add custom cookies if necessary
+			httpx.setCustomCookies(redirectedRequest)
+
+			// Check if we get a redirect to a different host
+			var newHost = redirectedRequest.URL.Hostname()
+			var oldHost = previousRequests[0].URL.Hostname()
+			if oldHost == "" {
+				oldHost = previousRequests[0].URL.Host
+			}
+			if newHost != oldHost {
+				// Tell the http client to not follow redirect
+				return http.ErrUseLastResponse
+			}
+			if len(previousRequests) >= options.MaxRedirects {
+				// https://github.com/golang/go/issues/10069
+				return http.ErrUseLastResponse
+			}
+
+			if options.RespectHSTS {
+				handleHSTS(redirectedRequest)
+			}
+
+			return nil
+		}
+	}
+	transport := &http.Transport{
+		DialContext:         httpx.Dialer.Dial,
+		DialTLSContext:      httpx.buildTLSDialer(options),
+		MaxIdleConnsPerHost: -1,
+		TLSClientConfig: &tls.Config{
+			InsecureSkipVerify: true,
+			MinVersion:         tls.VersionTLS10,
+		},
+		DisableKeepAlives: true,
+	}
+
+	if httpx.Options.Protocol == HTTP11 {
+		// Disable HTTP/2 on this transport without changing process-wide settings.
+		transport.TLSNextProto = map[string]func(string, *tls.Conn) http.RoundTripper{}
+	}
+
+	if httpx.Options.SniName != "" {
+		transport.TLSClientConfig.ServerName = httpx.Options.SniName
+	}
+
+	if httpx.Options.HTTPProxy != "" {
+		httpx.Options.Proxy = httpx.Options.HTTPProxy
+	} else if httpx.Options.SocksProxy != "" {
+		httpx.Options.Proxy = httpx.Options.SocksProxy
+	}
+
+	if httpx.Options.Proxy != "" {
+		proxyURL, parseErr := url.Parse(httpx.Options.Proxy)
+		if parseErr != nil {
+			return nil, parseErr
+		}
+		transport.Proxy = http.ProxyURL(proxyURL)
+	} else {
+		transport.Proxy = http.ProxyFromEnvironment
+	}
+
+	var requestTransport http.RoundTripper = transport
+	if !options.NativeHTTP {
+		cloak, err := newCloakTransport(options.Browser, options.Proxy, options.Protocol)
+		if err != nil {
+			return nil, err
+		}
+		requestTransport = cloak
+	}
+	httpx.client = retryablehttp.NewWithHTTPClient(&http.Client{
+		Transport:     requestTransport,
+		Timeout:       httpx.Options.Timeout,
+		CheckRedirect: redirectFunc,
+	}, retryablehttpOptions)
+
+	if !options.NativeHTTP || httpx.Options.Protocol == HTTP11 {
+		httpx.client.HTTPClient2 = httpx.client.HTTPClient
+	}
+
+	transport2 := &http2.Transport{
+		TLSClientConfig: &tls.Config{
+			InsecureSkipVerify: true,
+			MinVersion:         tls.VersionTLS10,
+		},
+		AllowHTTP: true,
+	}
+	if httpx.Options.SniName != "" {
+		transport2.TLSClientConfig.ServerName = httpx.Options.SniName
+	}
+	httpx.client2 = &http.Client{
+		Transport: transport2,
+		Timeout:   httpx.Options.Timeout,
+	}
+	if !options.NativeHTTP {
+		// Retry and HTTP/2 probes must use the same fingerprinted transport.
+		httpx.client2 = httpx.client.HTTPClient
+	}
+
+	httpx.htmlPolicy = bluemonday.NewPolicy()
+	httpx.CustomHeaders = httpx.Options.CustomHeaders
+
+	if options.CDNCheckClient != nil {
+		httpx.cdn = options.CDNCheckClient
+	} else {
+		if options.CdnCheck != "false" || options.ExcludeCdn {
+			httpx.cdn = cdncheck.New()
+		}
+	}
+
+	initialized = true
+	return httpx, nil
+}
+
+// Close releases pooled connections and the DNS cache after requests complete.
+func (h *HTTPX) Close() {
+	if h.client != nil {
+		h.client.HTTPClient.CloseIdleConnections()
+		if h.client.HTTPClient2 != nil && h.client.HTTPClient2 != h.client.HTTPClient {
+			h.client.HTTPClient2.CloseIdleConnections()
+		}
+	}
+	if h.client2 != nil {
+		h.client2.CloseIdleConnections()
+	}
+	if h.Dialer != nil {
+		h.Dialer.Close()
+	}
+}
+
+func (h *HTTPX) buildTLSDialer(options *Options) func(ctx context.Context, network, addr string) (net.Conn, error) {
+	if options.TlsImpersonate == "" {
+		return func(ctx context.Context, network, addr string) (net.Conn, error) {
+			return h.Dialer.DialTLS(ctx, network, addr)
+		}
+	}
+
+	tlsCfg := &tls.Config{InsecureSkipVerify: true, MinVersion: tls.VersionTLS10}
+
+	strategy, identity := resolveImpersonateStrategy(options.TlsImpersonate)
+
+	return func(ctx context.Context, network, addr string) (net.Conn, error) {
+		return h.Dialer.DialTLSWithConfigImpersonate(ctx, network, addr, tlsCfg, strategy, identity)
+	}
+}
+
+func resolveImpersonateStrategy(value string) (impersonate.Strategy, *impersonate.Identity) {
+	switch strings.ToLower(value) {
+	case "", "chrome":
+		return impersonate.Chrome, nil
+	case "random":
+		// random JA3 mode was removed due to unsupported curve picks; keep chrome for compatibility.
+		return impersonate.Chrome, nil
+	default:
+		spec, err := ja3.ParseWithJa3(value)
+		if err != nil {
+			gologger.Warning().Msgf("invalid tls-impersonate value %q: %v; falling back to chrome", value, err)
+			return impersonate.Chrome, nil
+		}
+		identity := impersonate.Identity(*spec)
+		return impersonate.Custom, &identity
+	}
+}
+
+// Do http request
+func (h *HTTPX) Do(req *retryablehttp.Request, unsafeOptions UnsafeOptions) (*Response, error) {
+	timeStart := time.Now()
+
+	var gzipRetry bool
+get_response:
+	httpresp, err := h.getResponse(req, unsafeOptions)
+	if httpresp == nil && err != nil {
+		return nil, err
+	}
+	// Preserve the original closer when bounded readers replace the body below.
+	// Closing a partial response also frees the httpcloak connection or stream.
+	defer httpresp.Body.Close()
+
+	var shouldIgnoreErrors, shouldIgnoreBodyErrors bool
+	if h.Options.Unsafe && req.Method == http.MethodHead && err != nil &&
+		!stringsutil.ContainsAny(err.Error(), "i/o timeout") {
+		shouldIgnoreErrors = true
+		shouldIgnoreBodyErrors = true
+	}
+
+	var resp Response
+	resp.Input = req.Host
+
+	resp.Headers = httpresp.Header.Clone()
+	// body shouldn't be read with the following status codes
+	// 101 - Switching Protocols => websockets don't have a readable body
+	// 304 - Not Modified => no body the response terminates with latest header newline
+	shouldSkipBodyRead := generic.EqualsAny(httpresp.StatusCode, http.StatusSwitchingProtocols, http.StatusNotModified)
+
+	if h.Options.MaxResponseBodySizeToRead > 0 {
+		httpresp.Body = io.NopCloser(io.LimitReader(httpresp.Body, h.Options.MaxResponseBodySizeToRead))
+		if !shouldSkipBodyRead {
+			defer func() {
+				_, _ = io.Copy(io.Discard, httpresp.Body)
+				_ = httpresp.Body.Close()
+			}()
+		}
+	}
+
+	// httputil.DumpResponse does not handle websockets
+	headers, rawResp, err := pdhttputil.DumpResponseHeadersAndRaw(httpresp)
+	if err != nil {
+		if stringsutil.ContainsAny(err.Error(), "tls: user canceled") {
+			shouldIgnoreErrors = true
+			shouldIgnoreBodyErrors = true
+		}
+
+		// Edge case - some servers respond with gzip encoding header but uncompressed body, in this case the standard library configures the reader as gzip, triggering an error when read.
+		// The bytes slice is not accessible because of abstraction, therefore we need to perform the request again tampering the Accept-Encoding header
+		if !gzipRetry && strings.Contains(err.Error(), "gzip: invalid header") {
+			gzipRetry = true
+			req.Header.Set("Accept-Encoding", "identity")
+			goto get_response
+		}
+		if !shouldIgnoreErrors {
+			return nil, err
+		}
+	}
+	resp.Raw = string(rawResp)
+	resp.RawHeaders = string(headers)
+	var respbody []byte
+	if !shouldSkipBodyRead {
+		var err error
+		respbody, err = io.ReadAll(io.LimitReader(httpresp.Body, h.Options.MaxResponseBodySizeToRead))
+		if err != nil && !shouldIgnoreBodyErrors {
+			return nil, err
+		}
+	}
+
+	closeErr := httpresp.Body.Close()
+	if closeErr != nil && !shouldIgnoreBodyErrors {
+		return nil, closeErr
+	}
+
+	// Keep a reference to the undecoded body. DecodeData returns the same slice
+	// when no transcoding is needed (the common case), so RawData and Data end up
+	// sharing the same backing array and we avoid an extra full-body copy. When
+	// DecodeData transcodes it returns a fresh slice, so RawData still holds the
+	// original undecoded bytes. Both fields are read-only afterwards, so sharing
+	// the backing array is safe.
+	rawbody := respbody
+
+	respbody, err = DecodeData(respbody, httpresp.Header)
+	if err != nil && !shouldIgnoreBodyErrors {
+		return nil, err
+	}
+	resp.RawData = rawbody
+
+	// if content length is not defined
+	if resp.ContentLength <= 0 {
+		// check if it's in the header and convert to int
+		if contentLength, ok := resp.Headers["Content-Length"]; ok && len(contentLength) > 0 {
+			if contentLengthInt, err := strconv.Atoi(contentLength[0]); err == nil {
+				resp.ContentLength = contentLengthInt
+			}
+		}
+
+		// if we have a body, then use the number of bytes in the body if the length is still zero
+		if resp.ContentLength <= 0 && len(respbody) > 0 {
+			resp.ContentLength = len(respbody)
+		}
+	}
+
+	resp.Data = respbody
+
+	// fill metrics
+	resp.StatusCode = httpresp.StatusCode
+
+	// Word/line counts are computed directly over the body bytes to avoid
+	// materializing an extra full-body string copy (and the slice produced by
+	// strings.Split) on the hot path. When HTML stripping is enabled the
+	// sanitized string is required, so counts are derived from it to preserve the
+	// previous behavior.
+	if h.Options.VHostStripHTML {
+		respbodystr := h.htmlPolicy.Sanitize(string(respbody))
+		if respbodystr != "" {
+			resp.Words = len(strings.Split(respbodystr, " "))
+			resp.Lines = len(strings.Split(strings.TrimSpace(respbodystr), "\n"))
+		}
+	} else if len(respbody) > 0 {
+		// equivalent to len(strings.Split(string(respbody), " ")) and
+		// len(strings.Split(strings.TrimSpace(string(respbody)), "\n"))
+		resp.Words = bytes.Count(respbody, []byte{' '}) + 1
+		resp.Lines = bytes.Count(bytes.TrimSpace(respbody), []byte{'\n'}) + 1
+	}
+
+	if !h.Options.Unsafe && h.Options.TLSGrab {
+		if h.Options.ZTLS {
+			resp.TLSData = h.ZTLSGrab(httpresp)
+		} else {
+			// extracts TLS data if any
+			resp.TLSData = h.TLSGrab(httpresp)
+		}
+	}
+
+	if h.Options.ExtractFqdn {
+		resp.CSPData = h.CSPGrab(&resp)
+		resp.BodyDomains = h.BodyDomainGrab(&resp)
+	}
+
+	// build the redirect flow by reverse cycling the response<-request chain
+	if !h.Options.Unsafe {
+		chain, err := pdhttputil.GetChain(httpresp)
+		if err != nil {
+			return nil, err
+		}
+		resp.Chain = chain
+	}
+
+	resp.Duration = time.Since(timeStart)
+
+	return &resp, nil
+}
+
+// RequestOverride contains the URI path to override the request
+type UnsafeOptions struct {
+	URIPath string
+}
+
+// getResponse returns response from safe / unsafe request
+func (h *HTTPX) getResponse(req *retryablehttp.Request, unsafeOptions UnsafeOptions) (resp *http.Response, err error) {
+	if h.Options.Unsafe {
+		return h.doUnsafeWithOptions(req, unsafeOptions)
+	}
+	return h.client.Do(req)
+}
+
+// doUnsafe does an unsafe http request
+func (h *HTTPX) doUnsafeWithOptions(req *retryablehttp.Request, unsafeOptions UnsafeOptions) (*http.Response, error) {
+	method := req.Method
+	headers := req.Header
+	targetURL := req.String()
+	body := req.Body
+	options := rawhttp.DefaultOptions
+	options.Timeout = h.Options.Timeout
+	return rawhttp.DoRawWithOptions(method, targetURL, unsafeOptions.URIPath, headers, body, options)
+}
+
+// Verify the http calls and apply-cascade all the filters, as soon as one matches it returns true
+func (h *HTTPX) Verify(req *retryablehttp.Request, unsafeOptions UnsafeOptions) (bool, error) {
+	resp, err := h.Do(req, unsafeOptions)
+	if err != nil {
+		return false, err
+	}
+
+	// apply all filters
+	for _, f := range h.Filters {
+		ok, err := f.Filter(resp)
+		if err != nil {
+			return false, err
+		}
+		if ok {
+			return true, nil
+		}
+	}
+
+	return false, nil
+}
+
+// AddFilter cascade
+func (h *HTTPX) AddFilter(f Filter) {
+	h.Filters = append(h.Filters, f)
+}
+
+// NewRequest from url
+func (h *HTTPX) NewRequest(method, targetURL string) (req *retryablehttp.Request, err error) {
+	return h.NewRequestWithContext(context.Background(), method, targetURL)
+}
+
+// NewRequest from url
+func (h *HTTPX) NewRequestWithContext(ctx context.Context, method, targetURL string) (req *retryablehttp.Request, err error) {
+	if !h.Options.NativeHTTP && ctx.Value(fastdialer.IP) != nil {
+		return nil, fmt.Errorf("custom dial IP requires --native-http")
+	}
+	urlx, err := urlutil.ParseURL(targetURL, h.Options.Unsafe)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err = retryablehttp.NewRequestFromURLWithContext(ctx, method, urlx, nil)
+	if err != nil {
+		return nil, err
+	}
+	// Skip if unsafe is used
+	if !h.Options.Unsafe && h.Options.NativeHTTP {
+		// set default user agent
+		req.Header.Set("User-Agent", h.Options.DefaultUserAgent)
+		// set default encoding to accept utf8
+		req.Header.Add("Accept-Charset", "utf-8")
+	}
+	return
+}
+
+// SetCustomHeaders on the provided request
+func (h *HTTPX) SetCustomHeaders(r *retryablehttp.Request, headers map[string][]string) {
+	// Coalesce values by canonical header key first. net/http canonicalizes keys
+	// on Del/Add, so case-variant duplicates (e.g. "X-Test" and "x-test") would
+	// otherwise have the second key's Del wipe the values added for the first.
+	normalized := make(map[string][]string, len(headers))
+	for name, values := range headers {
+		canonical := textproto.CanonicalMIMEHeaderKey(name)
+		normalized[canonical] = append(normalized[canonical], values...)
+	}
+
+	for name, values := range normalized {
+		r.Header.Del(name)
+		for _, value := range values {
+			switch strings.ToLower(name) {
+			case "host":
+				r.Host = value
+				if h.Options.Unsafe {
+					r.Header.Add("Host", value)
+				}
+			case "cookie":
+				// cookies are set in the default branch, and reset during the follow redirect flow
+				fallthrough
+			default:
+				r.Header.Add(name, value)
+			}
+		}
+	}
+	if h.Options.RandomAgent && h.Options.NativeHTTP {
+		userAgent := useragent.PickRandom()
+		r.Header.Set("User-Agent", userAgent.Raw) //nolint
+	}
+	if h.Options.AutoReferer && r.Header.Get("Referer") == "" {
+		r.Header.Set("Referer", r.String())
+	}
+}
+
+func (httpx *HTTPX) setCustomCookies(req *http.Request) {
+	if httpx.Options.hasCustomCookies() {
+		for _, cookie := range httpx.Options.customCookies {
+			req.AddCookie(cookie)
+		}
+	}
+}
+
+func (httpx *HTTPX) Sanitize(respStr string, trimLine, normalizeSpaces bool) string {
+	respStr = httpx.htmlPolicy.Sanitize(respStr)
+	if trimLine {
+		respStr = strings.ReplaceAll(respStr, "\n", "")
+	}
+	if normalizeSpaces {
+		respStr = httputilz.NormalizeSpaces(respStr)
+	}
+	return respStr
+}
