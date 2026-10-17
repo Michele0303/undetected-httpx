@@ -59,9 +59,9 @@ On the same five selected URLs, with the same User-Agent, **httpx returned `403 
   </tr>
 </table>
 
-**Real tool executions**, recorded with VHS on 16 October 2026. These examples highlight improvements from our **96-host comparison across 32 site groups**. Results vary by site; a `200` response can still contain a challenge page.
+**Real tool executions**, recorded with VHS on 16 October 2026. Results vary by site; a `200` response can still contain a challenge page.
 
-[Watch the MP4](docs/demos/v2-live/comparison.mp4) · [Full benchmark](docs/benchmarks/2026-10-16/README.md) · [Reproduce the recordings](docs/demos/v2-live/README.md)
+[Watch the MP4](docs/demos/v2-live/comparison.mp4)
 
 -----
 
@@ -97,4 +97,4 @@ undetected-httpx -u https://example.com --browser chrome-latest -json
 undetected-httpx -u https://example.com --native-http -tls-grab -ip
 ```
 
-Run `make test` for local regressions. [Validation results](docs/benchmarks/2026-10-16/validation.md) · [Upstream & licenses](docs/UPSTREAM.md)
+Run `make test` for local regressions. [Upstream & licenses](docs/UPSTREAM.md)

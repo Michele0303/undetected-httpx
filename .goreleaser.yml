@@ -38,12 +38,6 @@ archives:
       - src: docs/*.*
         dst: docs
         strip_parent: false
-      - src: docs/benchmarks/2026-10-16/*.*
-        dst: docs/benchmarks/2026-10-16
-        strip_parent: false
-      - src: docs/benchmarks/2026-10-16/*-verified/*.*
-        dst: docs/benchmarks/2026-10-16
-        strip_parent: false
       - src: docs/demos/v2-live/*.*
         dst: docs/demos/v2-live
         strip_parent: false

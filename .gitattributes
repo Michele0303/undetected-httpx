@@ -1,10 +1,8 @@
 # Preserve captured bytes and fixture line endings on every platform.
-docs/benchmarks/** -text
 docs/demos/** -text
 common/httpx/test-data/** -text
 
-# CSV exports and HTTP fixtures use CRLF line endings.
-docs/benchmarks/**/*.csv whitespace=cr-at-eol
+# HTTP fixtures use CRLF line endings.
 common/httpx/test-data/** whitespace=cr-at-eol
 
 # Captured terminal output and remote pages retain their own whitespace.
