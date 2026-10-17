@@ -97,7 +97,7 @@ var DefaultOptions = Options{
 	VHostIgnoreNumberOfLines: false,
 	VHostStripHTML:           false,
 	VHostSimilarityRatio:     85,
-	DefaultUserAgent:         "undetected-httpx/2.0.0-dev",
+	DefaultUserAgent:         "undetected-httpx/2.0.0",
 }
 
 func (options *Options) parseCustomCookies() {

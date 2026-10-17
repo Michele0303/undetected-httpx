@@ -7,8 +7,8 @@ import (
 
 const banner = `undetected-httpx`
 
-// Version is the current version of undetected-httpx.
-const Version = `v2.0.0-dev`
+// Version is the current version of undetected-httpx. GoReleaser sets it at build time.
+var Version = `v2.0.0`
 
 // showBanner is used to show the banner to the user
 func showBanner() {

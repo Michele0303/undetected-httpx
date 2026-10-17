@@ -14,10 +14,10 @@ Version 2.0 replaces the Python wrapper with a **Go fork of httpx v1.12.0**. You
 
 ## 📦 Installation
 
-Requires **Go 1.26.0+**. Build the current `v2.0.0-dev` branch:
+Download a binary for Linux or macOS from the [v2.0.0 release](https://github.com/Michele0303/undetected-httpx/releases/tag/v2.0.0), or build from source with **Go 1.26.0+**:
 
 ```bash
-git clone --branch mf/v2-httpcloak https://github.com/Michele0303/undetected-httpx.git
+git clone --branch v2.0.0 https://github.com/Michele0303/undetected-httpx.git
 cd undetected-httpx
 make build
 ./bin/undetected-httpx -h
