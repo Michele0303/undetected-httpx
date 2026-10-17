@@ -1,91 +1,85 @@
-# undetected-httpx 2.0
+<h1 align="center">undetected-httpx 2.0</h1>
 
-HTTP probing with ProjectDiscovery's [httpx](https://github.com/projectdiscovery/httpx) engine and [HTTPCloak](https://github.com/sardanioss/httpcloak) browser transport. Version 2.0 is a Go fork of httpx v1.12.0. It replaces the main request transport with HTTPCloak and keeps the upstream probe pipeline, retry wrapper, and output formats.
+<p align="center">
+  <img src="https://img.shields.io/badge/go-1.26%2B-blue.svg" alt="Go 1.26 or newer">
+  <img src="https://img.shields.io/badge/transport-HTTPCloak-green.svg" alt="HTTPCloak browser transport">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-red.svg" alt="MIT License"></a>
+</p>
 
-HTTPCloak supplies browser TLS and HTTP fingerprints. The default profile is `chrome-latest`. Browser impersonation does not guarantee access to a site or make traffic undetectable. Server policies, IP reputation, JavaScript challenges, and request behavior can still affect results.
+> **undetected-httpx** is an HTTP probing toolkit built on [ProjectDiscovery's httpx](https://github.com/projectdiscovery/httpx), with browser TLS and HTTP/2 fingerprints powered by [HTTPCloak](https://github.com/sardanioss/httpcloak).
 
-This repository contains `v2.0.0-dev`. The previous Python CLI, version 0.4.0, lives in [legacy/python](legacy/python). Read the [migration notes](docs/V2-MIGRATION.md) before replacing an existing installation.
+Version 2.0 replaces the Python wrapper with a **Go fork of httpx v1.12.0**. You get the upstream probes, flags and output formats, with **HTTPCloak v1.7.3** handling the main HTTP transport. The default browser profile is `chrome-latest`.
 
-## Selected 403 → 200 results
+-----
 
-<table>
-  <tr>
-    <th>httpx v1.12.0</th>
-    <th>undetected-httpx 2.0</th>
-  </tr>
-  <tr>
-    <td width="50%"><img src="docs/demos/v2-live/capture/upstream/httpx.gif" alt="Live execution of httpx returning HTTP 403 on five selected URLs" width="100%"></td>
-    <td width="50%"><img src="docs/demos/v2-live/capture/fork/undetected-httpx.gif" alt="Live execution of undetected-httpx 2.0 returning HTTP 200 on the same five URLs" width="100%"></td>
-  </tr>
-</table>
+## 📦 Installation
 
-**Real executions recorded with VHS on 16 October 2026**, using the same five selected URLs and User-Agent. Both binaries run in the terminal; the GIFs retain their actual output and timing. The fork's saved responses have page titles without known challenge indicators in these cases. See the [full 96-host comparison](docs/benchmarks/2026-10-16/README.md) for the complete results and remaining limitations.
+Requires **Go 1.26.0+**. Build the current `v2.0.0-dev` branch:
 
-[Watch the MP4 comparison](docs/demos/v2-live/comparison.mp4) · [Recording scripts, responses and reproduction](docs/demos/v2-live/README.md)
-
-## Build
-
-Install Go 1.26.0 or newer, then build from this checkout:
-
-```sh
+```bash
 git clone --branch mf/v2-httpcloak https://github.com/Michele0303/undetected-httpx.git
 cd undetected-httpx
 make build
-./bin/undetected-httpx -version
+./bin/undetected-httpx -h
 ```
 
-Use `make install` to place `undetected-httpx` in your Go binary directory. To build the compatibility executable named `httpx`, run `go build -o bin/httpx ./cmd/httpx`.
+Run `make install` to install the command in your Go binary directory. The previous Python package remains in [legacy/python](legacy/python); see the [migration guide](docs/V2-MIGRATION.md) when upgrading.
 
-## Probe
+-----
 
-```sh
-# Read targets from stdin and print status codes and titles.
-printf '%s\n' https://example.com | ./bin/undetected-httpx -sc -title
+## 🎭 Real-world Comparison
+
+On the same five selected URLs, with the same User-Agent, **httpx returned `403 Forbidden`** while **undetected-httpx returned `200 OK`**.
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <kbd><b>undetected-httpx 2.0</b></kbd><br><br>
+      <img src="docs/demos/v2-live/capture/fork/undetected-httpx.gif" alt="undetected-httpx returning HTTP 200 on five selected URLs" width="100%">
+    </td>
+    <td align="center" width="50%">
+      <kbd>httpx v1.12.0 (Original)</kbd><br><br>
+      <img src="docs/demos/v2-live/capture/upstream/httpx.gif" alt="httpx returning HTTP 403 on the same five URLs" width="100%">
+    </td>
+  </tr>
+</table>
+
+**Real tool executions**, recorded with VHS on 16 October 2026. These examples highlight improvements from our **96-host comparison across 32 site groups**. Results vary by site; a `200` response can still contain a challenge page.
+
+[Watch the MP4](docs/demos/v2-live/comparison.mp4) · [Full benchmark](docs/benchmarks/2026-10-16/README.md) · [Reproduce the recordings](docs/demos/v2-live/README.md)
+
+-----
+
+## 📊 Technical Capabilities
+
+| Feature | `undetected-httpx 2.0` | `httpx v1.12.0` |
+| :--- | :--- | :--- |
+| **Network stack** | HTTPCloak | Go `net/http` |
+| **Default TLS fingerprint** | Browser profile (`chrome-latest`) | Upstream default |
+| **Selected demo results** | ✅ **5 × HTTP 200** | **5 × HTTP 403** |
+| **Probes & output** | httpx probes, text and JSONL | httpx probes, text and JSONL |
+
+### 🛠 Key Features
+
+- **Browser transport:** browser TLS, HTTP/2 settings and headers through HTTPCloak, with HTTP/1.1 fallback.
+- **Familiar CLI:** keep the httpx probing pipeline, retries and output formats; select a profile with `--browser` or `-impersonate`.
+- **Native mode:** use `--native-http` for custom resolvers, IP/network controls, TLS certificate probes and raw requests.
+
+Browser impersonation does not guarantee access or solve JavaScript challenges. This adapter supports HTTP/1.1 and HTTP/2; see the [compatibility table](docs/V2-MIGRATION.md#transport-compatibility) for supported options.
+
+-----
+
+## 🚀 Usage
+
+```bash
+# Probe targets and show status codes and titles.
+./bin/undetected-httpx -l targets.txt -sc -title
 
 # Choose a browser profile and write JSONL.
 ./bin/undetected-httpx -u https://example.com --browser chrome-latest -json
 
-# Use the upstream transport for probes that need direct network control.
+# Use the native transport for TLS and IP probes.
 ./bin/undetected-httpx -u https://example.com --native-http -tls-grab -ip
-
-# Show the full upstream-compatible flag list.
-./bin/undetected-httpx -h
 ```
 
-`-impersonate` aliases `--browser`. HTTPCloak handles browser headers and the User-Agent for normal requests; a User-Agent supplied through `-H` overrides that choice. `--protocol http11` forces HTTP/1.1; `--protocol http2` requires HTTPS and HTTP/2 support. The default negotiates HTTP/2 and falls back to HTTP/1.1 when the server does not offer it. This adapter does not use HTTP/3.
-
-Several low-level flags require `--native-http`, including `--unsafe`, custom resolvers, TLS certificate probes, and explicit IP/network policy options. The CLI rejects unsupported combinations. See the [compatibility table](docs/V2-MIGRATION.md#transport-compatibility).
-
-The fork disables upstream self-update and background update checks. Cloud uploads require explicit dashboard/upload options; an environment variable alone does not enable uploads.
-
-## Measured comparison
-
-On 16 October 2026, we compared upstream v1.12.0 with this fork on **96 public hosts across 32 site groups**, including documentation, support, community, and status subdomains. Five A/B runs produced 960 observations, with no missing output or request failures. Each run used three initial probes per second and no configured retries.
-
-| Test, 96 URLs per tool | Upstream | Fork |
-|---|---:|---:|
-| Same explicit Chrome User-Agent: HTTP 403 | 8 | 1 |
-| Follow up to two redirects: HTTP 2xx | 82 | 93 |
-| Follow up to two redirects: HTTP 403 / 406 | 9 / 4 | 2 / 0 |
-| Native transport control: HTTP 2xx | 61 | 61 |
-
-HTTP 2xx does **not** mean usable content: the fork received `200` challenge pages from Reddit and Mozilla Support. Stack Overflow and Tripadvisor still returned `403` after redirects. Eight baseline status differences repeated with the execution order reversed; the native control differed on one host, showing that site behavior can change between requests. These observations do not establish undetectability or isolate TLS fingerprints from other transport differences.
-
-Read the [findings and reproduction instructions](docs/benchmarks/2026-10-16/README.md), open the [searchable HTML report](docs/benchmarks/2026-10-16/index.html) locally, or inspect the [code validation results](docs/benchmarks/2026-10-16/validation.md). Each run includes JSONL responses, normalized CSV, commands, timestamps, and binary hashes. Published response data omits client IPs and session tokens, as documented in the report.
-
-## Development
-
-```sh
-make test           # Compile all packages and run local fork regressions
-make test-upstream  # Include inherited tests that contact public websites
-make snapshot       # Package local archives with GoReleaser v2
-```
-
-CI builds both CLI names and runs the local regressions on Linux and macOS. The Docker image builds the Go binary and includes a CA certificate bundle:
-
-```sh
-docker build -t undetected-httpx:dev .
-docker run --rm undetected-httpx:dev -u https://example.com -sc -title
-```
-
-See [upstream provenance](docs/UPSTREAM.md) for the source revisions and licenses.
+Run `make test` for local regressions. [Validation results](docs/benchmarks/2026-10-16/validation.md) · [Upstream & licenses](docs/UPSTREAM.md)
