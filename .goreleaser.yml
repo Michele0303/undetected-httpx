@@ -32,6 +32,9 @@ archives:
       - LICENSE
       - LICENSE.md
       - README.md
+      - src: scripts/*.py
+        dst: scripts
+        strip_parent: false
       - src: docs/*.*
         dst: docs
         strip_parent: false
