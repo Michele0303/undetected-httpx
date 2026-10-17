@@ -14,7 +14,18 @@ Version 2.0 replaces the Python wrapper with a **Go fork of httpx v1.12.0**. You
 
 ## 📦 Installation
 
-Download a binary for Linux or macOS from the [v2.0.0 release](https://github.com/Michele0303/undetected-httpx/releases/tag/v2.0.0), or build from source with **Go 1.26.0+**:
+Install with **Go 1.26.0+**:
+
+```bash
+go install github.com/Michele0303/undetected-httpx/v2/cmd/undetected-httpx@latest
+```
+
+Use `@v2.0.0` instead of `@latest` to pin the release. Add your Go binary directory to `PATH`: `$GOBIN`, or `$(go env GOPATH)/bin` when `GOBIN` is unset.
+
+Prebuilt Linux and macOS binaries are available in the [releases](https://github.com/Michele0303/undetected-httpx/releases).
+
+<details>
+<summary>Build from a source checkout</summary>
 
 ```bash
 git clone --branch v2.0.0 https://github.com/Michele0303/undetected-httpx.git
@@ -23,7 +34,11 @@ make build
 ./bin/undetected-httpx -h
 ```
 
-Run `make install` to install the command in your Go binary directory. The previous Python package remains in [legacy/python](legacy/python); see the [migration guide](docs/V2-MIGRATION.md) when upgrading.
+Run `make install` to install the command in your Go binary directory.
+
+</details>
+
+The previous Python package remains in [legacy/python](legacy/python); see the [migration guide](docs/V2-MIGRATION.md) when upgrading.
 
 -----
 
@@ -73,13 +88,13 @@ Browser impersonation does not guarantee access or solve JavaScript challenges. 
 
 ```bash
 # Probe targets and show status codes and titles.
-./bin/undetected-httpx -l targets.txt -sc -title
+undetected-httpx -l targets.txt -sc -title
 
 # Choose a browser profile and write JSONL.
-./bin/undetected-httpx -u https://example.com --browser chrome-latest -json
+undetected-httpx -u https://example.com --browser chrome-latest -json
 
 # Use the native transport for TLS and IP probes.
-./bin/undetected-httpx -u https://example.com --native-http -tls-grab -ip
+undetected-httpx -u https://example.com --native-http -tls-grab -ip
 ```
 
 Run `make test` for local regressions. [Validation results](docs/benchmarks/2026-10-16/validation.md) · [Upstream & licenses](docs/UPSTREAM.md)

@@ -4,12 +4,13 @@ Version 2.0 replaces the Python wrapper with a Go fork of ProjectDiscovery httpx
 
 ## Installation and scripts
 
-Build with Go 1.26.0 or newer:
+Install with Go 1.26.0 or newer:
 
 ```sh
-make build
-./bin/undetected-httpx -h
+go install github.com/Michele0303/undetected-httpx/v2/cmd/undetected-httpx@latest
 ```
+
+Use `@v2.0.0` to pin the release. Add `$GOBIN` to `PATH`, or `$(go env GOPATH)/bin` when `GOBIN` is unset, then run `undetected-httpx -h`. From a source checkout, `make build` produces `bin/undetected-httpx` and `make install` installs the command in your Go binary directory.
 
 Update scripts to invoke this binary. Python package installation and Python imports do not install or load the Go implementation. The Go library module is `github.com/Michele0303/undetected-httpx/v2`; its `runner` and `common/httpx` packages retain the upstream Go API with transport options added by this fork.
 
